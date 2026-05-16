@@ -136,6 +136,7 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
 
     const eventId = generateEventId();
     const payload = {
+      site: "siriuba-2",
       origin: "Landing Page Siriúba 2 (exclusivo.opailhabela.com.br/siriuba-2)",
       receivedAt: new Date().toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" }),
       nome: formData.nome,
@@ -143,7 +144,6 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
       email: formData.email.trim(),
       cidade: formData.cidade,
       answers: answersMap,
-      subject: `[SITE Siriúba 2] Novo lead — ${formData.nome}`,
       event_id: eventId,
     };
 

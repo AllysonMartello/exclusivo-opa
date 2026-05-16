@@ -68,12 +68,12 @@ const DiagnosisForm = () => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          site: 'composicao-opa',
           origin: 'Landing Page Composicao OPA — Diagnostico',
           receivedAt: new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' }),
           nome: formData.nome ?? '',
           telefone: formData.whatsapp ?? '',
           cidade: formData.localizacao ?? 'Ilhabela',
-          subject: `[Composicao OPA] Diagnostico — ${formData.nome ?? ''}`,
           answers,
           event_id: eventId,
         }),

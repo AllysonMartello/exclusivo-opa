@@ -5,7 +5,20 @@ import { serverEnv } from "@/lib/env";
 
 export const runtime = "nodejs";
 
+// Mapa unico de site -> label exibido no email e no subject.
+// Fonte da verdade — clients mandam apenas `site`, nao `subject`.
+const SITE_LABELS = {
+  "siriuba-2": "Siriúba 2",
+  "morro-da-cruz": "Morro da Cruz",
+  "composicao-opa": "Composição Opa",
+  "lancamento-opa-imovel": "Lançamento Opa — Imóvel",
+  "lancamento-opa-empreendimento": "Lançamento Opa — Empreendimento",
+} as const;
+
+type SiteKey = keyof typeof SITE_LABELS;
+
 const leadSchema = z.object({
+  site: z.enum(Object.keys(SITE_LABELS) as [SiteKey, ...SiteKey[]]).optional(),
   origin: z.string().optional(),
   receivedAt: z.string().optional(),
   nome: z.string().min(1, "Nome obrigatório"),
@@ -13,7 +26,6 @@ const leadSchema = z.object({
   email: z.string().email().optional().or(z.literal("")),
   cidade: z.string().min(1, "Cidade obrigatória"),
   answers: z.record(z.string(), z.string()).optional(),
-  subject: z.string().optional(),
   // event_id (UUID gerado no client) — preservado para deduplicação client↔server
   // quando a Fase A (Meta CAPI + GA4 MP) for ativada.
   event_id: z.string().optional(),
@@ -31,7 +43,7 @@ const escapeHtml = (s: string) =>
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#39;");
 
-const renderHtml = (p: LeadPayload, originLabel: string) => {
+const renderHtml = (p: LeadPayload, siteLabel: string) => {
   const row = (k: string, v: string) =>
     `<tr><td style="padding:6px 12px;border-bottom:1px solid #eee;font-weight:600;white-space:nowrap;">${escapeHtml(k)}</td><td style="padding:6px 12px;border-bottom:1px solid #eee;">${escapeHtml(v)}</td></tr>`;
 
@@ -41,7 +53,7 @@ const renderHtml = (p: LeadPayload, originLabel: string) => {
 
   return `<!doctype html>
 <html><body style="font-family:system-ui,-apple-system,sans-serif;color:#111;max-width:640px;margin:0 auto;padding:24px;">
-  <h2 style="margin:0 0 8px;">Novo lead — ${escapeHtml(originLabel)}</h2>
+  <h2 style="margin:0 0 8px;">Novo lead — ${escapeHtml(siteLabel)}</h2>
   <p style="color:#555;margin:0 0 16px;">${escapeHtml(p.origin ?? "")} · ${escapeHtml(p.receivedAt ?? "")}</p>
   <table style="width:100%;border-collapse:collapse;font-size:14px;">
     ${row("Nome", p.nome)}
@@ -113,13 +125,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: true, dryRun: true });
   }
 
-  const originLabel = body.origin?.includes("composicao")
-    ? "Composição Opa"
-    : body.origin?.includes("morro")
-      ? "Morro da Cruz"
-      : body.origin?.includes("lancamento")
-        ? "Lançamento Opa"
-        : "Siriúba 2";
+  const siteLabel = body.site ? SITE_LABELS[body.site] : "Siriúba 2";
 
   const resend = new Resend(serverEnv.RESEND_API_KEY);
   const replyTo = body.email && body.email.length > 0 ? body.email : undefined;
@@ -128,8 +134,8 @@ export async function POST(req: NextRequest) {
     const { error } = await resend.emails.send({
       from: `OPA Leads <onboarding@resend.dev>`,
       to: [serverEnv.LEAD_TO_EMAIL],
-      subject: body.subject ?? `[SITE ${originLabel}] Novo lead — ${body.nome}`,
-      html: renderHtml(body, originLabel),
+      subject: `[SITE ${siteLabel}] Novo lead — ${body.nome}`,
+      html: renderHtml(body, siteLabel),
       ...(replyTo ? { replyTo } : {}),
     });
 

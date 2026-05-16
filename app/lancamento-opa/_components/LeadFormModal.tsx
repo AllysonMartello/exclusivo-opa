@@ -165,7 +165,7 @@ const VARIANT_CONFIG: Record<LeadFormVariant, {
   steps: Step[];
   formId: string;
   formName: string;
-  subject: (nome: string) => string;
+  site: "lancamento-opa-imovel" | "lancamento-opa-empreendimento";
   origin: string;
 }> = {
   imovel: {
@@ -173,7 +173,7 @@ const VARIANT_CONFIG: Record<LeadFormVariant, {
     steps: STEPS_IMOVEL,
     formId: "lead-form-lancamento-imovel",
     formName: "Lead Lançamento OPA — Imóvel",
-    subject: (nome) => `[Lançamento OPA] Novo lead (imóvel) — ${nome}`,
+    site: "lancamento-opa-imovel",
     origin: "Landing Page Lançamento OPA — Aplicar Imóvel",
   },
   empreendimento: {
@@ -181,7 +181,7 @@ const VARIANT_CONFIG: Record<LeadFormVariant, {
     steps: STEPS_EMPREENDIMENTO,
     formId: "lead-form-lancamento-empreendimento",
     formName: "Lead Lançamento OPA — Empreendimento",
-    subject: (nome) => `[Lançamento OPA] Novo lead (empreendimento) — ${nome}`,
+    site: "lancamento-opa-empreendimento",
     origin: "Landing Page Lançamento OPA — Aplicar Empreendimento",
   },
 };
@@ -308,12 +308,12 @@ export default function LeadFormModal({ isOpen, onClose, variant }: LeadFormModa
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          site: config.site,
           origin: config.origin,
           receivedAt: new Date().toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" }),
           nome: contact.nome,
           telefone: contact.telefone,
           cidade: "Ilhabela",
-          subject: config.subject(contact.nome),
           answers: stepAnswers,
           event_id: eventId,
         }),

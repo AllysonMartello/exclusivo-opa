@@ -189,12 +189,12 @@ export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          site: "morro-da-cruz",
           origin: "Landing Page Morro da Cruz",
           receivedAt: new Date().toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" }),
           nome: formData.nome,
           telefone: formData.telefone,
           cidade: formData.cidade,
-          subject: `[SITE Morro da Cruz] Novo lead — ${formData.nome}`,
           answers: answersForEmail,
           event_id: eventId,
         }),
