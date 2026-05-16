@@ -420,9 +420,12 @@ export default function Home() {
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 1 }}
-        className="text-center py-10 text-text-sec text-sm"
+        className="text-center py-10 text-text-sec text-sm flex flex-col items-center gap-2"
       >
-        &copy; {new Date().getFullYear()} Opa Ilhabela. Todos os direitos reservados.
+        <span>&copy; {new Date().getFullYear()} Opa Ilhabela. Todos os direitos reservados.</span>
+        <a href="/politica-de-privacidade" className="text-text-sec/80 hover:text-white underline transition-colors">
+          Política de Privacidade
+        </a>
       </motion.footer>
     </div>
   );

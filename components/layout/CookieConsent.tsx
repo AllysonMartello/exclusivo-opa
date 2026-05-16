@@ -44,7 +44,14 @@ export default function CookieConsent() {
                 Privacidade e Cookies
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">
-                Utilizamos cookies e tecnologias semelhantes para melhorar a sua experiência, analisar o tráfego do site e personalizar conteúdo e anúncios (Meta Ads, Google, etc). Ao continuar navegando, você concorda com a nossa política de privacidade e uso de cookies em conformidade com a LGPD.
+                Utilizamos cookies e tecnologias semelhantes para melhorar a sua experiência, analisar o tráfego do site e personalizar conteúdo e anúncios (Meta Ads, Google, etc). Ao continuar navegando, você concorda com a nossa{" "}
+                <a
+                  href="/politica-de-privacidade"
+                  className="text-primary-1 font-semibold underline hover:no-underline"
+                >
+                  política de privacidade
+                </a>{" "}
+                e uso de cookies em conformidade com a LGPD.
               </p>
             </div>
 
