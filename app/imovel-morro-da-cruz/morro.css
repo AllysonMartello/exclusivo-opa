@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+[data-app="morro"] {
+  --color-primary-1: #1F3A37;
+  --color-primary-2: #8C6B4F;
+  --color-secondary: #166188;
+  --color-bg-main: #F7F5F2;
+  --color-bg-alt: #ECE7E1;
+  --color-text-main: #1A1A1A;
+  --color-text-sec: #6A6A6A;
+  --color-border-main: #E2DDD7;
+  --color-alert: #C47A2C;
+
+  background-color: #F7F5F2;
+  color: #1A1A1A;
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+[data-app="morro"] h1,
+[data-app="morro"] h2,
+[data-app="morro"] h3,
+[data-app="morro"] h4,
+[data-app="morro"] h5,
+[data-app="morro"] h6 {
+  font-family: "Playfair Display", ui-serif, Georgia, serif;
+}
+
+[data-app="morro"] ::selection {
+  background: #166188;
+  color: white;
+}

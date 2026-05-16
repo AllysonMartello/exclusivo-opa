@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap');
+
+/* Escopo: aplica somente sob [data-app="composicao"] — sobrescreve tokens
+   globais (definidos em globals.css) com a paleta clara do composicao-opa. */
+[data-app="composicao"] {
+  --color-primary-1: #002147;
+  --color-primary-2: #005B96;
+  --color-secondary: #03396C;
+  --color-bg-main: #F4F7FA;
+  --color-bg-alt: #E8EEF2;
+  --color-text-main: #0A1128;
+  --color-text-sec: #526070;
+
+  background-color: #F4F7FA;
+  color: #0A1128;
+  font-family: "Poppins", sans-serif;
+}
+
+[data-app="composicao"] h1,
+[data-app="composicao"] h2,
+[data-app="composicao"] h3,
+[data-app="composicao"] h4,
+[data-app="composicao"] h5,
+[data-app="composicao"] h6 {
+  font-family: "Poppins", sans-serif;
+}
