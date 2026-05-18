@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'motion/react'
-import { X } from 'lucide-react';
+import { X, Play, Film } from 'lucide-react';
 
 // MediaItemType defines the structure of a media item
 export interface MediaItemType {
@@ -11,6 +11,9 @@ export interface MediaItemType {
     desc: string;
     url: string;
     span: string;
+    youtubeId?: string;
+    thumbnailUrl?: string;
+    startSeconds?: number;
 }
 
 // MediaItem component renders either a video or image based on item.type
@@ -85,6 +88,72 @@ const MediaItem = ({ item, className, onClick }: { item: MediaItemType, classNam
             }
         };
     }, [isInView]);
+
+    if (item.type === 'youtube') {
+        const base = item.thumbnailUrl ?? '';
+        return (
+            <div className={`${className} relative overflow-hidden group/video`}>
+                <picture className="block w-full h-full">
+                    <source
+                        type="image/avif"
+                        srcSet={`${base}-mobile.avif 640w, ${base}-desktop.avif 1280w`}
+                        sizes="(max-width: 768px) 100vw, 100vw"
+                    />
+                    <source
+                        type="image/webp"
+                        srcSet={`${base}-mobile.webp 640w, ${base}-desktop.webp 1280w`}
+                        sizes="(max-width: 768px) 100vw, 100vw"
+                    />
+                    <img
+                        src={`${base}-desktop.jpg`}
+                        srcSet={`${base}-mobile.jpg 640w, ${base}-desktop.jpg 1280w`}
+                        sizes="(max-width: 768px) 100vw, 100vw"
+                        alt={item.title}
+                        className="image-cover cursor-pointer"
+                        onClick={onClick}
+                        loading="lazy"
+                        decoding="async"
+                        width={1280}
+                        height={720}
+                    />
+                </picture>
+                {/* Cinematic letterbox bars */}
+                <div className="absolute top-0 left-0 right-0 h-[8%] bg-black pointer-events-none" />
+                <div className="absolute bottom-0 left-0 right-0 h-[8%] bg-black pointer-events-none" />
+
+                {/* Vignette */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50 pointer-events-none" />
+
+                {/* Cinematic badge */}
+                <div className="absolute top-[10%] left-4 sm:left-6 flex items-center gap-2 px-3 py-1.5 rounded-full bg-black/60 backdrop-blur-md border border-white/20 pointer-events-none">
+                    <Film className="w-3.5 h-3.5 text-white" strokeWidth={2} />
+                    <span className="text-white text-[10px] sm:text-xs font-sans tracking-[0.2em] uppercase font-medium">{item.title}</span>
+                    <span className="flex h-2 w-2 ml-1">
+                        <span className="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-red-500 opacity-75" />
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" />
+                    </span>
+                </div>
+
+                {/* Play button with pulse */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <div className="relative">
+                        <span className="absolute inset-0 rounded-full bg-white/40 animate-ping" />
+                        <span className="absolute -inset-2 rounded-full bg-white/20 animate-pulse" />
+                        <div className="relative w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full bg-white flex items-center justify-center shadow-2xl ring-4 ring-white/30 transition-transform duration-300 group-hover/video:scale-110">
+                            <Play className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-primary-1 ml-1" fill="currentColor" strokeWidth={0} />
+                        </div>
+                    </div>
+                </div>
+
+                {/* Bottom caption */}
+                <div className="absolute bottom-[10%] left-0 right-0 px-4 sm:px-6 md:px-8 pointer-events-none">
+                    <p className="text-white/90 text-xs sm:text-sm md:text-base font-sans max-w-md drop-shadow-lg">
+                        {item.desc}
+                    </p>
+                </div>
+            </div>
+        );
+    }
 
     if (item.type === 'video') {
         return (
@@ -197,18 +266,30 @@ const GalleryModal = ({ selectedItem, isOpen, onClose, setSelectedItem, mediaIte
                                     opacity: 0,
                                     transition: { duration: 0.15 }
                                 }}
-                                onClick={onClose}
+                                onClick={selectedItem.type === 'youtube' ? undefined : onClose}
                             >
-                                <MediaItem item={selectedItem} className="w-full h-full" onClick={onClose} />
-                                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 
-                                              bg-gradient-to-t from-black/80 via-black/40 to-transparent">
-                                    <h3 className="text-white text-xl sm:text-2xl md:text-3xl font-serif">
-                                        {selectedItem.title}
-                                    </h3>
-                                    <p className="text-white/80 text-sm sm:text-base mt-2 max-w-2xl">
-                                        {selectedItem.desc}
-                                    </p>
-                                </div>
+                                {selectedItem.type === 'youtube' ? (
+                                    <iframe
+                                        src={`https://www.youtube.com/embed/${selectedItem.youtubeId}?autoplay=1&rel=0${selectedItem.startSeconds ? `&start=${selectedItem.startSeconds}` : ''}`}
+                                        title={selectedItem.title}
+                                        className="w-full h-full"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowFullScreen
+                                    />
+                                ) : (
+                                    <>
+                                        <MediaItem item={selectedItem} className="w-full h-full" onClick={onClose} />
+                                        <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8
+                                                      bg-gradient-to-t from-black/80 via-black/40 to-transparent">
+                                            <h3 className="text-white text-xl sm:text-2xl md:text-3xl font-serif">
+                                                {selectedItem.title}
+                                            </h3>
+                                            <p className="text-white/80 text-sm sm:text-base mt-2 max-w-2xl">
+                                                {selectedItem.desc}
+                                            </p>
+                                        </div>
+                                    </>
+                                )}
                             </motion.div>
                         </AnimatePresence>
                     </div>
@@ -382,19 +463,21 @@ const InteractiveBentoGallery: React.FC<InteractiveBentoGalleryProps> = ({ media
                                     className="absolute inset-0 w-full h-full transition-transform duration-700 md:group-hover:scale-110"
                                     onClick={() => setSelectedItem(item)}
                                 />
-                                <motion.div
-                                    className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 bg-gradient-to-t from-black/80 via-black/20 to-transparent md:from-black/60 md:via-transparent md:to-transparent"
-                                    initial={{ opacity: 1 }}
-                                    whileHover={{ opacity: 1 }}
-                                    transition={{ duration: 0.3 }}
-                                >
-                                    <h3 className="relative text-white text-lg sm:text-xl font-serif font-medium">
-                                        {item.title}
-                                    </h3>
-                                    <p className="relative text-white/80 text-sm mt-1 line-clamp-2 font-sans">
-                                        {item.desc}
-                                    </p>
-                                </motion.div>
+                                {item.type !== 'youtube' && (
+                                    <motion.div
+                                        className="absolute inset-0 flex flex-col justify-end p-4 sm:p-6 bg-gradient-to-t from-black/80 via-black/20 to-transparent md:from-black/60 md:via-transparent md:to-transparent"
+                                        initial={{ opacity: 1 }}
+                                        whileHover={{ opacity: 1 }}
+                                        transition={{ duration: 0.3 }}
+                                    >
+                                        <h3 className="relative text-white text-lg sm:text-xl font-serif font-medium">
+                                            {item.title}
+                                        </h3>
+                                        <p className="relative text-white/80 text-sm mt-1 line-clamp-2 font-sans">
+                                            {item.desc}
+                                        </p>
+                                    </motion.div>
+                                )}
                             </motion.div>
                         ))}
                     </motion.div>

@@ -95,6 +95,10 @@ const pt = {
       "Essa casa tem uma proposta mais clean. Mais clara. Mais atual. São dois pavimentos completos, cada um com sala, cozinha e estar próprios. No térreo, tudo se integra com acesso direto à piscina. No superior, um segundo núcleo funciona de forma independente. Uma casa para viver com conforto, mas também para reunir.",
     differentialsEyebrow: "Diferenciais",
     differentialsTitle: "O que a casa oferece na prática",
+    video: {
+      title: "Vídeo cinematográfico",
+      desc: "Veja a casa em movimento — luz, mar e arquitetura em poucos minutos.",
+    },
     media: [
       {
         title: "Vista para o mar",
@@ -481,6 +485,10 @@ const en: Dictionary = {
       "This is a cleaner, brighter, more current take on a beach house. Two complete floors, each with its own living room, kitchen and lounge. The ground floor flows seamlessly with direct access to the pool. Upstairs, a second self-contained core works independently. A house designed for comfortable everyday living and for bringing people together.",
     differentialsEyebrow: "Highlights",
     differentialsTitle: "What the house actually delivers",
+    video: {
+      title: "Cinematic video",
+      desc: "See the house in motion — light, ocean and architecture in just a few minutes.",
+    },
     media: [
       {
         title: "Ocean view",

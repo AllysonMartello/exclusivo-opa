@@ -56,14 +56,27 @@ const mediaConfig: { url: string; span: string }[] = [
 export default function TheHouse() {
   const t = useT();
 
-  const mediaItems: MediaItemType[] = mediaConfig.map((cfg, i) => ({
-    id: i + 1,
-    type: "image",
-    title: t.theHouse.media[i].title,
-    desc: t.theHouse.media[i].desc,
-    url: cfg.url,
-    span: cfg.span,
-  }));
+  const mediaItems: MediaItemType[] = [
+    {
+      id: 0,
+      type: "youtube",
+      title: t.theHouse.video.title,
+      desc: t.theHouse.video.desc,
+      url: "",
+      thumbnailUrl: "/assets/siriuba-2/video-cinematografico",
+      youtubeId: "7XWgckz3SPU",
+      startSeconds: 3,
+      span: "col-span-2 row-span-3 sm:col-span-3 sm:row-span-3 md:col-span-4 md:row-span-3",
+    },
+    ...mediaConfig.map((cfg, i) => ({
+      id: i + 1,
+      type: "image",
+      title: t.theHouse.media[i].title,
+      desc: t.theHouse.media[i].desc,
+      url: cfg.url,
+      span: cfg.span,
+    })),
+  ];
 
   return (
     <section id="a-casa" className="py-16 md:py-24 bg-bg-alt">
