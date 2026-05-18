@@ -66,7 +66,7 @@ export default function TheHouse() {
       thumbnailUrl: "/assets/siriuba-2/video-cinematografico",
       youtubeId: "7XWgckz3SPU",
       startSeconds: 3,
-      span: "col-span-2 row-span-3 sm:col-span-3 sm:row-span-3 md:col-span-4 md:row-span-3",
+      span: "col-span-2 row-span-4 sm:col-span-3 sm:row-span-3 md:col-span-4 md:row-span-3",
     },
     ...mediaConfig.map((cfg, i) => ({
       id: i + 1,
