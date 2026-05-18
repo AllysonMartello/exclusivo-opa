@@ -13,6 +13,7 @@ const SITE_LABELS = {
   "composicao-opa": "Composição Opa",
   "lancamento-opa-imovel": "Lançamento Opa — Imóvel",
   "lancamento-opa-empreendimento": "Lançamento Opa — Empreendimento",
+  "cadastro-imovel": "Cadastro de Imóvel — Proprietário",
 } as const;
 
 type SiteKey = keyof typeof SITE_LABELS;
@@ -24,7 +25,7 @@ const leadSchema = z.object({
   nome: z.string().min(1, "Nome obrigatório"),
   telefone: z.string().min(1, "Telefone obrigatório"),
   email: z.string().email().optional().or(z.literal("")),
-  cidade: z.string().min(1, "Cidade obrigatória"),
+  cidade: z.string().optional().default(""),
   answers: z.record(z.string(), z.string()).optional(),
   // event_id (UUID gerado no client) — preservado para deduplicação client↔server
   // quando a Fase A (Meta CAPI + GA4 MP) for ativada.

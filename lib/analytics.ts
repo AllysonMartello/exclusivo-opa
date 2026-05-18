@@ -64,7 +64,7 @@ export type LeadEventPayload = {
   form_id: string;
   lead_name: string;
   lead_phone: string;
-  lead_city: string;
+  lead_city?: string;
   lead_email?: string;
   event_id?: string;
 };
