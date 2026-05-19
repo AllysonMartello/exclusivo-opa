@@ -1,24 +1,36 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "motion/react";
 import { pushClickWhatsApp } from "@/lib/analytics";
+import { BROKERS } from "@/lib/brokers";
 
 const WA_HREF = `https://wa.me/5512974068058?text=${encodeURIComponent(
   "Olá! Gostaria de falar com a OPA Ilhabela."
 )}`;
 
+const BROKER_SLUGS = Object.keys(BROKERS);
+
 export default function WhatsAppButton() {
+  const pathname = usePathname();
+  const isBrokerPage = BROKER_SLUGS.some(
+    (slug) => pathname === `/${slug}` || pathname.startsWith(`/${slug}/`),
+  );
+
   const [showBubble, setShowBubble] = useState(false);
 
   useEffect(() => {
+    if (isBrokerPage) return;
     const show = setTimeout(() => setShowBubble(true), 2500);
     const hide = setTimeout(() => setShowBubble(false), 6500);
     return () => {
       clearTimeout(show);
       clearTimeout(hide);
     };
-  }, []);
+  }, [isBrokerPage]);
+
+  if (isBrokerPage) return null;
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3">
