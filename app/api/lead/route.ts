@@ -14,6 +14,9 @@ const SITE_LABELS = {
   "lancamento-opa-imovel": "Lançamento Opa — Imóvel",
   "lancamento-opa-empreendimento": "Lançamento Opa — Empreendimento",
   "cadastro-imovel": "Cadastro de Imóvel — Proprietário",
+  "captacao-exclusiva": "Captação Exclusiva",
+  "teste-lancamento": "Teste Lançamento",
+  "sao-jose-dos-campos": "Apartamento Rua da Alegria, SJC",
 } as const;
 
 type SiteKey = keyof typeof SITE_LABELS;
