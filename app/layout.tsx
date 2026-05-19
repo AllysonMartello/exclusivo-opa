@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import "./globals.css";
 import { publicEnv } from "@/lib/env";
+import { DEFAULT_OG_IMAGE } from "@/lib/seo";
 import ConsentMode from "@/components/analytics/ConsentMode";
 import LazyTags from "@/components/analytics/LazyTags";
 import GTMNoScript from "@/components/analytics/GTMNoScript";
@@ -23,6 +24,23 @@ export const metadata: Metadata = {
     "Conheça os lançamentos exclusivos Opa Ilhabela: Composição, Morro da Cruz e Siriúba 2.",
   icons: {
     icon: "/assets/logo/logo-opa-nova.svg",
+  },
+  openGraph: {
+    title: "Exclusivo Opa Ilhabela | Lançamentos",
+    description:
+      "Conheça os lançamentos exclusivos Opa Ilhabela: Composição, Morro da Cruz e Siriúba 2.",
+    url: publicEnv.NEXT_PUBLIC_SITE_URL,
+    siteName: "OPA Imóveis Ilhabela",
+    locale: "pt_BR",
+    type: "website",
+    images: [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Exclusivo Opa Ilhabela | Lançamentos",
+    description:
+      "Conheça os lançamentos exclusivos Opa Ilhabela: Composição, Morro da Cruz e Siriúba 2.",
+    images: [DEFAULT_OG_IMAGE],
   },
 };
 
