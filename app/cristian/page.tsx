@@ -20,10 +20,10 @@ const acessos: AccessCardData[] = [
     color: "#25D366",
   },
   {
-    href: "https://www.instagram.com/cristian.opa",
+    href: "https://www.instagram.com/spengler.imoveis/",
     icon: "instagram",
     title: "Instagram",
-    desc: "Siga e acompanhe os bastidores",
+    desc: "@spengler.imoveis",
     color: "#E1306C",
   },
   {
