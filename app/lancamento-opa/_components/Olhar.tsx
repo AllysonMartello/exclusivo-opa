@@ -3,7 +3,7 @@
 import { motion } from "motion/react";
 import { useT } from "../_i18n/LanguageContext";
 
-const BASE = "/assets/teste-lancamento";
+const BASE = "/assets/lancamento-opa";
 
 export default function Olhar() {
   const t = useT();
@@ -51,7 +51,7 @@ export default function Olhar() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="flex items-center px-6 py-16 sm:px-10 md:px-14 md:py-20 lg:px-16 lg:py-24 xl:px-24"
+          className="flex items-center px-6 py-12 sm:px-10 md:px-14 md:py-16 lg:px-16 lg:py-20 xl:px-24"
         >
           <div className="max-w-xl">
             <div className="flex items-center gap-3 mb-4 md:mb-6">
@@ -61,7 +61,7 @@ export default function Olhar() {
               </span>
             </div>
 
-            <h2 className="section-title text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-serif text-primary-1 leading-[1.1]">
+            <h2 className="section-title text-3xl sm:text-4xl md:text-5xl font-serif text-primary-1 leading-[1.1]">
               {t.olhar.title}
             </h2>
 

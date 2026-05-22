@@ -23,14 +23,14 @@ export default function Divisao() {
         className="absolute inset-0 z-0"
       >
         <img
-          src="/assets/teste-lancamento/partnership_division.png"
-          alt="Partnership and Division"
+          src="/assets/lancamento-opa/bg-produto-opa.jpg"
+          alt="Lançamento OPA Produto"
           className="w-full h-full object-cover"
           loading="lazy"
         />
       </motion.div>
-      <div className="absolute inset-0 bg-primary-1/90 z-0" />
-      <div className="absolute inset-0 bg-gradient-to-b from-primary-1/40 via-transparent to-primary-1/95 z-0" />
+      <div className="absolute inset-0 bg-black/40 z-0" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/90 z-0" />
 
       <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-primary-2/40 to-transparent z-10" />
 
@@ -39,7 +39,7 @@ export default function Divisao() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="relative z-10 max-w-6xl mx-auto px-6 sm:px-10 py-20 md:py-28 lg:py-36"
+        className="relative z-10 max-w-6xl mx-auto px-6 sm:px-10 py-12 md:py-16 lg:py-20"
       >
         <div className="text-center max-w-3xl mx-auto">
           <div className="flex items-center justify-center gap-3 mb-6 md:mb-8">
@@ -50,13 +50,15 @@ export default function Divisao() {
             <div className="h-[1px] w-12 bg-primary-2" />
           </div>
 
-          <h2 className="section-title text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-white leading-[1.05] drop-shadow-lg">
+          <h2 className="section-title text-3xl sm:text-4xl md:text-5xl font-serif text-white leading-[1.05] drop-shadow-lg">
             {t.divisao.title}
           </h2>
 
-          <p className="text-white/80 text-base md:text-lg leading-relaxed font-light max-w-xl mx-auto drop-shadow-md">
-            {t.divisao.intro}
-          </p>
+          {t.divisao.intro && (
+            <p className="mt-8 text-white/80 text-base md:text-lg leading-relaxed font-light max-w-xl mx-auto drop-shadow-md">
+              {t.divisao.intro}
+            </p>
+          )}
         </div>
 
         <div className="mt-14 md:mt-20 grid grid-cols-1 lg:grid-cols-[1fr_auto_1fr] gap-10 lg:gap-0 items-stretch bg-white/5 backdrop-blur-md rounded-3xl p-8 md:p-12 border border-white/10 shadow-2xl">
@@ -94,9 +96,16 @@ export default function Divisao() {
           />
 
           <div className="lg:pl-12">
-            <span className="block text-primary-2 uppercase tracking-[0.3em] text-[10px] font-black mb-6">
+            <span className="block text-primary-2 uppercase tracking-[0.3em] text-[10px] font-black mb-4">
               {proprietario.label}
             </span>
+            
+            {proprietario.subLabel && (
+              <p className="text-white/80 font-serif italic mb-6">
+                {proprietario.subLabel}
+              </p>
+            )}
+
             <ul className="space-y-4 mb-8">
               {proprietario.items.map((item) => (
                 <li
@@ -118,15 +127,17 @@ export default function Divisao() {
           </div>
         </div>
 
-        <p className="mt-14 md:mt-20 text-white/80 text-base md:text-lg leading-relaxed font-light max-w-3xl mx-auto text-center drop-shadow-md">
+        <p className="mt-14 md:mt-20 text-primary-2 text-2xl md:text-3xl lg:text-4xl font-serif italic leading-snug max-w-3xl mx-auto text-center drop-shadow-md">
           {t.divisao.closing}
         </p>
 
-        <div className="mt-10 md:mt-14 pt-8 md:pt-10 border-t border-white/10 text-center">
-          <p className="text-primary-2 text-xl md:text-2xl lg:text-3xl font-serif italic leading-snug max-w-2xl mx-auto drop-shadow-md">
-            {t.divisao.highlight}
-          </p>
-        </div>
+        {t.divisao.highlight && (
+          <div className="mt-10 md:mt-14 pt-8 md:pt-10 border-t border-white/10 text-center">
+            <p className="text-primary-2 text-xl md:text-2xl lg:text-3xl font-serif italic leading-snug max-w-2xl mx-auto drop-shadow-md">
+              {t.divisao.highlight}
+            </p>
+          </div>
+        )}
       </motion.div>
     </section>
   );

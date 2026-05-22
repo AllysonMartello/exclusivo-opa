@@ -1,120 +1,132 @@
 "use client";
 
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X } from 'lucide-react';
-import { cn } from '@/lib/cn';
-import { useT } from '../_i18n/LanguageContext';
-import LanguageSwitcher from './LanguageSwitcher';
+import { useState, useEffect } from "react";
+import { AnimatePresence, motion } from "motion/react";
+import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
+import { useT } from "../_i18n/LanguageContext";
 
-const Header = () => {
+const BASE_PATH = "/lancamento-opa";
+
+export default function Header() {
   const t = useT();
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
+  const isOnLanding = pathname === BASE_PATH;
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const navHref = (anchor: string) => (isOnLanding ? `#${anchor}` : `${BASE_PATH}#${anchor}`);
+
+  const handleNavClick = (anchor: string) => (e: React.MouseEvent) => {
+    if (!isOnLanding) {
+      e.preventDefault();
+      router.push(`${BASE_PATH}#${anchor}`);
+    }
+    setMobileMenuOpen(false);
+  };
+
+  const handleCtaClick = (e: React.MouseEvent) => {
+    setMobileMenuOpen(false);
+    if (isOnLanding) {
+      e.preventDefault();
+      const el = document.getElementById("contato");
+      el?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      router.push(`${BASE_PATH}#contato`);
+    }
+  };
+
   return (
-    <header className="fixed top-0 left-0 w-full z-[100] transition-all duration-500">
-      <div className={cn(
-        "mx-auto transition-all duration-500 flex items-center justify-between",
-        isScrolled
-          ? "max-w-[1200px] mt-4 px-6 md:px-8 py-3 bg-white/80 backdrop-blur-md rounded-full border border-[#D9D9D9]/50 shadow-[0_8px_30px_rgb(0,0,0,0.04)] mx-4 md:mx-auto"
-          : "max-w-full px-6 md:px-12 py-8 bg-transparent"
-      )}>
-        {/* LOGO */}
-        <a href="/" className="flex items-center group">
-          <img
-            src="/assets/logo/logo-opa-nova.svg"
-            alt={t.footer.logoAlt}
-            className={cn(
-              "transition-all duration-500",
-              isScrolled ? "h-8 brightness-0" : "h-12 brightness-100"
-            )}
-          />
-        </a>
+    <>
+      <header
+        className={`fixed top-0 left-0 w-full z-50 transition-[background,padding] duration-300 ${
+          scrolled ? "bg-bg-main/95 backdrop-blur-md py-4 shadow-sm" : "bg-transparent py-6"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+          <Link href={BASE_PATH} className="flex items-center z-50 relative" aria-label="OPA Imóveis - Início">
+            <img
+              src="/assets/logo/logo-opa.svg"
+              alt="OPA Imóveis"
+              width={96}
+              height={32}
+              loading="eager"
+              decoding="async"
+              style={{ height: "32px", width: "auto", maxWidth: "96px" }}
+              className={`transition-[filter] duration-300 ${
+                scrolled || mobileMenuOpen ? "invert" : ""
+              }`}
+            />
+          </Link>
 
-        {/* DESKTOP NAV */}
-        <nav className="hidden md:flex items-center gap-6">
-          {t.header.nav.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className={cn(
-                "text-[11px] uppercase tracking-[0.2em] font-bold transition-colors duration-300 hover:text-[#2F5D82]",
-                isScrolled ? "text-[#0F2A44]/70" : "text-white/80"
-              )}
-            >
-              {link.name}
-            </a>
-          ))}
-          <LanguageSwitcher variant={isScrolled ? "header-dark" : "header-light"} />
-          <a
-            href="#apply"
-            className={cn(
-              "px-6 py-2.5 rounded-full text-[11px] uppercase tracking-[0.2em] font-bold transition-all duration-500",
-              isScrolled
-                ? "bg-[#0F2A44] text-white hover:bg-[#2F5D82]"
-                : "bg-white text-[#0F2A44] hover:bg-[#F2F2F2]"
+          <nav className="hidden md:flex items-center gap-8">
+            <a href={navHref("olhar")} onClick={handleNavClick("olhar")} className={`text-sm font-medium hover:text-secondary transition-colors ${scrolled ? 'text-text-main' : 'text-white'}`}>{t.header.nav.olhar}</a>
+            <a href={navHref("composicao")} onClick={handleNavClick("composicao")} className={`text-sm font-medium hover:text-secondary transition-colors ${scrolled ? 'text-text-main' : 'text-white'}`}>{t.header.nav.composicao}</a>
+            <a href={navHref("capitulo")} onClick={handleNavClick("capitulo")} className={`text-sm font-medium hover:text-secondary transition-colors ${scrolled ? 'text-text-main' : 'text-white'}`}>{t.header.nav.capitulo}</a>
+          </nav>
+
+          <div className="hidden md:flex items-center gap-4">
+            {isOnLanding && (
+              <button
+                onClick={handleCtaClick}
+                className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
+                  scrolled
+                    ? "bg-[#166188] text-white hover:bg-[#166188]/90"
+                    : "bg-white/20 text-white backdrop-blur-sm hover:bg-white/30 border border-white/30"
+                }`}
+              >
+                {t.header.cta}
+              </button>
             )}
+          </div>
+
+          <button
+            className={`md:hidden z-50 relative p-2 rounded-full transition-colors ${scrolled || mobileMenuOpen ? 'text-text-main hover:bg-black/5' : 'text-white hover:bg-white/10'}`}
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={t.header.toggleMenu}
           >
-            {t.header.cta}
-          </a>
-        </nav>
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+      </header>
 
-        {/* MOBILE TOGGLE */}
-        <button
-          className={cn(
-            "md:hidden p-2 transition-colors",
-            isScrolled ? "text-[#0F2A44]" : "text-white"
-          )}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Menu"
-        >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-
-      {/* MOBILE MENU */}
       <AnimatePresence>
-        {isMobileMenuOpen && (
+        {mobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="absolute top-full left-0 w-full bg-white border-t border-[#F2F2F2] shadow-xl p-8 flex flex-col gap-6 md:hidden"
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-40 bg-bg-main pt-24 px-6 pb-8 flex flex-col md:hidden"
           >
-            {t.header.nav.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm uppercase tracking-widest font-bold text-[#0F2A44]"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {link.name}
-              </a>
-            ))}
-            <div className="self-start">
-              <LanguageSwitcher variant="mobile" />
-            </div>
-            <a
-              href="#apply"
-              className="bg-[#0F2A44] text-white text-center py-4 rounded-xl text-[12px] uppercase tracking-[0.2em] font-bold"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {t.header.cta}
-            </a>
+            <nav className="flex flex-col gap-6 mt-8">
+              <a href={navHref("olhar")} onClick={handleNavClick("olhar")} className="text-2xl font-serif text-primary-1 border-b border-border-main pb-4">{t.header.nav.olhar}</a>
+              <a href={navHref("composicao")} onClick={handleNavClick("composicao")} className="text-2xl font-serif text-primary-1 border-b border-border-main pb-4">{t.header.nav.composicao}</a>
+              <a href={navHref("capitulo")} onClick={handleNavClick("capitulo")} className="text-2xl font-serif text-primary-1 border-b border-border-main pb-4">{t.header.nav.capitulo}</a>
+            </nav>
+            {isOnLanding && (
+              <div className="mt-auto pb-8">
+                <button
+                  onClick={handleCtaClick}
+                  className="w-full block text-center bg-[#166188] text-white px-6 py-4 rounded-full text-lg font-medium"
+                >
+                  {t.header.cta}
+                </button>
+              </div>
+            )}
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
-};
-
-export default Header;
+}

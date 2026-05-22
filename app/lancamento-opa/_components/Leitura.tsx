@@ -37,7 +37,7 @@ export default function Leitura() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
-        className="relative z-10 max-w-5xl mx-auto px-6 sm:px-10 py-20 md:py-28 lg:py-36"
+        className="relative z-10 max-w-5xl mx-auto px-6 sm:px-10 py-12 md:py-16 lg:py-20"
       >
         <motion.div variants={itemVariants} className="text-center max-w-3xl mx-auto">
           <div className="flex items-center justify-center gap-3 mb-6 md:mb-8">
@@ -48,7 +48,7 @@ export default function Leitura() {
             <div className="h-[1px] w-12 bg-primary-2" />
           </div>
 
-          <h2 className="section-title text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif text-primary-1 leading-[1.05]">
+          <h2 className="section-title text-3xl sm:text-4xl md:text-5xl font-serif text-primary-1 leading-[1.05]">
             {t.leitura.title}
           </h2>
 

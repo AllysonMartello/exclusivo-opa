@@ -7,10 +7,10 @@ const BASE = "/assets/siriuba-2";
 
 // ⇩ Vídeo de fundo do hero. Deixe vazio ("") para usar só a imagem.
 // Aceita:
-//   - arquivo local em /public, ex: "/assets/teste-lancamento/hero.mp4"
+//   - arquivo local em /public, ex: "/assets/lancamento-opa/hero.mp4"
 //   - URL externa direta para .mp4/.webm
 // Dica: codifique em H.264 .mp4 (compatibilidade) + .webm (peso) e adicione um segundo <source>.
-const HERO_VIDEO_MP4 = "/assets/teste-lancamento/HERO_VIDEO_MP4.mp4";
+const HERO_VIDEO_MP4 = "/assets/lancamento-opa/HERO_VIDEO_MP4.mp4";
 const HERO_VIDEO_WEBM = ""; // .webm atual está mais pesado que o .mp4 — desativado de propósito
 
 export default function Hero() {

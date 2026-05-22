@@ -15,7 +15,7 @@ const SITE_LABELS = {
   "lancamento-opa-empreendimento": "Lançamento Opa — Empreendimento",
   "cadastro-imovel": "Cadastro de Imóvel — Proprietário",
   "captacao-exclusiva": "Captação Exclusiva",
-  "teste-lancamento": "Teste Lançamento",
+  "lancamento-opa-elite": "Lançamento OPA",
   "sao-jose-dos-campos": "Apartamento Rua da Alegria, SJC",
 } as const;
 

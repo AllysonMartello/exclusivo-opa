@@ -6,11 +6,18 @@ import { useT } from "../_i18n/LanguageContext";
 export default function Footer() {
   const t = useT();
   return (
-    <footer className="bg-primary-1 text-white/80 py-16 border-t border-white/10">
+    <footer className="bg-[#166188] text-white/80 py-16 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-2">
-            <div className="text-3xl font-serif font-bold tracking-widest text-white mb-6">OPA</div>
+            <div className="mb-6">
+              <img
+                src="/assets/logo/logo-opa.svg"
+                alt="OPA Imóveis"
+                className="h-10 w-auto"
+                loading="lazy"
+              />
+            </div>
             <p className="text-white/60 max-w-sm mb-8 leading-relaxed">{t.footer.description}</p>
             <div className="flex gap-4">
               <a
@@ -39,14 +46,12 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-white/60">
                 <Phone size={18} className="mt-1 shrink-0" />
-                <span>+55 (12) 97406-8058</span>
+                <span>{t.footer.phone}</span>
               </li>
               <li className="flex items-start gap-3 text-white/60">
                 <MapPin size={18} className="mt-1 shrink-0" />
-                <span>
-                  Av. São João, 243 - loja 13<br />
-                  Perequê, Ilhabela - SP<br />
-                  11623-036
+                <span className="whitespace-pre-line">
+                  {t.footer.address}
                 </span>
               </li>
             </ul>
@@ -68,9 +73,8 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/40">
           <p>
-            © {new Date().getFullYear()} OPA Imóveis. {t.footer.rights}
+            {t.footer.rights}
           </p>
-          <p>CRECI 79555</p>
         </div>
       </div>
     </footer>
