@@ -183,11 +183,11 @@ function MediaPreview({ media, alt }: { media: MediaImage; alt: string }) {
       {isSite && (
         <style>{`
           @keyframes site-scroll {
-            0%, 15% { object-position: top center; }
-            85%, 100% { object-position: bottom center; }
+            0% { object-position: top center; }
+            100% { object-position: bottom center; }
           }
           .site-scroll-animation {
-            animation: site-scroll 25s ease-in-out infinite alternate;
+            animation: site-scroll 22s ease-in-out infinite alternate;
           }
         `}</style>
       )}
