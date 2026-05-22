@@ -46,31 +46,7 @@ export default function ThankYou() {
   }, []);
 
   return (
-    <div className="min-h-screen relative flex flex-col overflow-hidden">
-      {/* Imagem de fundo */}
-      <div className="absolute inset-0 z-0">
-        <picture>
-          <source
-            media="(max-width: 767px)"
-            srcSet="/assets/sao-jose-dos-campos/hero-mobile.avif"
-            type="image/avif"
-          />
-          <source
-            media="(min-width: 768px)"
-            srcSet="/assets/sao-jose-dos-campos/hero-desktop.avif"
-            type="image/avif"
-          />
-          <img
-            src="/assets/sao-jose-dos-campos/hero-desktop.jpg"
-            alt={t.thankYou.imageAlt}
-            className="w-full h-full object-cover"
-            fetchPriority="high"
-          />
-        </picture>
-        {/* Overlay escuro suave */}
-        <div className="absolute inset-0 bg-primary-1/60" />
-      </div>
-
+    <div className="min-h-screen relative flex flex-col overflow-hidden bg-primary-1">
       <Header />
 
       {/* Conteúdo centralizado */}
