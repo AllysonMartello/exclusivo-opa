@@ -71,8 +71,8 @@ export default function Header() {
 
           <nav className="hidden md:flex items-center gap-8">
             <a href={navHref("olhar")} onClick={handleNavClick("olhar")} className={`text-sm font-medium hover:text-secondary transition-colors ${scrolled ? 'text-text-main' : 'text-white'}`}>{t.header.nav.olhar}</a>
-            <a href={navHref("metodo")} onClick={handleNavClick("metodo")} className={`text-sm font-medium hover:text-secondary transition-colors ${scrolled ? 'text-text-main' : 'text-white'}`}>{t.header.nav.metodo}</a>
-            <a href={navHref("incluso")} onClick={handleNavClick("incluso")} className={`text-sm font-medium hover:text-secondary transition-colors ${scrolled ? 'text-text-main' : 'text-white'}`}>{t.header.nav.incluso}</a>
+            <a href={navHref("composicao")} onClick={handleNavClick("composicao")} className={`text-sm font-medium hover:text-secondary transition-colors ${scrolled ? 'text-text-main' : 'text-white'}`}>{t.header.nav.composicao}</a>
+            <a href={navHref("capitulo")} onClick={handleNavClick("capitulo")} className={`text-sm font-medium hover:text-secondary transition-colors ${scrolled ? 'text-text-main' : 'text-white'}`}>{t.header.nav.capitulo}</a>
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
@@ -111,8 +111,8 @@ export default function Header() {
           >
             <nav className="flex flex-col gap-6 mt-8">
               <a href={navHref("olhar")} onClick={handleNavClick("olhar")} className="text-2xl font-serif text-primary-1 border-b border-border-main pb-4">{t.header.nav.olhar}</a>
-              <a href={navHref("metodo")} onClick={handleNavClick("metodo")} className="text-2xl font-serif text-primary-1 border-b border-border-main pb-4">{t.header.nav.metodo}</a>
-              <a href={navHref("incluso")} onClick={handleNavClick("incluso")} className="text-2xl font-serif text-primary-1 border-b border-border-main pb-4">{t.header.nav.incluso}</a>
+              <a href={navHref("composicao")} onClick={handleNavClick("composicao")} className="text-2xl font-serif text-primary-1 border-b border-border-main pb-4">{t.header.nav.composicao}</a>
+              <a href={navHref("capitulo")} onClick={handleNavClick("capitulo")} className="text-2xl font-serif text-primary-1 border-b border-border-main pb-4">{t.header.nav.capitulo}</a>
             </nav>
             {isOnLanding && (
               <div className="mt-auto pb-8">

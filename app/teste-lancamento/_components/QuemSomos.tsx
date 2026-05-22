@@ -8,6 +8,26 @@ export default function QuemSomos() {
 
   return (
     <section className="py-16 md:py-24 lg:py-32 bg-bg-main relative overflow-hidden">
+      <div
+        aria-hidden
+        className="absolute inset-0 pointer-events-none opacity-[0.18]"
+      >
+        <picture className="block absolute inset-0 w-full h-full">
+          <img
+            src="/assets/siriuba-2/armacao.jpg"
+            alt=""
+            aria-hidden="true"
+            className="image-cover"
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
+      </div>
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-gradient-to-b from-bg-main via-bg-main/60 to-bg-main pointer-events-none"
+      />
+
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary-2/20 to-transparent" />
       <div className="hidden md:block absolute -left-20 top-1/2 -translate-y-1/2 w-64 h-64 bg-primary-1/5 rounded-full blur-3xl" />
 
@@ -87,7 +107,7 @@ export default function QuemSomos() {
               </div>
 
               <div className="mt-8 md:mt-10 pl-6 border-l-2 border-primary-2 max-w-2xl">
-                <p className="text-primary-1 text-lg md:text-2xl font-serif italic leading-snug">
+                <p className="text-accent text-lg md:text-2xl font-serif italic leading-snug">
                   {t.quemSomos.highlight}
                 </p>
               </div>

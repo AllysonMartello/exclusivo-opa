@@ -7,7 +7,7 @@ export default function Metodo() {
   const t = useT();
 
   return (
-    <section id="metodo" className="py-16 md:py-24 lg:py-32 bg-bg-alt relative overflow-hidden">
+    <section id="composicao" className="py-16 md:py-24 lg:py-32 bg-bg-alt relative overflow-hidden">
       <div className="hidden md:block absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary-2/8 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

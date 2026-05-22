@@ -3,7 +3,8 @@
 [data-app="teste"] {
   --color-primary-1: #253A47;
   --color-primary-2: #809C9E;
-  --color-secondary: #4A6B7C;
+  --color-secondary: #0071c6;
+  --color-accent: #156187;
   --color-bg-main: #F4F7F7;
   --color-bg-alt: #E8ECEE;
   --color-text-main: #1A2226;
@@ -26,7 +27,7 @@
 }
 
 [data-app="teste"] ::selection {
-  background: #4A6B7C;
+  background: #0071c6;
   color: white;
 }
 

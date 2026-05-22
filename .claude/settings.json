@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx eslint *)",
+      "Bash(grep -E \"cadastro-imovel|api[/\\\\\\\\\\\\\\\\]lead|lib[/\\\\\\\\\\\\\\\\]analytics\" -A 5)",
+      "Bash(grep -E \"cadastro-imovel|api[/\\\\\\\\\\\\\\\\]lead|lib[/\\\\\\\\\\\\\\\\]analytics\")",
+      "Bash(curl -s -o /dev/null -w \"cadastro-imovel: %{http_code}\\\\n\" http://localhost:3001/cadastro-imovel)",
+      "Bash(curl -s -o /dev/null -w \"cadastro-imovel/obrigado: %{http_code}\\\\n\" http://localhost:3001/cadastro-imovel/obrigado)",
+      "Bash(curl -s -o /dev/null -w \"api/lead GET \\(esperado 405\\): %{http_code}\\\\n\" http://localhost:3001/api/lead)",
+      "Bash(curl -s -X POST http://localhost:3001/api/lead -H \"Content-Type: application/json\" -d '{\"site\":\"cadastro-imovel\",\"nome\":\"Teste OPA\",\"telefone\":\"\\(12\\) 99999-0000\",\"email\":\"teste@opa.com\",\"answers\":{\"Qual o tipo do imóvel?\":\"Casa, Casa em Condomínio\",\"Quantos quartos no total?\":\"4\"}}')",
+      "Bash(git commit -m ' *)",
+      "Bash(npx next *)",
+      "PowerShell(Copy-Item -Path \"app\\\\siriuba-2\" -Destination \"app\\\\teste-lancamento\" -Recurse -Force)"
+    ]
+  }
+}

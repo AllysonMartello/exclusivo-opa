@@ -15,21 +15,33 @@ export default function Olhar() {
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:min-h-[680px] xl:min-h-[760px]">
         {/* Imagem — preenche toda a metade esquerda no desktop */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.98 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="relative h-[60vh] min-h-[420px] sm:h-[70vh] lg:h-auto lg:min-h-0"
+          className="relative h-[60vh] min-h-[420px] sm:h-[70vh] lg:h-auto lg:min-h-0 overflow-hidden"
         >
-          <picture className="block absolute inset-0 w-full h-full">
-            <img
-              src={`${BASE}/20-anos.jpg`}
-              alt={t.olhar.imageAlt}
-              className="image-cover"
-              loading="lazy"
-              decoding="async"
-            />
-          </picture>
+          <motion.div
+            initial={{ scale: 1.05 }}
+            animate={{ scale: 1.14 }}
+            transition={{
+              duration: 22,
+              ease: "easeInOut",
+              repeat: Infinity,
+              repeatType: "reverse",
+            }}
+            className="absolute inset-0 will-change-transform"
+          >
+            <picture className="block absolute inset-0 w-full h-full">
+              <img
+                src={`${BASE}/20-anos.jpg`}
+                alt={t.olhar.imageAlt}
+                className="image-cover"
+                loading="lazy"
+                decoding="async"
+              />
+            </picture>
+          </motion.div>
           <div className="absolute inset-0 bg-gradient-to-t from-primary-1/30 via-transparent to-transparent" />
         </motion.div>
 
@@ -62,7 +74,7 @@ export default function Olhar() {
             </div>
 
             <div className="mt-8 md:mt-10 pl-6 border-l-2 border-primary-2">
-              <p className="text-primary-1 text-lg md:text-2xl font-serif italic leading-snug">
+              <p className="text-accent text-lg md:text-2xl font-serif italic leading-snug">
                 {t.olhar.highlight}
               </p>
             </div>
