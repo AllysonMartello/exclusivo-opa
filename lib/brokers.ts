@@ -52,7 +52,7 @@ export const INSTITUTIONAL_ACESSOS: AccessCardData[] = [
   },
 ];
 
-export type BrokerSlug = "marco" | "cristian" | "fabio" | "luana";
+export type BrokerSlug = "marco" | "cristian" | "fabio" | "luana" | "june-rocha";
 
 export type BrokerProfile = {
   slug: BrokerSlug;
@@ -93,6 +93,13 @@ export const BROKERS: Record<BrokerSlug, BrokerProfile> = {
     logoFile: "luana-machado.png",
     whatsapp: "#",
     instagram: "#",
+  },
+  "june-rocha": {
+    slug: "june-rocha",
+    displayName: "June Rocha",
+    logoFile: "june-rocha.png",
+    whatsapp: "https://wa.me/5511986719000",
+    instagram: "https://www.instagram.com/june_rocha/",
   },
 };
 
