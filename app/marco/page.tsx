@@ -55,6 +55,9 @@ const acessos: AccessCardData[] = [
     desc: "Anuncie seu imóvel conosco em Ilhabela",
     color: "#1E90C4",
   },
+];
+
+const ilhabela: AccessCardData[] = [
   {
     href: "https://turismoilhabela.com/",
     icon: "map",
@@ -80,6 +83,7 @@ export default function Page() {
       logoAlt={broker.displayName}
       imoveis={IMOVEIS_EXCLUSIVOS}
       acessos={acessos}
+      ilhabela={ilhabela}
     />
   );
 }

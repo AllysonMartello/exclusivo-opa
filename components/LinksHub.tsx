@@ -44,12 +44,13 @@ export type ImovelCardData = {
   description: string;
 };
 
-const tabs = [
+const ALL_TABS = [
   { id: "acessos", label: "Nossos acessos" },
   { id: "imoveis", label: "Imóveis exclusivos" },
+  { id: "ilhabela", label: "Ilhabela" },
 ] as const;
 
-type Tab = (typeof tabs)[number]["id"];
+type Tab = (typeof ALL_TABS)[number]["id"];
 
 function IconGlobe({ color }: { color: string }) {
   return (
@@ -339,6 +340,7 @@ export type LinksHubProps = {
   logoClassName?: string;
   imoveis: ImovelCardData[];
   acessos: AccessCardData[];
+  ilhabela?: AccessCardData[];
 };
 
 export default function LinksHub({
@@ -349,7 +351,9 @@ export default function LinksHub({
   logoClassName = "h-20 md:h-28 mb-8 drop-shadow-lg",
   imoveis,
   acessos,
+  ilhabela,
 }: LinksHubProps) {
+  const tabs = ALL_TABS.filter((t) => t.id !== "ilhabela" || (ilhabela && ilhabela.length > 0));
   const [activeTab, setActiveTab] = useState<Tab>("acessos");
 
   const heroRef = useRef<HTMLElement>(null);
@@ -486,6 +490,21 @@ export default function LinksHub({
               className="grid grid-cols-1 sm:grid-cols-2 gap-5"
             >
               {acessos.map((item, i) => (
+                <AccessCard key={item.href + item.title} item={item} index={i} />
+              ))}
+            </motion.div>
+          )}
+
+          {activeTab === "ilhabela" && ilhabela && (
+            <motion.div
+              key="ilhabela"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="grid grid-cols-1 sm:grid-cols-2 gap-5"
+            >
+              {ilhabela.map((item, i) => (
                 <AccessCard key={item.href + item.title} item={item} index={i} />
               ))}
             </motion.div>
