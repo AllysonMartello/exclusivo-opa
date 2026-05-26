@@ -43,8 +43,8 @@ export type ImovelCardData = {
 };
 
 const tabs = [
-  { id: "imoveis", label: "Imóveis exclusivos" },
   { id: "acessos", label: "Nossos acessos" },
+  { id: "imoveis", label: "Imóveis exclusivos" },
 ] as const;
 
 type Tab = (typeof tabs)[number]["id"];
@@ -325,7 +325,7 @@ export default function LinksHub({
   imoveis,
   acessos,
 }: LinksHubProps) {
-  const [activeTab, setActiveTab] = useState<Tab>("imoveis");
+  const [activeTab, setActiveTab] = useState<Tab>("acessos");
 
   const heroRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
