@@ -47,7 +47,7 @@ const escapeHtml = (s: string) =>
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#39;");
 
-const renderHtml = (p: LeadPayload, siteLabel: string) => {
+const renderHtml = (p: LeadPayload, siteLabel: string, isFichaTecnica: boolean) => {
   const row = (k: string, v: string) =>
     `<tr><td style="padding:6px 12px;border-bottom:1px solid #eee;font-weight:600;white-space:nowrap;">${escapeHtml(k)}</td><td style="padding:6px 12px;border-bottom:1px solid #eee;">${escapeHtml(v)}</td></tr>`;
 
@@ -55,9 +55,13 @@ const renderHtml = (p: LeadPayload, siteLabel: string) => {
     ? Object.entries(p.answers).map(([k, v]) => row(k, v)).join("")
     : "";
 
+  const heading = isFichaTecnica
+    ? `Ficha técnica do imóvel — ${escapeHtml(p.nome)}`
+    : `Novo lead — ${escapeHtml(siteLabel)}`;
+
   return `<!doctype html>
 <html><body style="font-family:system-ui,-apple-system,sans-serif;color:#111;max-width:640px;margin:0 auto;padding:24px;">
-  <h2 style="margin:0 0 8px;">Novo lead — ${escapeHtml(siteLabel)}</h2>
+  <h2 style="margin:0 0 8px;">${heading}</h2>
   <p style="color:#555;margin:0 0 16px;">${escapeHtml(p.origin ?? "")} · ${escapeHtml(p.receivedAt ?? "")}</p>
   <table style="width:100%;border-collapse:collapse;font-size:14px;">
     ${row("Nome", p.nome)}
@@ -130,16 +134,25 @@ export async function POST(req: NextRequest) {
   }
 
   const siteLabel = body.site ? SITE_LABELS[body.site] : "Siriúba 2";
+  const isFichaTecnica = body.site === "cadastro-imovel";
 
   const resend = new Resend(serverEnv.RESEND_API_KEY);
   const replyTo = body.email && body.email.length > 0 ? body.email : undefined;
 
+  const subject = isFichaTecnica
+    ? `[Ficha técnica] ${body.nome} — imóvel cadastrado`
+    : `[SITE ${siteLabel}] Novo lead — ${body.nome}`;
+
+  const to = isFichaTecnica
+    ? ["contato@opailhabela.com.br", "opaimoveisilhabela@gmail.com"]
+    : [serverEnv.LEAD_TO_EMAIL];
+
   try {
     const { error } = await resend.emails.send({
       from: `OPA Leads <onboarding@resend.dev>`,
-      to: [serverEnv.LEAD_TO_EMAIL],
-      subject: `[SITE ${siteLabel}] Novo lead — ${body.nome}`,
-      html: renderHtml(body, siteLabel),
+      to,
+      subject,
+      html: renderHtml(body, siteLabel, isFichaTecnica),
       ...(replyTo ? { replyTo } : {}),
     });
 

@@ -569,16 +569,17 @@ export default function CadastroImovelForm({ initialAnunciante }: Props) {
             OPA Agência Imobiliária
           </p>
           <h1 className="font-serif text-[#253A47] text-3xl sm:text-4xl md:text-5xl leading-[1.1] mb-6">
-            Anuncie seu imóvel com a OPA
+            Ficha técnica do seu imóvel
           </h1>
           <p className="text-[#1A2226]/75 text-base md:text-lg leading-relaxed mb-4">
-            Inicie o processo para anunciar seu imóvel. Para que possamos atender da melhor forma
-            possível, precisamos entender o perfil de cliente que se adequa à sua propriedade.
+            Que bom ter você com a gente. Agora que a parceria está acertada, precisamos montar a
+            ficha técnica do imóvel para começar a divulgação e os atendimentos.
           </p>
           <p className="text-[#1A2226]/60 text-sm md:text-base leading-relaxed mb-10">
-            Vamos te guiar pergunta por pergunta. Quanto mais detalhadas as informações, maior a
-            chance de conectar seu imóvel ao comprador ou locatário ideal. Suas respostas ficam
-            salvas automaticamente — você pode parar e voltar quando quiser.
+            Vamos te guiar pergunta por pergunta. Quanto mais completas as informações, melhor
+            apresentamos o imóvel aos interessados — sem ter que voltar para você pedir dado por
+            dado. Suas respostas ficam salvas automaticamente, você pode parar e voltar quando
+            quiser.
           </p>
 
           {draftAvailable && !draftRestored && (
@@ -623,13 +624,13 @@ export default function CadastroImovelForm({ initialAnunciante }: Props) {
             onClick={startForm}
             className="inline-flex items-center gap-3 bg-[#253A47] text-white px-8 py-4 rounded-full font-semibold text-base md:text-lg hover:bg-[#253A47]/90 transition-colors shadow-lg"
           >
-            Começar cadastro
+            Preencher ficha técnica
             <ArrowRight size={20} />
           </button>
 
           <p className="mt-8 text-xs text-[#1A2226]/45 leading-relaxed">
-            Levam cerca de 8 a 12 minutos para preencher. Tenha em mãos guia do IPTU, área do
-            terreno e construção, e valores pretendidos.
+            Leva cerca de 8 a 12 minutos. Tenha em mãos a guia do IPTU, as áreas do terreno e da
+            construção e os valores combinados.
           </p>
         </motion.div>
       </div>

@@ -66,7 +66,7 @@ export default function CadastroObrigado() {
           transition={{ delay: 0.35, duration: 0.5 }}
           className="text-[#809C9E] text-xs md:text-sm font-semibold tracking-[0.3em] uppercase"
         >
-          Cadastro recebido
+          Ficha técnica recebida
         </motion.p>
 
         <motion.h1
@@ -91,9 +91,8 @@ export default function CadastroObrigado() {
           transition={{ delay: 0.7, duration: 0.5 }}
           className="text-[#1A2226]/70 text-base md:text-lg leading-relaxed"
         >
-          Nossa equipe vai revisar o cadastro e entrar em contato em breve para validar os
-          detalhes e iniciar a divulgação. Se quiser adiantar, fale com a gente direto pelo
-          WhatsApp.
+          Já estamos preparando a divulgação do seu imóvel. Se algum dado mudar ou precisar
+          complementar algo, é só falar com a gente pelo WhatsApp.
         </motion.p>
 
         <motion.div
