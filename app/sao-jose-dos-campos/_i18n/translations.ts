@@ -184,7 +184,7 @@ const pt = {
       { label: "Elevadores", value: "2 elevadores (13 paradas)" },
       { label: "Lazer", value: "Salão de festas, solário, portaria" },
       { label: "Estado", value: "Reformado parcialmente" },
-      { label: "Condomínio", value: "A confirmar" },
+      { label: "Condomínio", value: "R$ 550" },
       { label: "IPTU", value: "A confirmar" },
       { label: "Endereço", value: "Rua da Alegria, 98, Jardim Satélite, SJC/SP" },
       { label: "Financiamento", value: "A confirmar" },
