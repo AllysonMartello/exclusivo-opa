@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
 import LinksHub, { type AccessCardData } from "@/components/LinksHub";
-import { BROKERS, IMOVEIS_EXCLUSIVOS } from "@/lib/brokers";
+import { BROKERS, ILHABELA_LINKS, IMOVEIS_EXCLUSIVOS } from "@/lib/brokers";
 
 const broker = BROKERS.marco;
 
@@ -57,25 +57,6 @@ const acessos: AccessCardData[] = [
   },
 ];
 
-const ilhabela: AccessCardData[] = [
-  {
-    href: "https://turismoilhabela.com/",
-    icon: "map",
-    title: "O que fazer na ilha",
-    desc: "Guia oficial de turismo de Ilhabela",
-    color: "#2BB673",
-    external: true,
-  },
-  {
-    href: "https://horamarcada.dh.sp.gov.br/ViaDigital/",
-    icon: "ferry",
-    title: "Balsa sem fila",
-    desc: "Agende o horário da travessia",
-    color: "#F39C12",
-    external: true,
-  },
-];
-
 export default function Page() {
   return (
     <LinksHub
@@ -83,7 +64,7 @@ export default function Page() {
       logoAlt={broker.displayName}
       imoveis={IMOVEIS_EXCLUSIVOS}
       acessos={acessos}
-      ilhabela={ilhabela}
+      ilhabela={ILHABELA_LINKS}
     />
   );
 }

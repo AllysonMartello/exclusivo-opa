@@ -52,6 +52,25 @@ export const INSTITUTIONAL_ACESSOS: AccessCardData[] = [
   },
 ];
 
+export const ILHABELA_LINKS: AccessCardData[] = [
+  {
+    href: "https://turismoilhabela.com/",
+    icon: "map",
+    title: "O que fazer na ilha",
+    desc: "Guia oficial de turismo de Ilhabela",
+    color: "#2BB673",
+    external: true,
+  },
+  {
+    href: "https://horamarcada.dh.sp.gov.br/ViaDigital/",
+    icon: "ferry",
+    title: "Balsa sem fila",
+    desc: "Agende o horário da travessia",
+    color: "#F39C12",
+    external: true,
+  },
+];
+
 export type BrokerSlug = "marco" | "cristian" | "fabio" | "luana" | "june-rocha";
 
 export type BrokerProfile = {
