@@ -28,6 +28,13 @@ const acessos: AccessCardData[] = [
     color: "#E1306C",
   },
   {
+    href: "https://www.linkedin.com/in/marcohenriquesilva/?utm_source=linkbio_marco&utm_medium=linkbio&utm_campaign=corretor_marco_2026&utm_content=card_linkedin",
+    icon: "linkedin",
+    title: "LinkedIn",
+    desc: "Conecte-se profissionalmente",
+    color: "#0A66C2",
+  },
+  {
     href: "https://opailhabela.com.br/blog?utm_source=linkbio_marco&utm_medium=linkbio&utm_campaign=corretor_marco_2026&utm_content=card_blog",
     icon: "book",
     title: "Blog – OPA Imóveis",
