@@ -42,6 +42,10 @@ const nextConfig: NextConfig = {
       { source: "/composicao-opa/index.html", destination: "/composicao-opa", permanent: true },
       { source: "/imovel-morro-da-cruz/index.html", destination: "/imovel-morro-da-cruz", permanent: true },
       { source: "/lancamento-opa/index.html", destination: "/lancamento-opa", permanent: true },
+      { source: "/mensagens-de-apoio-siriuba-2/index.html", destination: "/mensagens-de-apoio-siriuba-2", permanent: true },
+      { source: "/sobre-o-imovel-siriuba-2/index.html", destination: "/sobre-o-imovel-siriuba-2", permanent: true },
+      { source: "/mensagens-de-apoio-siriuba2.html", destination: "/mensagens-de-apoio-siriuba-2", permanent: true },
+      { source: "/sobre-o-imovel-siriuba2.html", destination: "/sobre-o-imovel-siriuba-2", permanent: true },
     ];
   },
 };

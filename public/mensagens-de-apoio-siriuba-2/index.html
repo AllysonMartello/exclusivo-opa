@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mensagens — Siriúba 2 | OPA</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul: #166188;
+    --azul-claro: #e8f4f8;
+    --cinza-texto: #2d2d2d;
+    --cinza-leve: #6b7280;
+    --cinza-linha: #e5e7eb;
+    --branco: #ffffff;
+    --fundo: #fafbfc;
+    --verde-wpp: #e7fce3;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--cinza-texto);
+    background: var(--branco);
+    line-height: 1.7;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .header {
+    background: var(--azul);
+    color: var(--branco);
+    padding: 60px 40px;
+    text-align: center;
+  }
+
+  .header img {
+    height: 32px;
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+    margin-bottom: 40px;
+  }
+
+  .header h1 {
+    font-size: 32px;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+    margin-bottom: 16px;
+  }
+
+  .header p {
+    font-size: 15px;
+    opacity: 0.6;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 60px 40px;
+  }
+
+  .intro {
+    background: var(--azul-claro);
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin-bottom: 48px;
+    font-size: 15px;
+    color: var(--azul);
+    line-height: 1.7;
+    font-weight: 500;
+  }
+
+  .msg-block {
+    margin-bottom: 56px;
+  }
+
+  .msg-idea {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--azul);
+  }
+
+  .msg-idea-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--azul);
+    color: var(--branco);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .msg-idea-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--azul);
+  }
+
+  .msg-context {
+    font-size: 13px;
+    color: var(--cinza-leve);
+    margin-bottom: 16px;
+    font-style: italic;
+  }
+
+  .bubbles {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-left: 16px;
+  }
+
+  .bubble {
+    background: var(--verde-wpp);
+    padding: 12px 16px;
+    border-radius: 0 12px 12px 12px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--cinza-texto);
+    max-width: 85%;
+    position: relative;
+  }
+
+  .bubble:first-child {
+    border-radius: 12px 12px 12px 0;
+  }
+
+  .bubble a {
+    color: var(--azul);
+    word-break: break-all;
+    text-decoration: none;
+  }
+
+  .bubble a:hover {
+    text-decoration: underline;
+  }
+
+  .footer {
+    background: var(--azul);
+    color: var(--branco);
+    padding: 48px 40px;
+    text-align: center;
+  }
+
+  .footer img {
+    height: 28px;
+    filter: brightness(0) invert(1);
+    opacity: 0.6;
+    margin-bottom: 20px;
+  }
+
+  .footer p {
+    font-size: 13px;
+    opacity: 0.4;
+    letter-spacing: 1px;
+  }
+
+  @media (max-width: 768px) {
+    .header h1 { font-size: 24px; }
+    .container { padding: 40px 24px; }
+    .bubble { max-width: 95%; }
+  }
+
+  @media print {
+    .header { padding: 40px; }
+    .msg-block { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <img src="https://exclusivo.opailhabela.com.br/assets/logo/logo-opa.svg" alt="OPA">
+  <h1>Mensagens para Leads</h1>
+  <p>Siri&uacute;ba 2 &middot; C&oacute;digo ca007139</p>
+</div>
+
+<div class="container">
+
+  <div class="intro">
+    Ideias de mensagens para Leads, adapte e melhore conforme a sua linguagem e do Lead.
+  </div>
+
+  <!-- 1 -->
+  <div class="msg-block">
+    <div class="msg-idea">
+      <div class="msg-idea-icon">1</div>
+      <div class="msg-idea-text">Ativa&ccedil;&atilde;o: lead que pode ter perfil pra casa</div>
+    </div>
+    <p class="msg-context">Quando voc&ecirc; identifica algu&eacute;m que pode se interessar e quer apresentar a casa pela primeira vez.</p>
+    <div class="bubbles">
+      <div class="bubble">Oi [nome], tudo bem?</div>
+      <div class="bubble">Lembrei de voc&ecirc;. Apareceu uma casa no norte de Ilhabela que acho que combina.</div>
+      <div class="bubble">Siri&uacute;ba 2, contempor&acirc;nea, 4 su&iacute;tes, piscina, vista pro mar. Dois andares que funcionam independentes.</div>
+      <div class="bubble">D&aacute; uma olhada, tem tour virtual e tudo:<br><a href="https://exclusivo.opailhabela.com.br/siriuba-2">exclusivo.opailhabela.com.br/siriuba-2</a></div>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="msg-block">
+    <div class="msg-idea">
+      <div class="msg-idea-icon">2</div>
+      <div class="msg-idea-text">Follow-up: mandou o link e quer retomar sem press&atilde;o</div>
+    </div>
+    <p class="msg-context">Dois ou tr&ecirc;s dias depois de mandar o link. O v&iacute;deo &eacute; a desculpa pra retomar.</p>
+    <div class="bubbles">
+      <div class="bubble">[Nome], viu aquela casa?</div>
+      <div class="bubble">Tem um v&iacute;deo que mostra melhor que as fotos:<br><a href="https://www.youtube.com/watch?v=7XWgckz3SPU">youtube.com/watch?v=7XWgckz3SPU</a></div>
+      <div class="bubble">Me diz o que achou.</div>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="msg-block">
+    <div class="msg-idea">
+      <div class="msg-idea-icon">3</div>
+      <div class="msg-idea-text">Relacionamento: manter a casa na cabe&ccedil;a do lead</div>
+    </div>
+    <p class="msg-context">Sem link, sem call to action. S&oacute; cria conversa e mant&eacute;m o im&oacute;vel presente.</p>
+    <div class="bubbles">
+      <div class="bubble">[Nome], uma coisa sobre aquela casa que te mandei</div>
+      <div class="bubble">&Agrave; tarde a piscina reflete no teto da sala inteira. &Eacute; o tipo de coisa que n&atilde;o aparece em foto.</div>
+      <div class="bubble">Quem visitou disse que &eacute; o que mais marca.</div>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="msg-block">
+    <div class="msg-idea">
+      <div class="msg-idea-icon">4</div>
+      <div class="msg-idea-text">Reativa&ccedil;&atilde;o: lead que sumiu</div>
+    </div>
+    <p class="msg-context">Semanas ou meses depois. Respeita o tempo do lead e abre espa&ccedil;o pra resposta.</p>
+    <div class="bubbles">
+      <div class="bubble">Oi [nome], faz um tempo que a gente conversou sobre aquela casa em Ilhabela.</div>
+      <div class="bubble">Ainda t&aacute; no radar ou mudou os planos?</div>
+      <div class="bubble">Pergunto s&oacute; pra saber se faz sentido te manter atualizado.</div>
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="msg-block">
+    <div class="msg-idea">
+      <div class="msg-idea-icon">5</div>
+      <div class="msg-idea-text">Convite pra visita: lead que demonstrou interesse</div>
+    </div>
+    <p class="msg-context">Quando o lead j&aacute; viu o material e quer avan&ccedil;ar. Direcione pra tarde por causa da luz.</p>
+    <div class="bubbles">
+      <div class="bubble">[Nome], que tal conhecer pessoalmente?</div>
+      <div class="bubble">O curador da casa &eacute; arquiteto e apresenta junto comigo. A casa fica melhor &agrave; tarde por causa da luz.</div>
+      <div class="bubble">Me diz um dia que funciona.</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <img src="https://exclusivo.opailhabela.com.br/assets/logo/logo-opa.svg" alt="OPA">
+  <p>Material exclusivo para corretores parceiros</p>
+</div>
+
+</body>
+</html>

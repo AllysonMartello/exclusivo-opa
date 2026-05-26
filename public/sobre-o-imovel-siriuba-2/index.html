@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Siriúba 2 | OPA Agência Imobiliária</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul: #166188;
+    --azul-claro: #e8f4f8;
+    --azul-hover: #1a7aa8;
+    --cinza-texto: #2d2d2d;
+    --cinza-leve: #6b7280;
+    --cinza-linha: #e5e7eb;
+    --branco: #ffffff;
+    --fundo: #fafbfc;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--cinza-texto);
+    background: var(--branco);
+    line-height: 1.7;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* CAPA */
+  .capa {
+    min-height: 100vh;
+    background: var(--azul);
+    color: var(--branco);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .capa::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -30%;
+    width: 80%;
+    height: 200%;
+    background: rgba(255,255,255,0.03);
+    transform: rotate(15deg);
+    pointer-events: none;
+  }
+
+  .capa-logo {
+    margin-bottom: 80px;
+  }
+
+  .capa-logo img {
+    height: 40px;
+    opacity: 0.9;
+    filter: brightness(0) invert(1);
+  }
+
+  .hero-img {
+    width: 100%;
+    max-height: 60vh;
+    object-fit: cover;
+    display: block;
+  }
+
+  .capa h1 {
+    font-size: 72px;
+    font-weight: 300;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+    line-height: 1.1;
+  }
+
+  .capa-subtitulo {
+    font-size: 18px;
+    font-weight: 300;
+    opacity: 0.8;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+  }
+
+  .capa-specs {
+    font-size: 15px;
+    font-weight: 400;
+    opacity: 0.6;
+    margin-bottom: 80px;
+    letter-spacing: 1px;
+  }
+
+  .capa-codigo {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.5;
+    padding: 10px 24px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 4px;
+    margin-bottom: 40px;
+  }
+
+  .capa-badge {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    opacity: 0.4;
+    position: absolute;
+    bottom: 40px;
+  }
+
+  /* SUMARIO */
+  .sumario {
+    background: var(--fundo);
+    padding: 80px 40px;
+  }
+
+  .sumario-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .sumario-titulo {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--azul);
+    margin-bottom: 48px;
+  }
+
+  .sumario-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+  }
+
+  .sumario-item {
+    padding: 28px 32px;
+    border-bottom: 1px solid var(--cinza-linha);
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    cursor: default;
+    transition: background 0.2s;
+  }
+
+  .sumario-item:hover {
+    background: var(--branco);
+  }
+
+  .sumario-num {
+    font-size: 32px;
+    font-weight: 200;
+    color: var(--azul);
+    line-height: 1;
+    min-width: 36px;
+  }
+
+  .sumario-item h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--cinza-texto);
+    margin-bottom: 4px;
+  }
+
+  .sumario-item p {
+    font-size: 13px;
+    color: var(--cinza-leve);
+    line-height: 1.5;
+  }
+
+  /* SECOES */
+  .secao {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+
+  .secao-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--azul);
+    margin-bottom: 12px;
+  }
+
+  .secao h2 {
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--cinza-texto);
+    margin-bottom: 40px;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+  }
+
+  .secao p {
+    font-size: 16px;
+    color: var(--cinza-texto);
+    margin-bottom: 20px;
+    line-height: 1.8;
+  }
+
+  .secao-divider {
+    width: 48px;
+    height: 2px;
+    background: var(--azul);
+    margin: 80px auto;
+    opacity: 0.3;
+  }
+
+  /* DESTAQUE FULL */
+  .destaque-full {
+    background: var(--azul);
+    color: var(--branco);
+    padding: 80px 40px;
+  }
+
+  .destaque-full .secao-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .destaque-full .secao-label {
+    color: rgba(255,255,255,0.5);
+  }
+
+  .destaque-full h2 {
+    color: var(--branco);
+  }
+
+  .destaque-full p {
+    color: rgba(255,255,255,0.85);
+  }
+
+  /* FICHA TECNICA */
+  .ficha-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-top: 1px solid var(--cinza-linha);
+  }
+
+  .ficha-item {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--cinza-linha);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-right: 32px;
+  }
+
+  .ficha-item:nth-child(odd) {
+    padding-right: 32px;
+  }
+
+  .ficha-item:nth-child(even) {
+    padding-left: 32px;
+    border-left: 1px solid var(--cinza-linha);
+  }
+
+  .ficha-label {
+    font-size: 13px;
+    color: var(--cinza-leve);
+    font-weight: 400;
+  }
+
+  .ficha-valor {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--cinza-texto);
+    text-align: right;
+  }
+
+  .ficha-destaque {
+    background: var(--azul-claro);
+    padding: 24px 32px;
+    border-radius: 8px;
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .ficha-destaque .ficha-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--azul);
+  }
+
+  .ficha-destaque .ficha-valor {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--azul);
+  }
+
+  /* LOCALIZACAO */
+  .dist-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .dist-card {
+    background: var(--fundo);
+    padding: 20px 24px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .dist-nome {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--cinza-texto);
+  }
+
+  .dist-tempo {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--azul);
+  }
+
+  /* PERFIS */
+  .perfil-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .perfil-card {
+    border: 1px solid var(--cinza-linha);
+    border-radius: 8px;
+    padding: 32px;
+    transition: border-color 0.2s;
+  }
+
+  .perfil-card:hover {
+    border-color: var(--azul);
+  }
+
+  .perfil-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--cinza-texto);
+    margin-bottom: 12px;
+  }
+
+  .perfil-card p {
+    font-size: 14px;
+    color: var(--cinza-leve);
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+
+  /* DIFERENCIAIS */
+  .dif-lista {
+    display: grid;
+    gap: 0;
+  }
+
+  .dif-item {
+    padding: 32px 0;
+    border-bottom: 1px solid var(--cinza-linha);
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 32px;
+    align-items: start;
+  }
+
+  .dif-item:first-child {
+    border-top: 1px solid var(--cinza-linha);
+  }
+
+  .dif-titulo {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--azul);
+  }
+
+  .dif-texto {
+    font-size: 15px;
+    color: var(--cinza-texto);
+    line-height: 1.7;
+  }
+
+  /* LINKS */
+  .links-grid {
+    display: grid;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .link-card {
+    background: var(--fundo);
+    border: 1px solid var(--cinza-linha);
+    border-radius: 8px;
+    padding: 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .link-card:hover {
+    border-color: var(--azul);
+    background: var(--azul-claro);
+  }
+
+  .link-info h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--cinza-texto);
+    margin-bottom: 4px;
+  }
+
+  .link-info p {
+    font-size: 13px;
+    color: var(--cinza-leve);
+    margin-bottom: 0;
+  }
+
+  .link-arrow {
+    font-size: 20px;
+    color: var(--azul);
+    font-weight: 300;
+  }
+
+  .link-url {
+    font-size: 12px;
+    color: var(--azul);
+    word-break: break-all;
+    margin-top: 4px;
+    font-weight: 400;
+  }
+
+  /* PARCERIA */
+  .parceria-bg {
+    background: var(--fundo);
+  }
+
+  .etapas {
+    display: grid;
+    gap: 0;
+    margin-top: 32px;
+    counter-reset: etapa;
+  }
+
+  .etapa {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--cinza-linha);
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 20px;
+    align-items: start;
+    counter-increment: etapa;
+  }
+
+  .etapa-num {
+    width: 40px;
+    height: 40px;
+    background: var(--azul);
+    color: var(--branco);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  .etapa p {
+    font-size: 15px;
+    color: var(--cinza-texto);
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+
+  .etapa strong {
+    font-weight: 600;
+  }
+
+  /* BENEFICIOS */
+  .beneficios {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .beneficio {
+    background: var(--branco);
+    border: 1px solid var(--cinza-linha);
+    padding: 20px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--cinza-texto);
+    line-height: 1.6;
+  }
+
+  .beneficio strong {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: var(--azul);
+    font-size: 13px;
+  }
+
+  /* CONTATO FINAL */
+  .contato-final {
+    background: var(--azul);
+    color: var(--branco);
+    padding: 80px 40px;
+    text-align: center;
+  }
+
+  .contato-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .contato-final h2 {
+    font-size: 32px;
+    font-weight: 300;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+  }
+
+  .contato-final .subtitulo {
+    font-size: 16px;
+    opacity: 0.7;
+    margin-bottom: 48px;
+  }
+
+  .contato-dados {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    text-align: left;
+  }
+
+  .contato-bloco h3 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    opacity: 0.9;
+  }
+
+  .contato-bloco p {
+    font-size: 14px;
+    opacity: 0.7;
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+
+  .contato-bloco a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: 500;
+    opacity: 1;
+  }
+
+  .contato-creci {
+    margin-top: 48px;
+    font-size: 12px;
+    opacity: 0.4;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  /* RESPONSIVO */
+  @media (max-width: 768px) {
+    .capa h1 { font-size: 48px; }
+    .sumario-grid { grid-template-columns: 1fr; }
+    .ficha-grid { grid-template-columns: 1fr; }
+    .ficha-item:nth-child(even) { padding-left: 0; border-left: none; }
+    .dist-grid { grid-template-columns: 1fr; }
+    .perfil-grid { grid-template-columns: 1fr; }
+    .dif-item { grid-template-columns: 1fr; gap: 8px; }
+    .beneficios { grid-template-columns: 1fr; }
+    .contato-dados { grid-template-columns: 1fr; }
+    .secao h2 { font-size: 28px; }
+  }
+
+  /* PRINT */
+  @media print {
+    .capa { min-height: auto; padding: 120px 40px; page-break-after: always; }
+    .sumario { page-break-after: always; }
+    .secao { page-break-inside: avoid; }
+    .destaque-full { page-break-inside: avoid; }
+    .contato-final { page-break-inside: avoid; }
+    body { font-size: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- CAPA -->
+<section class="capa">
+  <div class="capa-logo"><img src="https://exclusivo.opailhabela.com.br/assets/logo/logo-opa.svg" alt="OPA Ag&ecirc;ncia Imobili&aacute;ria"></div>
+  <h1>Siri&uacute;ba 2</h1>
+  <p class="capa-subtitulo">Casa contempor&acirc;nea no norte de Ilhabela</p>
+  <p class="capa-specs">4 su&iacute;tes &middot; 427 m&sup2; &middot; Vista para o mar</p>
+  <div class="capa-codigo">C&oacute;digo ca007139</div>
+  <div class="capa-badge">Material exclusivo para corretores parceiros</div>
+</section>
+
+<!-- HERO IMAGE -->
+<img src="https://exclusivo.opailhabela.com.br/assets/siriuba-2/area-externa-desktop.avif" alt="Siri&uacute;ba 2 - &Aacute;rea externa" class="hero-img">
+
+<!-- SUMARIO -->
+<section class="sumario">
+  <div class="sumario-inner">
+    <div class="sumario-titulo">Neste material</div>
+    <div class="sumario-grid">
+      <div class="sumario-item">
+        <span class="sumario-num">01</span>
+        <div>
+          <h3>A casa</h3>
+          <p>O que &eacute; a Siri&uacute;ba 2 e por que ela se diferencia no portf&oacute;lio da ilha</p>
+        </div>
+      </div>
+      <div class="sumario-item">
+        <span class="sumario-num">02</span>
+        <div>
+          <h3>Ficha t&eacute;cnica</h3>
+          <p>Metragem, su&iacute;tes, infraestrutura, documenta&ccedil;&atilde;o e valor</p>
+        </div>
+      </div>
+      <div class="sumario-item">
+        <span class="sumario-num">03</span>
+        <div>
+          <h3>Localiza&ccedil;&atilde;o</h3>
+          <p>Onde fica na ilha, por que essa posi&ccedil;&atilde;o importa e dist&acirc;ncias reais</p>
+        </div>
+      </div>
+      <div class="sumario-item">
+        <span class="sumario-num">04</span>
+        <div>
+          <h3>Para quem faz sentido</h3>
+          <p>Perfis de comprador que encaixam nessa casa</p>
+        </div>
+      </div>
+      <div class="sumario-item">
+        <span class="sumario-num">05</span>
+        <div>
+          <h3>Diferenciais de venda</h3>
+          <p>Os argumentos que voc&ecirc; vai usar na conversa com o seu cliente</p>
+        </div>
+      </div>
+      <div class="sumario-item">
+        <span class="sumario-num">06</span>
+        <div>
+          <h3>Acesse agora</h3>
+          <p>Links diretos para p&aacute;gina exclusiva, tour virtual, v&iacute;deo e drive de m&iacute;dias</p>
+        </div>
+      </div>
+      <div class="sumario-item">
+        <span class="sumario-num">07</span>
+        <div>
+          <h3>Parceria OPA</h3>
+          <p>Como funciona, o que voc&ecirc; recebe e como ativar</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- A CASA -->
+<section class="secao">
+  <div class="secao-label">01</div>
+  <h2>A casa</h2>
+  <p>Siri&uacute;ba 2 &eacute; uma casa contempor&acirc;nea no norte de Ilhabela. Proposta clean, clara e atual. S&atilde;o dois pavimentos completos, cada um funcionando de forma independente, com sala e cozinha pr&oacute;prios.</p>
+  <p>4 su&iacute;tes grandes, piscina generosa, vista aberta para o mar e um p&ocirc;r do sol que aparece todo dia.</p>
+  <p>No t&eacute;rreo, sala, cozinha gourmet e deck est&atilde;o completamente integrados. O deck d&aacute; acesso direto &agrave; piscina, sem degrau. &Agrave; tarde, a &aacute;gua da piscina reflete no teto da sala e movimenta o ambiente inteiro. &Eacute; uma das imagens mais marcantes da casa.</p>
+  <p>O pavimento superior funciona como uma casa dentro da casa. Tem sala, cozinha e su&iacute;tes pr&oacute;prias, com a mesma vista do t&eacute;rreo, mas com mais privacidade. Fam&iacute;lia grande, h&oacute;spedes, grupos diferentes ao mesmo tempo. Cada um no seu espa&ccedil;o, sem perder a conex&atilde;o.</p>
+  <p>A &aacute;rea externa re&uacute;ne piscina, espreguicadeiras, churrasqueira e o verde da Siri&uacute;ba ao redor. Arquitetura contempor&acirc;nea integrada &agrave; mata. Tudo pensado para reunir.</p>
+  <p>Uma casa para viver bem e para receber.</p>
+</section>
+
+<div class="secao-divider"></div>
+
+<!-- FICHA TECNICA -->
+<section class="secao">
+  <div class="secao-label">02</div>
+  <h2>Ficha t&eacute;cnica</h2>
+  <div class="ficha-grid">
+    <div class="ficha-item">
+      <span class="ficha-label">C&oacute;digo</span>
+      <span class="ficha-valor">ca007139</span>
+    </div>
+    <div class="ficha-item">
+      <span class="ficha-label">&Aacute;rea constru&iacute;da</span>
+      <span class="ficha-valor">427 m&sup2;</span>
+    </div>
+    <div class="ficha-item">
+      <span class="ficha-label">&Aacute;rea do terreno</span>
+      <span class="ficha-valor">891,2 m&sup2;</span>
+    </div>
+    <div class="ficha-item">
+      <span class="ficha-label">Su&iacute;tes</span>
+      <span class="ficha-valor">4</span>
+    </div>
+    <div class="ficha-item">
+      <span class="ficha-label">Salas</span>
+      <span class="ficha-valor">2</span>
+    </div>
+    <div class="ficha-item">
+      <span class="ficha-label">Cozinhas</span>
+      <span class="ficha-valor">2 completas</span>
+    </div>
+    <div class="ficha-item">
+      <span class="ficha-label">Pavimentos</span>
+      <span class="ficha-valor">2 independentes</span>
+    </div>
+    <div class="ficha-item">
+      <span class="ficha-label">Capacidade</span>
+      <span class="ficha-valor">At&eacute; 8 pessoas</span>
+    </div>
+    <div class="ficha-item">
+      <span class="ficha-label">Climatiza&ccedil;&atilde;o</span>
+      <span class="ficha-valor">Ar central, 100%</span>
+    </div>
+    <div class="ficha-item">
+      <span class="ficha-label">Energia</span>
+      <span class="ficha-valor">Solar instalada</span>
+    </div>
+    <div class="ficha-item">
+      <span class="ficha-label">Piscina</span>
+      <span class="ficha-valor">Sim</span>
+    </div>
+    <div class="ficha-item">
+      <span class="ficha-label">Churrasqueira</span>
+      <span class="ficha-valor">Espa&ccedil;o gourmet</span>
+    </div>
+    <div class="ficha-item">
+      <span class="ficha-label">Acabamentos</span>
+      <span class="ficha-valor">Contempor&acirc;neos</span>
+    </div>
+    <div class="ficha-item">
+      <span class="ficha-label">Estrutura</span>
+      <span class="ficha-valor">Totalmente renovada</span>
+    </div>
+    <div class="ficha-item">
+      <span class="ficha-label">Documenta&ccedil;&atilde;o</span>
+      <span class="ficha-valor">Escritura definitiva</span>
+    </div>
+    <div class="ficha-item">
+      <span class="ficha-label">Constru&ccedil;&atilde;o</span>
+      <span class="ficha-valor">2015</span>
+    </div>
+    <div class="ficha-item">
+      <span class="ficha-label">IPTU</span>
+      <span class="ficha-valor">R$ 10.184/ano</span>
+    </div>
+  </div>
+  <div class="ficha-destaque">
+    <span class="ficha-label">Valor de venda</span>
+    <span class="ficha-valor">R$ 5.000.000</span>
+  </div>
+</section>
+
+<div class="secao-divider"></div>
+
+<!-- LOCALIZACAO -->
+<section class="secao">
+  <div class="secao-label">03</div>
+  <h2>Localiza&ccedil;&atilde;o</h2>
+  <p><strong>Bairro: Siri&uacute;ba 2, norte de Ilhabela</strong></p>
+  <p>A posi&ccedil;&atilde;o &eacute; um dos maiores diferenciais. N&atilde;o &eacute; extremo norte. N&atilde;o est&aacute; colada ao centro. Fica no meio do caminho entre a Vila e a Ponta das Canas.</p>
+  <p>Isso entrega uma combina&ccedil;&atilde;o que &eacute; rara na ilha: acesso &agrave;s melhores praias do norte, conex&atilde;o direta com esportes n&aacute;uticos, dist&acirc;ncia ainda confort&aacute;vel do centro hist&oacute;rico e boa rela&ccedil;&atilde;o de n&iacute;vel com a via principal, sem subida excessiva.</p>
+  <p>Em Ilhabela, essa combina&ccedil;&atilde;o muda tudo. Dois im&oacute;veis na mesma rua podem valer completamente diferente dependendo do n&iacute;vel, da orienta&ccedil;&atilde;o e do acesso. A Siri&uacute;ba 2 resolve bem todos esses pontos.</p>
+  <div class="dist-grid">
+    <div class="dist-card">
+      <span class="dist-nome">Praia do Siri&uacute;ba</span>
+      <span class="dist-tempo">2 min</span>
+    </div>
+    <div class="dist-card">
+      <span class="dist-nome">Praia do Viana</span>
+      <span class="dist-tempo">3 min</span>
+    </div>
+    <div class="dist-card">
+      <span class="dist-nome">Praia da Arma&ccedil;&atilde;o</span>
+      <span class="dist-tempo">7 min</span>
+    </div>
+    <div class="dist-card">
+      <span class="dist-nome">Centro Hist&oacute;rico (Vila)</span>
+      <span class="dist-tempo">12 min</span>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM FAZ SENTIDO -->
+<section class="destaque-full">
+  <div class="secao-inner">
+    <div class="secao-label">04</div>
+    <h2>Para quem faz sentido</h2>
+    <p style="opacity: 0.6; margin-bottom: 40px;">Use como refer&ecirc;ncia para identificar clientes no seu radar.</p>
+    <div class="perfil-grid">
+      <div class="perfil-card" style="border-color: rgba(255,255,255,0.15); background: rgba(255,255,255,0.05);">
+        <h3 style="color: #fff;">Fam&iacute;lia que quer se encontrar com espa&ccedil;o</h3>
+        <p style="color: rgba(255,255,255,0.7);">Pais, filhos, netos e amigos pr&oacute;ximos. A casa comporta todo mundo junto sem ningu&eacute;m ficar apertado. Os dois n&uacute;cleos independentes resolvem privacidade sem cortar a conviv&ecirc;ncia.</p>
+      </div>
+      <div class="perfil-card" style="border-color: rgba(255,255,255,0.15); background: rgba(255,255,255,0.05);">
+        <h3 style="color: #fff;">Quem busca equil&iacute;brio entre norte e centro</h3>
+        <p style="color: rgba(255,255,255,0.7);">Quer as praias e a n&aacute;utica do norte, mas n&atilde;o quer se isolar do centro hist&oacute;rico. O Siri&uacute;ba 2 entrega exatamente esse meio-termo na ilha.</p>
+      </div>
+      <div class="perfil-card" style="border-color: rgba(255,255,255,0.15); background: rgba(255,255,255,0.05);">
+        <h3 style="color: #fff;">Quem valoriza casa pronta</h3>
+        <p style="color: rgba(255,255,255,0.7);">Escritura definitiva, energia solar, ar-condicionado central, estrutura renovada, acabamentos contempor&acirc;neos. Uma casa que n&atilde;o exige obra, n&atilde;o tem pend&ecirc;ncia e tem custo operacional baixo.</p>
+      </div>
+      <div class="perfil-card" style="border-color: rgba(255,255,255,0.15); background: rgba(255,255,255,0.05);">
+        <h3 style="color: #fff;">Quem recebe muito</h3>
+        <p style="color: rgba(255,255,255,0.7);">Dois espa&ccedil;os gourmet, churrasqueira, piscina, varanda e &aacute;rea externa integrada. A casa &eacute; desenhada para reunir pessoas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="secao">
+  <div class="secao-label">05</div>
+  <h2>Diferenciais de venda</h2>
+  <p style="color: var(--cinza-leve); margin-bottom: 40px;">Cada ponto resolve uma obje&ccedil;&atilde;o ou fortalece uma decis&atilde;o.</p>
+  <div class="dif-lista">
+    <div class="dif-item">
+      <span class="dif-titulo">Vista e orienta&ccedil;&atilde;o</span>
+      <span class="dif-texto">Vista aberta para o mar e p&ocirc;r do sol nos dois pavimentos. A rela&ccedil;&atilde;o da casa com o horizonte &eacute; direta e constante. Em Ilhabela, essa combina&ccedil;&atilde;o junto com acesso f&aacute;cil e n&iacute;vel confort&aacute;vel &eacute; rara.</span>
+    </div>
+    <div class="dif-item">
+      <span class="dif-titulo">Dois n&uacute;cleos independentes</span>
+      <span class="dif-texto">T&eacute;rreo e superior com sala e cozinha pr&oacute;prios. N&atilde;o &eacute; um segundo andar. &Eacute; uma segunda casa. Resolve qualquer configura&ccedil;&atilde;o de uso.</span>
+    </div>
+    <div class="dif-item">
+      <span class="dif-titulo">Integra&ccedil;&atilde;o total no t&eacute;rreo</span>
+      <span class="dif-texto">Sala, cozinha, deck e piscina funcionam como um &uacute;nico espa&ccedil;o. Sem degrau entre o deck e a piscina. &Aacute;rea gourmet integrada ao verde do bairro.</span>
+    </div>
+    <div class="dif-item">
+      <span class="dif-titulo">Posi&ccedil;&atilde;o estrat&eacute;gica</span>
+      <span class="dif-texto">Entre a Vila e a Ponta das Canas. Praias do norte a minutos. Centro a 12 minutos. Sem subida excessiva. Acesso n&aacute;utico direto.</span>
+    </div>
+    <div class="dif-item">
+      <span class="dif-titulo">Infraestrutura completa</span>
+      <span class="dif-texto">Energia solar, ar-condicionado central em todos os ambientes, estrutura totalmente renovada, marcenaria funcional. Nada a fazer. &Eacute; entrar.</span>
+    </div>
+    <div class="dif-item">
+      <span class="dif-titulo">Documenta&ccedil;&atilde;o impec&aacute;vel</span>
+      <span class="dif-texto">Escritura definitiva e matr&iacute;cula regular. Sem pend&ecirc;ncias. Pronta para negociar. Num mercado onde 80% dos im&oacute;veis s&atilde;o posse, isso &eacute; um diferencial real.</span>
+    </div>
+  </div>
+</section>
+
+<div class="secao-divider"></div>
+
+<!-- LINKS -->
+<section class="secao">
+  <div class="secao-label">06</div>
+  <h2>Acesse agora</h2>
+  <p>O tour virtual permite ao seu cliente caminhar pela casa, ver a planta baixa interativa, medir espa&ccedil;os e circular entre os ambientes e a piscina. Tudo sem sair de onde est&aacute;.</p>
+  <div class="links-grid">
+    <a href="https://exclusivo.opailhabela.com.br/siriuba-2" target="_blank" class="link-card">
+      <div class="link-info">
+        <h3>P&aacute;gina exclusiva</h3>
+        <p>Fotos, tour virtual, ficha completa</p>
+        <div class="link-url">exclusivo.opailhabela.com.br/siriuba-2</div>
+      </div>
+      <span class="link-arrow">&rarr;</span>
+    </a>
+    <a href="https://opailhabela.com.br/imovel/ca007139-casa-venda-siriuba-ilhabela-sp/" target="_blank" class="link-card">
+      <div class="link-info">
+        <h3>P&aacute;gina no site OPA</h3>
+        <p>Ficha t&eacute;cnica e fotos do portf&oacute;lio geral</p>
+        <div class="link-url">opailhabela.com.br/imovel/ca007139</div>
+      </div>
+      <span class="link-arrow">&rarr;</span>
+    </a>
+    <a href="https://www.youtube.com/watch?v=7XWgckz3SPU" target="_blank" class="link-card">
+      <div class="link-info">
+        <h3>V&iacute;deo cinematogr&aacute;fico (YouTube)</h3>
+        <p>Tour em v&iacute;deo completo da casa</p>
+        <div class="link-url">youtube.com/watch?v=7XWgckz3SPU</div>
+      </div>
+      <span class="link-arrow">&rarr;</span>
+    </a>
+    <a href="https://drive.google.com/drive/folders/1nInhiljDrIETJzVKFpd2CiJTH4Zs24Ay?usp=sharing" target="_blank" class="link-card">
+      <div class="link-info">
+        <h3>Drive de m&iacute;dias</h3>
+        <p>Fotos, v&iacute;deos e materiais completos da casa</p>
+        <div class="link-url">drive.google.com/drive/folders/1nInhiljDrIETJzVKFpd2CiJTH4Zs24Ay</div>
+      </div>
+      <span class="link-arrow">&rarr;</span>
+    </a>
+  </div>
+</section>
+
+<!-- PARCERIA -->
+<section class="parceria-bg">
+  <div class="secao" style="padding-top: 80px; padding-bottom: 80px;">
+    <div class="secao-label">07</div>
+    <h2>Parceria OPA</h2>
+    <p>A OPA trabalha com parceria. Se voc&ecirc; tem cliente com perfil para essa casa, o processo &eacute; simples:</p>
+    <div class="etapas">
+      <div class="etapa">
+        <div class="etapa-num">1</div>
+        <p><strong>Voc&ecirc; identifica o cliente</strong> e registra com a gente via WhatsApp (nome completo e telefone). A partir desse momento, o lead &eacute; seu.</p>
+      </div>
+      <div class="etapa">
+        <div class="etapa-num">2</div>
+        <p><strong>Sem prazo de validade.</strong> Quem indicou primeiro tem prioridade. Sem prazo para expirar.</p>
+      </div>
+      <div class="etapa">
+        <div class="etapa-num">3</div>
+        <p><strong>Visita conjunta.</strong> Voc&ecirc; acompanha com o seu cliente e o Marco apresenta a casa pessoalmente.</p>
+      </div>
+      <div class="etapa">
+        <div class="etapa-num">4</div>
+        <p><strong>Negocia&ccedil;&atilde;o conjunta.</strong> Cada um cuidando do seu lado da rela&ccedil;&atilde;o.</p>
+      </div>
+      <div class="etapa">
+        <div class="etapa-num">5</div>
+        <p><strong>Comiss&atilde;o do parceiro</strong> definida em acordo direto com o Marco.</p>
+      </div>
+    </div>
+
+    <h3 style="font-size: 14px; font-weight: 600; color: var(--azul); margin-top: 48px; margin-bottom: 20px; letter-spacing: 2px; text-transform: uppercase;">O que voc&ecirc; recebe como parceiro</h3>
+    <div class="beneficios">
+      <div class="beneficio">
+        <strong>P&aacute;gina exclusiva</strong>
+        Link de cada im&oacute;vel para enviar ao seu cliente
+      </div>
+      <div class="beneficio">
+        <strong>Tour virtual</strong>
+        Acess&iacute;vel direto pelo link, sem app
+      </div>
+      <div class="beneficio">
+        <strong>Mensagens prontas</strong>
+        Para repassar ao seu cliente via WhatsApp
+      </div>
+      <div class="beneficio">
+        <strong>Apresenta&ccedil;&atilde;o presencial</strong>
+        Feita pelo curador. Voc&ecirc; s&oacute; traz o cliente
+      </div>
+      <div class="beneficio">
+        <strong>Apoio comercial</strong>
+        Na negocia&ccedil;&atilde;o e no fechamento
+      </div>
+      <div class="beneficio">
+        <strong>Drive de m&iacute;dias</strong>
+        Fotos e v&iacute;deos para usar com seus leads
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL -->
+<section class="contato-final">
+  <div class="contato-inner">
+    <img src="https://exclusivo.opailhabela.com.br/assets/logo/logo-opa.svg" alt="OPA" style="height: 36px; filter: brightness(0) invert(1); opacity: 0.8; margin-bottom: 48px;">
+    <h2>Vamos fazer essa parceria?</h2>
+  </div>
+</section>
+
+</body>
+</html>
