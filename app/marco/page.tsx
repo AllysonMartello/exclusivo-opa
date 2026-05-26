@@ -55,6 +55,22 @@ const acessos: AccessCardData[] = [
     desc: "Anuncie seu imóvel conosco em Ilhabela",
     color: "#1E90C4",
   },
+  {
+    href: "https://turismoilhabela.com/",
+    icon: "map",
+    title: "O que fazer na ilha",
+    desc: "Guia oficial de turismo de Ilhabela",
+    color: "#2BB673",
+    external: true,
+  },
+  {
+    href: "https://horamarcada.dh.sp.gov.br/ViaDigital/",
+    icon: "ferry",
+    title: "Balsa sem fila",
+    desc: "Agende o horário da travessia",
+    color: "#F39C12",
+    external: true,
+  },
 ];
 
 export default function Page() {
