@@ -40,6 +40,20 @@ const acessos: AccessCardData[] = [
     desc: "@june_rocha",
     color: "#E1306C",
   },
+  {
+    href: "https://opailhabela.com.br/?utm_source=linkbio_june&utm_medium=linkbio&utm_campaign=corretor_june_2026&utm_content=card_opa_home",
+    icon: "globe",
+    title: "OPA Imóveis",
+    desc: "Conheça nossos imóveis e serviços",
+    color: "#0071C6",
+  },
+  {
+    href: "https://opailhabela.com.br/blog?utm_source=linkbio_june&utm_medium=linkbio&utm_campaign=corretor_june_2026&utm_content=card_blog",
+    icon: "book",
+    title: "Blog – OPA Imóveis",
+    desc: "Acompanhe dicas e novidades",
+    color: "#3B9ED4",
+  },
 ];
 
 export default function Page() {
