@@ -143,14 +143,10 @@ export async function POST(req: NextRequest) {
     ? `[Ficha técnica] ${body.nome} — imóvel cadastrado`
     : `[SITE ${siteLabel}] Novo lead — ${body.nome}`;
 
-  const to = isFichaTecnica
-    ? ["contato@opailhabela.com.br", "opaimoveisilhabela@gmail.com"]
-    : [serverEnv.LEAD_TO_EMAIL];
-
   try {
     const { error } = await resend.emails.send({
       from: `OPA Leads <onboarding@resend.dev>`,
-      to,
+      to: [serverEnv.LEAD_TO_EMAIL],
       subject,
       html: renderHtml(body, siteLabel, isFichaTecnica),
       ...(replyTo ? { replyTo } : {}),
