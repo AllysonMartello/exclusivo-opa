@@ -4,10 +4,9 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion } from "motion/react";
 import { Check } from "lucide-react";
-import { useT } from "../_i18n/LanguageContext";
+import { t } from "../_i18n/t";
 
 export default function ForWho() {
-  const t = useT();
   const profiles = t.forWho.profiles.map((p, i) => ({ id: i + 1, ...p }));
   const [selected, setSelected] = useState<number[]>([]);
 

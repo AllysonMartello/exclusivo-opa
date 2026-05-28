@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, ReactNode } from "react";
-import { translations, type Dictionary } from "./translations";
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
@@ -9,8 +8,4 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   }, []);
 
   return <>{children}</>;
-}
-
-export function useT(): Dictionary {
-  return translations.pt;
 }

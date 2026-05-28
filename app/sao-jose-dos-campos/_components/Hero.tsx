@@ -2,13 +2,12 @@
 
 import Image from "next/image";
 import { ArrowRight, MessageCircle } from "lucide-react";
-import { useT } from "../_i18n/LanguageContext";
+import { t } from "../_i18n/t";
 
 const BASE = "/assets/sao-jose-dos-campos";
 const WHATSAPP_NUMBER = "5512974068058";
 
 export default function Hero() {
-  const t = useT();
   const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(t.leadForm.whatsappMessage)}`;
 
   return (

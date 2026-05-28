@@ -22,26 +22,36 @@ export default function ScrollDepthTracker() {
   useEffect(() => {
     fired.current = new Set();
 
-    const onScroll = () => {
-      const doc = document.documentElement;
-      const scrollTop = window.scrollY || doc.scrollTop;
-      const viewport = window.innerHeight;
-      const totalHeight = doc.scrollHeight - viewport;
-      if (totalHeight <= 0) return;
-      const pct = (scrollTop / totalHeight) * 100;
+    let totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    let ticking = false;
 
-      for (const t of THRESHOLDS) {
-        if (pct >= t && !fired.current.has(t)) {
-          fired.current.add(t);
-          pushScrollDepth(pathname, t);
+    const recalc = () => {
+      totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+    };
+
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        ticking = false;
+        if (totalHeight <= 0) return;
+        const pct = (window.scrollY / totalHeight) * 100;
+        for (const t of THRESHOLDS) {
+          if (pct >= t && !fired.current.has(t)) {
+            fired.current.add(t);
+            pushScrollDepth(pathname, t);
+          }
         }
-      }
+      });
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
-    // Dispara uma vez no mount caso a página já comece scrollada (ex: âncora #section)
+    window.addEventListener("resize", recalc, { passive: true });
     onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", recalc);
+    };
   }, [pathname]);
 
   return null;

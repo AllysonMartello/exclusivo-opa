@@ -1,13 +1,11 @@
 "use client";
 
-import { motion } from "motion/react";
 import { MessageCircle, CalendarCheck } from "lucide-react";
-import { useT } from "../_i18n/LanguageContext";
+import { t } from "../_i18n/t";
 
 const WHATSAPP_NUMBER = "5512974068058";
 
 export default function FinalCTA() {
-  const t = useT();
   const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(t.leadForm.whatsappMessage)}`;
 
   return (
@@ -18,31 +16,20 @@ export default function FinalCTA() {
       </div>
 
       <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="section-title text-3xl sm:text-4xl md:text-6xl font-serif text-primary-1"
-        >
+        <h2 className="reveal section-title text-3xl sm:text-4xl md:text-6xl font-serif text-primary-1">
           {t.finalCTA.title}
-        </motion.h2>
+        </h2>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="text-text-sec text-base md:text-xl mb-8 md:mb-12 max-w-2xl mx-auto"
+        <p
+          className="reveal text-text-sec text-base md:text-xl mb-8 md:mb-12 max-w-2xl mx-auto"
+          style={{ animationDelay: "0.15s" }}
         >
           {t.finalCTA.subtitle}
-        </motion.p>
+        </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4"
+        <div
+          className="reveal flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4"
+          style={{ animationDelay: "0.3s" }}
         >
           <button
             onClick={() => window.dispatchEvent(new CustomEvent("open-lead-form"))}
@@ -60,7 +47,7 @@ export default function FinalCTA() {
             <MessageCircle size={22} />
             {t.finalCTA.secondaryButton}
           </a>
-        </motion.div>
+        </div>
 
         <p className="mt-6 text-sm text-text-sec">{t.finalCTA.footer}</p>
       </div>

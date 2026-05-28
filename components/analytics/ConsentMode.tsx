@@ -2,7 +2,9 @@ import Script from "next/script";
 
 /**
  * Consent Mode v2 — DEVE rodar antes de qualquer tag carregar (GTM, Clarity,
- * GA4, Meta Pixel, etc), por isso strategy="beforeInteractive" no <head>.
+ * GA4, Meta Pixel, etc). O GTM/Clarity em LazyTags só carrega após 4s ou
+ * interação do usuário, então afterInteractive é cedo o suficiente e não
+ * bloqueia o caminho crítico de renderização (FCP/LCP).
  *
  * Instala window.gtag e seta default deny (LGPD-friendly).
  * O CookieConsent depois chama updateConsent(true) via gtag('consent','update').
@@ -34,7 +36,7 @@ export default function ConsentMode() {
     } catch (e) {}
   `;
   return (
-    <Script id="consent-mode-default" strategy="beforeInteractive">
+    <Script id="consent-mode-default" strategy="afterInteractive">
       {js}
     </Script>
   );

@@ -5,12 +5,11 @@ import { AnimatePresence, motion } from "motion/react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useT } from "../_i18n/LanguageContext";
+import { t } from "../_i18n/t";
 
 const ROUTE = "/sao-jose-dos-campos";
 
 export default function Header() {
-  const t = useT();
   const pathname = usePathname();
   const router = useRouter();
   const isOnLanding = pathname === ROUTE;

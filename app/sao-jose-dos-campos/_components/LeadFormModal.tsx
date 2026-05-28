@@ -4,7 +4,7 @@ import { useState, useEffect, useRef, FormEvent } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { X, ChevronRight, ChevronLeft, Check, Send, Phone, User, MapPin, Mail } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useT } from "../_i18n/LanguageContext";
+import { t } from "../_i18n/t";
 import { pushLeadFormOpen, pushLeadFormStep, pushLeadSubmit, generateEventId } from "@/lib/analytics";
 
 const FORM_ID = "lead-form-sao-jose-dos-campos";
@@ -28,7 +28,6 @@ const isValidPhoneBR = (v: string) => v.replace(/\D/g, "").length >= 10;
 const isValidEmail = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim());
 
 export default function LeadFormModal({ isOpen, onClose }: LeadFormModalProps) {
-  const t = useT();
   const router = useRouter();
   const stepCount = t.leadForm.steps.length;
   const FINAL_STEP_INDEX = stepCount - 1;

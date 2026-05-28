@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 import { MapPin, ShoppingBag, Car, Briefcase, Building2, Compass } from "lucide-react";
-import { useT } from "../_i18n/LanguageContext";
+import { t } from "../_i18n/t";
 
 const itemIcons = [ShoppingBag, Car, Briefcase, Building2];
 const itemImages = ["padaria.jpg", "shopping.jpg", "dutra.jpg", "centro.jpg"];
@@ -29,7 +29,6 @@ const itemVariants = {
 };
 
 export default function Location() {
-  const t = useT();
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
   const toggleAccordion = (index: number) => {

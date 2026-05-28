@@ -4,13 +4,12 @@ import { useEffect } from "react";
 import { motion } from "motion/react";
 import { MessageCircle } from "lucide-react";
 import Header from "./Header";
-import { useT } from "../_i18n/LanguageContext";
+import { t } from "../_i18n/t";
 import { pushClickWhatsApp } from "@/lib/analytics";
 
 const WHATSAPP_NUMBER = "5512974068058";
 
 export default function ThankYou() {
-  const t = useT();
   const whatsappMessage = encodeURIComponent(t.thankYou.whatsappMessage);
 
   useEffect(() => {

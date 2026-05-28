@@ -33,7 +33,10 @@ export default function WhatsAppButton() {
   if (isBrokerPage) return null;
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex items-center gap-3">
+    <div
+      className="fixed bottom-6 right-6 z-50 flex items-center gap-3"
+      style={{ minWidth: 56, minHeight: 56 }}
+    >
       <AnimatePresence>
         {showBubble && (
           <motion.div

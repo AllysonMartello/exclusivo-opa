@@ -1,24 +1,21 @@
-"use client";
-
+import Image from "next/image";
 import { Instagram, Youtube, MapPin, Phone } from "lucide-react";
-import { useT } from "../_i18n/LanguageContext";
+import { t } from "../_i18n/t";
 
 const quickLinkHrefs = ["#a-casa", "#experiencia", "#tour", "#contato"];
 
 export default function Footer() {
-  const t = useT();
   return (
     <footer className="bg-primary-1 text-white/80 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-2">
-            <img
+            <Image
               src="/assets/logo/logo-opa.svg"
               alt="OPA Imóveis"
               width={120}
               height={40}
               loading="lazy"
-              decoding="async"
               style={{ height: "40px", width: "auto" }}
               className="mb-6"
             />

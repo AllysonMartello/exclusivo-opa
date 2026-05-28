@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 import { Sofa, UtensilsCrossed, Bath, BedDouble, Info } from "lucide-react";
-import { useT } from "../_i18n/LanguageContext";
+import { t } from "../_i18n/t";
 
 const BASE = "/assets/sao-jose-dos-campos";
 const differentialIcons = [Sofa, UtensilsCrossed, Bath, BedDouble];
@@ -12,7 +12,6 @@ const differentialIcons = [Sofa, UtensilsCrossed, Bath, BedDouble];
 type View = "today" | "furnished";
 
 export default function TheHouse() {
-  const t = useT();
   const [view, setView] = useState<View>("today");
 
   return (

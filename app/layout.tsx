@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { publicEnv } from "@/lib/env";
 import { DEFAULT_OG_IMAGE } from "@/lib/seo";
@@ -13,6 +14,13 @@ import WebVitalsTracker from "@/components/analytics/WebVitalsTracker";
 import DebugMode from "@/components/analytics/DebugMode";
 import CookieConsent from "@/components/layout/CookieConsent";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-sans-app",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(publicEnv.NEXT_PUBLIC_SITE_URL),
@@ -50,11 +58,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className="h-full antialiased">
-      <head>
-        <ConsentMode />
-      </head>
+    <html lang="pt-BR" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
+        <ConsentMode />
         <GTMNoScript />
         {children}
         <CookieConsent />

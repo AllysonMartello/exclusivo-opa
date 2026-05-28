@@ -1,8 +1,5 @@
-"use client";
-
 import Image from "next/image";
-import { motion } from "motion/react";
-import { useT } from "../_i18n/LanguageContext";
+import { t } from "../_i18n/t";
 
 const BASE = "/assets/sao-jose-dos-campos/carrossel";
 const TOTAL = 15;
@@ -13,7 +10,6 @@ const slides = Array.from({ length: TOTAL }, (_, i) => {
 });
 
 export default function Gallery() {
-  const t = useT();
   const loop = [...slides, ...slides];
 
   return (
@@ -23,23 +19,15 @@ export default function Gallery() {
       className="py-16 md:py-24 bg-bg-main overflow-hidden"
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 md:mb-14 text-center">
-        <motion.span
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-primary-2 uppercase tracking-widest text-xs font-bold mb-4 block"
-        >
+        <span className="reveal text-primary-2 uppercase tracking-widest text-xs font-bold mb-4 block">
           {t.gallery.eyebrow}
-        </motion.span>
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-          className="text-3xl sm:text-4xl md:text-5xl font-serif text-primary-1 leading-tight"
+        </span>
+        <h2
+          className="reveal text-3xl sm:text-4xl md:text-5xl font-serif text-primary-1 leading-tight"
+          style={{ animationDelay: "0.1s" }}
         >
           {t.gallery.title}
-        </motion.h2>
+        </h2>
       </div>
 
       <div className="marquee relative w-full overflow-hidden">
