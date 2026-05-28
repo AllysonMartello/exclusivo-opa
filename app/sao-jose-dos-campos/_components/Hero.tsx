@@ -11,7 +11,7 @@ export default function Hero() {
   const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(t.leadForm.whatsappMessage)}`;
 
   return (
-    <section className="relative min-h-[100dvh] w-full flex items-end justify-start overflow-hidden pb-16 md:pb-24 lg:pb-32 bg-primary-1">
+    <section className="relative min-h-[100dvh] w-full flex items-end justify-start overflow-hidden pt-28 md:pt-36 pb-16 md:pb-24 lg:pb-32 bg-primary-1">
       <div className="absolute inset-0 z-0">
         <Image
           src={`${BASE}/hero-mobile.jpg`}
