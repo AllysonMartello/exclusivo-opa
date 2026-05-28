@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion } from "motion/react";
 import { Check } from "lucide-react";
 import { useT } from "../_i18n/LanguageContext";
@@ -32,14 +33,13 @@ export default function ForWho() {
           transition={{ duration: 0.8 }}
           className="relative aspect-[16/9] sm:aspect-[16/7] md:aspect-[16/6] rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-xl bg-bg-alt mb-12 md:mb-20"
         >
-          <img
+          <Image
             src="/assets/sao-jose-dos-campos/pra-quem-entende.jpg"
             alt="Apartamento na Rua da Alegria, Jardim Satélite"
-            width={1920}
-            height={1080}
+            fill
+            sizes="(max-width: 1280px) 100vw, 1280px"
             loading="lazy"
-            decoding="async"
-            className="absolute inset-0 image-cover"
+            className="image-cover"
           />
         </motion.div>
 

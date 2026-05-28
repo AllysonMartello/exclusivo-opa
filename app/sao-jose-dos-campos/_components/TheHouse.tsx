@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 import { Sofa, UtensilsCrossed, Bath, BedDouble, Info } from "lucide-react";
 import { useT } from "../_i18n/LanguageContext";
@@ -99,20 +100,23 @@ export default function TheHouse() {
               >
                 <div className="relative aspect-[4/3] overflow-hidden bg-bg-alt">
                   <AnimatePresence mode="wait" initial={false}>
-                    <motion.img
+                    <motion.div
                       key={`${index}-${view}`}
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       transition={{ duration: 0.35 }}
-                      src={`${src}.jpg`}
-                      alt={item.alt}
-                      width={1280}
-                      height={960}
-                      loading="lazy"
-                      decoding="async"
-                      className="absolute inset-0 image-cover"
-                    />
+                      className="absolute inset-0"
+                    >
+                      <Image
+                        src={`${src}.jpg`}
+                        alt={item.alt}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        loading="lazy"
+                        className="image-cover"
+                      />
+                    </motion.div>
                   </AnimatePresence>
 
                   <span

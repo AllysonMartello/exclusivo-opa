@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "motion/react";
 import { useT } from "../_i18n/LanguageContext";
 
@@ -49,16 +50,15 @@ export default function Gallery() {
           {loop.map((slide, i) => (
             <li
               key={`${slide.src}-${i}`}
-              className="shrink-0 w-[260px] sm:w-[320px] md:w-[400px] lg:w-[460px] aspect-[4/3] rounded-2xl md:rounded-[2rem] overflow-hidden shadow-sm bg-bg-alt"
+              className="relative shrink-0 w-[260px] sm:w-[320px] md:w-[400px] lg:w-[460px] aspect-[4/3] rounded-2xl md:rounded-[2rem] overflow-hidden shadow-sm bg-bg-alt"
               aria-hidden={i >= slides.length ? "true" : undefined}
             >
-              <img
+              <Image
                 src={`${BASE}/${slide.src}`}
                 alt={i >= slides.length ? "" : slide.alt}
-                width={1280}
-                height={960}
+                fill
+                sizes="(max-width: 640px) 260px, (max-width: 768px) 320px, (max-width: 1024px) 400px, 460px"
                 loading="lazy"
-                decoding="async"
                 draggable={false}
                 className="image-cover"
               />

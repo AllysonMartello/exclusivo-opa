@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import { useT } from "../_i18n/LanguageContext";
 
@@ -13,22 +14,24 @@ export default function Hero() {
   return (
     <section className="relative min-h-[100dvh] w-full flex items-end justify-start overflow-hidden pb-16 md:pb-24 lg:pb-32 bg-primary-1">
       <div className="absolute inset-0 z-0">
-        <picture className="block absolute inset-0 w-full h-full">
-          <source
-            type="image/jpeg"
-            media="(max-width: 767px)"
-            srcSet={`${BASE}/hero-mobile.jpg`}
-          />
-          <img
-            src={`${BASE}/hero-desktop.jpg`}
-            alt={t.hero.imageAlt}
-            width={1920}
-            height={1080}
-            fetchPriority="high"
-            decoding="async"
-            className="image-cover"
-          />
-        </picture>
+        <Image
+          src={`${BASE}/hero-mobile.jpg`}
+          alt={t.hero.imageAlt}
+          fill
+          priority
+          fetchPriority="high"
+          sizes="(max-width: 767px) 100vw, 0px"
+          className="image-cover md:hidden"
+        />
+        <Image
+          src={`${BASE}/hero-desktop.jpg`}
+          alt={t.hero.imageAlt}
+          fill
+          priority
+          fetchPriority="high"
+          sizes="(min-width: 768px) 100vw, 0px"
+          className="image-cover hidden md:block"
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-black/20" />
       </div>
 

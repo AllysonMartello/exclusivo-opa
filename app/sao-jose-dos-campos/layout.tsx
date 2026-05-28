@@ -1,7 +1,23 @@
 import type { Metadata } from "next";
+import { Inter, Poppins } from "next/font/google";
 import "./sjc.css";
 import { LanguageProvider } from "./_i18n/LanguageContext";
 import { buildMetadata } from "@/lib/seo";
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+  variable: "--font-sjc-sans",
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
+  variable: "--font-sjc-serif",
+});
 
 export const metadata: Metadata = {
   ...buildMetadata({
@@ -50,12 +66,12 @@ const jsonLd = {
 
 export default function SJCLayout({ children }: { children: React.ReactNode }) {
   return (
-    <>
+    <div className={`${inter.variable} ${poppins.variable}`}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <LanguageProvider>{children}</LanguageProvider>
-    </>
+    </div>
   );
 }

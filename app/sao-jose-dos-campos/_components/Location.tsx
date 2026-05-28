@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 import { MapPin, ShoppingBag, Car, Briefcase, Building2, Compass } from "lucide-react";
 import { useT } from "../_i18n/LanguageContext";
@@ -118,13 +119,12 @@ export default function Location() {
                             <div className="pl-12 md:pl-14 pr-2 space-y-3">
                               {imageSrc && (
                                 <figure className="relative overflow-hidden rounded-xl aspect-[16/9] bg-bg-alt">
-                                  <img
+                                  <Image
                                     src={`/assets/sao-jose-dos-campos/${imageSrc}`}
                                     alt={item.label}
+                                    fill
+                                    sizes="(max-width: 1024px) 100vw, 40vw"
                                     loading="lazy"
-                                    decoding="async"
-                                    width={1280}
-                                    height={720}
                                     className="image-cover"
                                   />
                                 </figure>
@@ -161,17 +161,14 @@ export default function Location() {
               aria-label={t.location.openInMaps ?? "Abrir no Google Maps"}
               className="absolute inset-0 group"
             >
-              <picture className="block absolute inset-0 w-full h-full">
-                <img
-                  src="/assets/sao-jose-dos-campos/mapa-capa.jpg"
-                  alt={t.location.mapAlt ?? "Mapa do Jardim Satélite"}
-                  width={1280}
-                  height={1600}
-                  loading="lazy"
-                  decoding="async"
-                  className="image-cover transition-transform duration-700 group-hover:scale-[1.02]"
-                />
-              </picture>
+              <Image
+                src="/assets/sao-jose-dos-campos/mapa-capa.jpg"
+                alt={t.location.mapAlt ?? "Mapa do Jardim Satélite"}
+                fill
+                sizes="(max-width: 1024px) 100vw, 60vw"
+                loading="lazy"
+                className="image-cover transition-transform duration-700 group-hover:scale-[1.02]"
+              />
               <span className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-white text-primary-1 px-6 py-3 rounded-full font-bold text-sm shadow-xl group-hover:scale-105 transition-transform z-30">
                 {t.location.openInMaps ?? "Abrir no Google Maps"}
               </span>
