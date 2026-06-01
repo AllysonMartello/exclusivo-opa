@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Costeira Pacuíba | OPA Agência Imobiliária</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --azul: #166188;
+    --azul-claro: #e8f4f8;
+    --cinza-texto: #2d2d2d;
+    --cinza-leve: #6b7280;
+    --cinza-linha: #e5e7eb;
+    --branco: #ffffff;
+    --fundo: #fafbfc;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    color: var(--cinza-texto);
+    background: var(--branco);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.7;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('https://pink-dinosaur-332616.hostingersite.com/wp-content/uploads/2026/06/slide-1-scaled.jpeg');
+    background-size: cover;
+    background-position: center 30%;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(8, 28, 42, 0.92) 0%,
+      rgba(8, 28, 42, 0.55) 50%,
+      rgba(8, 28, 42, 0.35) 100%
+    );
+  }
+
+  .hero-logo {
+    position: absolute;
+    top: 52px;
+    left: 80px;
+    z-index: 2;
+  }
+
+  .hero-logo img {
+    height: 36px;
+    filter: brightness(0) invert(1);
+    opacity: 0.85;
+  }
+
+  .hero-badge {
+    position: absolute;
+    top: 58px;
+    right: 80px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.3);
+    z-index: 2;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 80px 80px;
+    max-width: 1000px;
+  }
+
+  .hero-content h1 {
+    font-size: 88px;
+    font-weight: 300;
+    letter-spacing: -4px;
+    line-height: 0.95;
+    color: var(--branco);
+    margin-bottom: 28px;
+  }
+
+  .hero-sub {
+    font-size: 20px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 10px;
+  }
+
+  .hero-specs {
+    font-size: 13px;
+    color: rgba(255,255,255,0.38);
+    letter-spacing: 2px;
+    margin-bottom: 56px;
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 0;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    padding-top: 36px;
+    max-width: 700px;
+  }
+
+  .hero-stat {
+    flex: 1;
+    padding-right: 32px;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    margin-right: 32px;
+  }
+
+  .hero-stat:last-child { border-right: none; margin-right: 0; padding-right: 0; }
+
+  .hero-stat-num {
+    font-size: 30px;
+    font-weight: 300;
+    color: var(--branco);
+    letter-spacing: -0.5px;
+    line-height: 1;
+    margin-bottom: 5px;
+  }
+
+  .hero-stat-label {
+    font-size: 10px;
+    color: rgba(255,255,255,0.38);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  /* ── TIPOGRAFIA COMUM ── */
+  .s-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--azul);
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .s-h2 {
+    font-size: 42px;
+    font-weight: 300;
+    letter-spacing: -0.8px;
+    line-height: 1.15;
+    color: var(--cinza-texto);
+    margin-bottom: 32px;
+  }
+
+  .s-p {
+    font-size: 17px;
+    line-height: 1.85;
+    color: var(--cinza-texto);
+    margin-bottom: 20px;
+  }
+
+  /* ── DIVISOR ── */
+  .divider {
+    width: 48px;
+    height: 2px;
+    background: var(--azul);
+    opacity: 0.2;
+    margin: 80px auto;
+  }
+
+  /* ── SEÇÕES SPLIT: texto | foto ── */
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 640px;
+  }
+
+  .split-content {
+    padding: 100px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .split-image { overflow: hidden; }
+
+  .split-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ── FICHA TÉCNICA ── */
+  .secao-ficha {
+    background: var(--fundo);
+    padding: 100px 80px 0;
+  }
+
+  .ficha-inner { max-width: 1280px; margin: 0 auto; }
+
+  .ficha-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 48px;
+    border-top: 1px solid var(--cinza-linha);
+  }
+
+  .ficha-col {
+    padding: 48px 60px 48px 0;
+    border-right: 1px solid var(--cinza-linha);
+  }
+
+  .ficha-col:last-child {
+    border-right: none;
+    padding-left: 60px;
+    padding-right: 0;
+  }
+
+  .lote-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--azul);
+    margin-bottom: 28px;
+    display: block;
+  }
+
+  .f-row {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--cinza-linha);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 24px;
+  }
+
+  .f-label { font-size: 13px; color: var(--cinza-leve); }
+  .f-valor { font-size: 14px; font-weight: 500; color: var(--cinza-texto); text-align: right; }
+
+  .f-destaque {
+    margin-top: 24px;
+    background: var(--azul-claro);
+    padding: 20px 24px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .f-destaque .f-label { color: var(--azul); font-weight: 500; }
+  .f-destaque .f-valor { font-size: 17px; font-weight: 700; color: var(--azul); }
+
+  /* ── BARRA TOTAIS ── */
+  .totais-bar {
+    background: var(--azul);
+    padding: 36px 80px;
+  }
+
+  .totais-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .t-item { display: flex; flex-direction: column; gap: 5px; }
+
+  .t-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .t-valor {
+    font-size: 26px;
+    font-weight: 300;
+    color: var(--branco);
+    letter-spacing: -0.5px;
+  }
+
+  .t-sep { width: 1px; height: 40px; background: rgba(255,255,255,0.12); flex-shrink: 0; }
+
+  /* ── ACOMODAÇÕES ── */
+  .acom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .acom-card {
+    background: var(--fundo);
+    border: 1px solid var(--cinza-linha);
+    padding: 18px 22px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .acom-nome { font-size: 13px; font-weight: 500; color: var(--cinza-texto); }
+  .acom-val { font-size: 22px; font-weight: 600; color: var(--azul); white-space: nowrap; }
+
+  .acom-val.texto {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--azul);
+    text-align: right;
+    line-height: 1.5;
+  }
+
+  .acom-sub { font-size: 11px; font-weight: 400; color: var(--cinza-leve); display: block; }
+
+  /* ── DIFERENCIAIS ── */
+  .secao-dif {
+    background: var(--azul);
+    color: var(--branco);
+  }
+
+  .dif-content {
+    padding: 100px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .dif-content .s-label { color: rgba(255,255,255,0.4); }
+  .dif-content .s-h2   { color: var(--branco); }
+
+  .dif-list { display: flex; flex-direction: column; }
+
+  .dif-row {
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .dif-row:first-child { border-top: 1px solid rgba(255,255,255,0.1); }
+  .dif-titulo { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.48); padding-top: 2px; }
+  .dif-texto  { font-size: 15px; line-height: 1.75; color: rgba(255,255,255,0.8); }
+
+  /* ── GALERIA ── */
+  .secao-galeria { background: var(--cinza-texto); }
+
+  .gal-header {
+    padding: 64px 80px 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .gal-header .s-label { color: rgba(255,255,255,0.3); }
+
+  .gal-header h2 {
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--branco);
+    letter-spacing: -0.5px;
+  }
+
+  .gal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 420px);
+    gap: 3px;
+    padding: 3px;
+  }
+
+  .gal-item { overflow: hidden; }
+
+  .gal-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+  }
+
+  .gal-item:hover img { transform: scale(1.04); }
+
+  /* ── TERRENO ── */
+  .secao-terreno { background: var(--fundo); }
+
+  .terreno-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    padding: 100px 80px 60px;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .terreno-texto p {
+    font-size: 17px;
+    line-height: 1.85;
+    color: var(--cinza-texto);
+    margin-bottom: 16px;
+  }
+
+  .terreno-stats { display: flex; flex-direction: column; justify-content: center; }
+
+  .t-s-row {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--cinza-linha);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .t-s-row:first-child { border-top: 1px solid var(--cinza-linha); }
+  .t-s-label { font-size: 13px; color: var(--cinza-leve); }
+  .t-s-valor { font-size: 18px; font-weight: 600; color: var(--azul); }
+
+  .docs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3px;
+    padding: 3px;
+    background: #d0d4d9;
+    margin: 0 0 0 0;
+  }
+
+  .doc-item {
+    display: flex;
+    flex-direction: column;
+    background: var(--branco);
+    overflow: hidden;
+    min-height: 480px;
+  }
+
+  .doc-label {
+    padding: 12px 18px;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--azul);
+    border-bottom: 1px solid var(--cinza-linha);
+    flex-shrink: 0;
+  }
+
+  .doc-item img {
+    flex: 1;
+    width: 100%;
+    object-fit: contain;
+    padding: 20px;
+    background: #f5f6f7;
+  }
+
+  /* ── RODAPÉ ── */
+  .rodape {
+    background: var(--azul);
+    color: var(--branco);
+    padding: 80px;
+    text-align: center;
+  }
+
+  .rodape img {
+    height: 34px;
+    filter: brightness(0) invert(1);
+    opacity: 0.75;
+    margin-bottom: 48px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .rodape h2 {
+    font-size: 32px;
+    font-weight: 300;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+
+  .rodape p { font-size: 14px; opacity: 0.45; }
+
+  .rodape-creci {
+    margin-top: 52px;
+    font-size: 10px;
+    opacity: 0.25;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+  }
+
+  /* ── RESPONSIVO (MOBILE/TABLET) ── */
+  @media (max-width: 992px) {
+    .hero-content h1 { font-size: 64px; }
+    .split { grid-template-columns: 1fr; min-height: auto; }
+    .split-image { height: 400px; }
+    .ficha-cols { grid-template-columns: 1fr; }
+    .ficha-col { padding: 40px 0; border-right: none; border-bottom: 1px solid var(--cinza-linha); }
+    .ficha-col:last-child { padding: 40px 0 0 0; border-bottom: none; }
+    .totais-inner { flex-direction: column; align-items: flex-start; gap: 24px; }
+    .t-sep { width: 100%; height: 1px; }
+    .terreno-top { grid-template-columns: 1fr; gap: 40px; padding: 60px 40px; }
+    .docs-grid { grid-template-columns: 1fr 1fr; }
+    .gal-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 768px) {
+    .hero-logo { left: 24px; top: 24px; }
+    .hero-badge { right: 24px; top: 30px; font-size: 8px; text-align: right; width: 120px; line-height: 1.4; }
+    .hero-content { padding: 0 24px 40px; }
+    .hero-content h1 { font-size: 48px; margin-bottom: 16px; }
+    .hero-sub { font-size: 16px; }
+    .hero-specs { font-size: 10px; margin-bottom: 32px; line-height: 1.5; }
+    
+    .hero-stats { flex-direction: column; gap: 16px; padding-top: 24px; border-top: none; }
+    .hero-stat { border-right: none; padding-right: 0; margin-right: 0; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 16px; }
+    .hero-stat:last-child { border-bottom: none; padding-bottom: 0; }
+
+    .split-content { padding: 60px 24px; }
+    .split-image { height: 300px; }
+    .secao-ficha { padding: 60px 24px 0; }
+    .totais-bar { padding: 40px 24px; }
+    .dif-content { padding: 60px 24px; }
+    .gal-header { padding: 60px 24px 30px; }
+    .terreno-top { padding: 60px 24px; }
+    .rodape { padding: 60px 24px; }
+
+    .s-h2 { font-size: 32px; margin-bottom: 24px; }
+    
+    .acom-grid { grid-template-columns: 1fr; }
+    .dif-row { grid-template-columns: 1fr; gap: 8px; padding: 20px 0; }
+    .dif-titulo { margin-bottom: 4px; }
+
+    .gal-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+    .gal-item { height: 320px; }
+
+    .docs-grid { grid-template-columns: 1fr; }
+    .doc-item { min-height: 320px; }
+    .f-row { flex-direction: column; gap: 4px; align-items: flex-start; }
+    .f-valor { text-align: left; }
+    .f-destaque { flex-direction: column; align-items: flex-start; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-logo">
+    <img src="https://exclusivo.opailhabela.com.br/assets/logo/logo-opa.svg" alt="OPA Agência Imobiliária">
+  </div>
+  <span class="hero-badge">Material exclusivo para corretores parceiros</span>
+
+  <div class="hero-content">
+    <h1>Costeira<br>Pacuíba</h1>
+    <p class="hero-sub">Propriedade exclusiva no norte de Ilhabela</p>
+    <p class="hero-specs">7 SUÍTES &nbsp;&middot;&nbsp; ~1.000 M² CONSTRUÍDOS &nbsp;&middot;&nbsp; 18.187 M² DE TERRENO &nbsp;&middot;&nbsp; ACESSO DIRETO AO MAR</p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">7</div>
+        <div class="hero-stat-label">Suítes</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">~1.000 m²</div>
+        <div class="hero-stat-label">Construídos</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">18.187 m²</div>
+        <div class="hero-stat-label">Área total</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">2 lotes</div>
+        <div class="hero-stat-label">Incluídos na venda</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     01 · RESUMO GERAL
+══════════════════════════════════════════ -->
+<section class="split">
+  <div class="split-content">
+    <span class="s-label">01</span>
+    <h2 class="s-h2">Resumo geral</h2>
+    <p class="s-p">Uma das propriedades costeiras mais imponentes e exclusivas de Ilhabela, localizada no Norte da Ilha (Pacuíba). Arquitetura térrea que une o rústico ao sofisticado, com total privacidade, vista panorâmica definitiva para o mar e acesso direto ao oceano.</p>
+    <p class="s-p">A venda engloba <strong>duas inscrições imobiliárias distintas</strong>: o complexo residencial principal à beira-mar e um enorme terreno preservado do outro lado da avenida — garantindo vista definitiva, privacidade total e potencial para novos projetos.</p>
+  </div>
+  <div class="split-image">
+    <img src="https://pink-dinosaur-332616.hostingersite.com/wp-content/uploads/2026/06/slide-2-scaled.jpeg" alt="Fachada Costeira Pacuíba">
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     02 · FICHA TÉCNICA
+══════════════════════════════════════════ -->
+<section class="secao-ficha">
+  <div class="ficha-inner">
+    <span class="s-label">02</span>
+    <h2 class="s-h2">Ficha técnica</h2>
+    <div class="ficha-cols">
+      <div class="ficha-col">
+        <span class="lote-label">Lote 1 &middot; Complexo Residencial (Beira-Mar)</span>
+        <div class="f-row"><span class="f-label">Endereço</span><span class="f-valor">Av. Eng. Martinho Storace, 8307 – Pacuíba</span></div>
+        <div class="f-row"><span class="f-label">Inscrição Cadastral</span><span class="f-valor">1006.8307.0010</span></div>
+        <div class="f-row"><span class="f-label">Área Territorial</span><span class="f-valor">8.394,90 m²</span></div>
+        <div class="f-row"><span class="f-label">Área Construída</span><span class="f-valor">971,42 m² (~1.000 m²)</span></div>
+        <div class="f-row"><span class="f-label">IPTU Anual</span><span class="f-valor">R$ 53.019,51</span></div>
+        <div class="f-destaque"><span class="f-label">Tipo</span><span class="f-valor">Complexo residencial beira-mar</span></div>
+      </div>
+      <div class="ficha-col">
+        <span class="lote-label">Lote 2 &middot; Terreno de Preservação / Expansão</span>
+        <div class="f-row"><span class="f-label">Endereço</span><span class="f-valor">Av. Eng. Martinho Storace, 8282 – Pacuíba</span></div>
+        <div class="f-row"><span class="f-label">Inscrição Cadastral</span><span class="f-valor">1006.8282.0010</span></div>
+        <div class="f-row"><span class="f-label">Área Territorial</span><span class="f-valor">9.792,46 m²</span></div>
+        <div class="f-row"><span class="f-label">Benfeitorias</span><span class="f-valor">Sem benfeitorias averbadas</span></div>
+        <div class="f-row"><span class="f-label">IPTU Anual</span><span class="f-valor">R$ 4.803,13</span></div>
+        <div class="f-destaque"><span class="f-label">Tipo</span><span class="f-valor">Preservação e expansão futura</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="totais-bar">
+  <div class="totais-inner">
+    <div class="t-item"><span class="t-label">Área total de terreno</span><span class="t-valor">18.187,36 m²</span></div>
+    <div class="t-sep"></div>
+    <div class="t-item"><span class="t-label">Área construída</span><span class="t-valor">971,42 m²</span></div>
+    <div class="t-sep"></div>
+    <div class="t-item"><span class="t-label">IPTU anual total</span><span class="t-valor">R$ 57.822,64</span></div>
+    <div class="t-sep"></div>
+    <div class="t-item"><span class="t-label">Lotes na venda</span><span class="t-valor">2 inscrições</span></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     03 · ACOMODAÇÕES
+══════════════════════════════════════════ -->
+<section class="split">
+  <div class="split-image">
+    <img src="https://pink-dinosaur-332616.hostingersite.com/wp-content/uploads/2026/06/slide-4-scaled.jpeg" alt="Interior">
+  </div>
+  <div class="split-content">
+    <span class="s-label">03</span>
+    <h2 class="s-h2">Acomodações</h2>
+    <p class="s-p">Duas edificações independentes inseridas em um paisagismo impecável.</p>
+    <div class="acom-grid">
+      <div class="acom-card"><span class="acom-nome">Total de suítes</span><span class="acom-val">7</span></div>
+      <div class="acom-card"><span class="acom-nome">Banheiros</span><span class="acom-val">7</span></div>
+      <div class="acom-card">
+        <span class="acom-nome">Casa principal</span>
+        <span class="acom-val texto">5 suítes<span class="acom-sub">com closets e banheiras</span></span>
+      </div>
+      <div class="acom-card">
+        <span class="acom-nome">Casa de hóspedes</span>
+        <span class="acom-val texto">2 suítes<span class="acom-sub">totalmente independentes</span></span>
+      </div>
+      <div class="acom-card"><span class="acom-nome">Vagas de garagem</span><span class="acom-val">8</span></div>
+      <div class="acom-card"><span class="acom-nome">Casa de caseiro</span><span class="acom-val" style="font-size:14px;">Completa</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     04 · DIFERENCIAIS
+══════════════════════════════════════════ -->
+<section class="split secao-dif">
+  <div class="split-image">
+    <img src="https://pink-dinosaur-332616.hostingersite.com/wp-content/uploads/2026/06/pier-scaled.jpeg" alt="Píer privativo">
+  </div>
+  <div class="dif-content">
+    <span class="s-label">04</span>
+    <h2 class="s-h2">Diferenciais exclusivos</h2>
+    <div class="dif-list">
+      <div class="dif-row">
+        <span class="dif-titulo">Píer privativo</span>
+        <span class="dif-texto">Acesso direto ao mar com estrutura para atracação de embarcações e apoio a esportes náuticos.</span>
+      </div>
+      <div class="dif-row">
+        <span class="dif-titulo">Heliponto</span>
+        <span class="dif-texto">Área gramada preparada para pouso e decolagem de helicópteros com total segurança e discrição.</span>
+      </div>
+      <div class="dif-row">
+        <span class="dif-titulo">Lazer integrado</span>
+        <span class="dif-texto">Varanda gourmet com churrasqueira conectada às salas e ao deck da piscina. Ambientes amplos e integrados.</span>
+      </div>
+      <div class="dif-row" style="border-bottom:none;">
+        <span class="dif-titulo">Natureza integrada</span>
+        <span class="dif-texto">Pomar com diversas árvores frutíferas, cercado pela exuberante Mata Atlântica nativa.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     05 · GALERIA
+══════════════════════════════════════════ -->
+<section class="secao-galeria">
+  <div class="gal-header">
+    <span class="s-label">05</span>
+    <h2>Galeria</h2>
+  </div>
+  <div class="gal-grid">
+    <div class="gal-item"><img src="https://pink-dinosaur-332616.hostingersite.com/wp-content/uploads/2026/06/variada-01-scaled.jpeg" alt=""></div>
+    <div class="gal-item"><img src="https://pink-dinosaur-332616.hostingersite.com/wp-content/uploads/2026/06/variada-02-scaled.jpeg" alt=""></div>
+    <div class="gal-item"><img src="https://pink-dinosaur-332616.hostingersite.com/wp-content/uploads/2026/06/variada-03.jpeg" alt=""></div>
+    <div class="gal-item"><img src="https://pink-dinosaur-332616.hostingersite.com/wp-content/uploads/2026/06/variada-04-scaled.jpeg" alt=""></div>
+    <div class="gal-item"><img src="https://pink-dinosaur-332616.hostingersite.com/wp-content/uploads/2026/06/variada-05-scaled.jpeg" alt=""></div>
+    <div class="gal-item"><img src="https://pink-dinosaur-332616.hostingersite.com/wp-content/uploads/2026/06/variada-06-scaled.jpeg" alt=""></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     06 · TERRENO
+══════════════════════════════════════════ -->
+<section class="secao-terreno">
+  <div class="terreno-top">
+    <div class="terreno-texto">
+      <span class="s-label">06</span>
+      <h2 class="s-h2">Dois lotes.<br>Uma única oportunidade.</h2>
+      <p>A venda engloba duas inscrições imobiliárias distintas: o complexo residencial à beira-mar e o terreno de preservação do outro lado da avenida.</p>
+      <p>Juntos, garantem vista definitiva, privacidade total e potencial de expansão — uma combinação praticamente impossível de replicar na costa de Ilhabela.</p>
+    </div>
+    <div class="terreno-stats">
+      <div class="t-s-row"><span class="t-s-label">Lote 1 · Complexo residencial</span><span class="t-s-valor">8.394,90 m²</span></div>
+      <div class="t-s-row"><span class="t-s-label">Lote 2 · Terreno de preservação</span><span class="t-s-valor">9.792,46 m²</span></div>
+      <div class="t-s-row" style="border-bottom:none;"><span class="t-s-label">Área total combinada</span><span class="t-s-valor" style="font-size:24px;">18.187,36 m²</span></div>
+    </div>
+  </div>
+  <div class="docs-grid">
+    <div class="doc-item">
+      <div class="doc-label">Lote 1 &middot; Croqui Oficial – Prefeitura de Ilhabela</div>
+      <img src="https://pink-dinosaur-332616.hostingersite.com/wp-content/uploads/2026/06/terreno.jpeg" alt="Croqui Lote 1">
+    </div>
+    <div class="doc-item">
+      <div class="doc-label">Lote 2 &middot; Croqui Oficial – Prefeitura de Ilhabela</div>
+      <img src="https://pink-dinosaur-332616.hostingersite.com/wp-content/uploads/2026/06/terreno-2.jpeg" alt="Croqui Lote 2">
+    </div>
+    <div class="doc-item">
+      <div class="doc-label">Lote 1 &middot; IPTU 2026</div>
+      <img src="https://pink-dinosaur-332616.hostingersite.com/wp-content/uploads/2026/06/iptu-1.jpeg" alt="IPTU Lote 1">
+    </div>
+    <div class="doc-item">
+      <div class="doc-label">Lote 2 &middot; IPTU 2026</div>
+      <img src="https://pink-dinosaur-332616.hostingersite.com/wp-content/uploads/2026/06/iptu-2.jpeg" alt="IPTU Lote 2">
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════
+     RODAPÉ
+══════════════════════════════════════════ -->
+<section class="rodape">
+  <img src="https://exclusivo.opailhabela.com.br/assets/logo/logo-opa.svg" alt="OPA Agência Imobiliária">
+</section>
+
+</body>
+</html>
