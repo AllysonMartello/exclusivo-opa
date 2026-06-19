@@ -10,7 +10,30 @@
       "Bash(curl -s -X POST http://localhost:3001/api/lead -H \"Content-Type: application/json\" -d '{\"site\":\"cadastro-imovel\",\"nome\":\"Teste OPA\",\"telefone\":\"\\(12\\) 99999-0000\",\"email\":\"teste@opa.com\",\"answers\":{\"Qual o tipo do imóvel?\":\"Casa, Casa em Condomínio\",\"Quantos quartos no total?\":\"4\"}}')",
       "Bash(git commit -m ' *)",
       "Bash(npx next *)",
-      "PowerShell(Copy-Item -Path \"app\\\\siriuba-2\" -Destination \"app\\\\teste-lancamento\" -Recurse -Force)"
+      "PowerShell(Copy-Item -Path \"app\\\\siriuba-2\" -Destination \"app\\\\teste-lancamento\" -Recurse -Force)",
+      "Bash(git fetch *)",
+      "Bash(git rev-list *)",
+      "Bash(git pull *)",
+      "Bash(break)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/midia-kit-marco)",
+      "Bash(taskkill /PID 30040 /F)",
+      "PowerShell(Get-NetTCPConnection -LocalPort 3000,3001 -State Listen -ErrorAction SilentlyContinue | Select-Object -ExpandProperty OwningProcess -Unique | ForEach-Object { Write-Output \"Stopping PID $_\"; Stop-Process -Id $_ -Force -ErrorAction SilentlyContinue }; Write-Output \"done\")",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code} em %{time_total}s\\\\n\" http://localhost:3000/midia-kit-marco)",
+      "Bash(curl -s http://localhost:3000/midia-kit-marco)",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" http://localhost:3000/midia-kit-marco)",
+      "Bash(curl -s -o /dev/null -w \"Página: HTTP %{http_code}\\\\n\" http://localhost:3000/midia-kit-marco)",
+      "Bash(curl -s -o /dev/null -w \"Imagem: HTTP %{http_code}  \\(%{size_download} bytes\\)\\\\n\" http://localhost:3000/midiakit/marco-foto.jpg)",
+      "Bash(curl -s -o /dev/null -w \"QR png: HTTP %{http_code}  \\(%{size_download} bytes\\)\\\\n\" \"http://localhost:3000/midiakit/qr-code-marco-midiakit-ong.png\")",
+      "Bash(python3 -c ' *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code} \\(%{size_download} bytes\\)\\\\n\" \"http://localhost:3000/midiakit/qr-code-marco-midiakit-ong.png\")",
+      "Bash(sed -i 's/data-app=\"midia-kit-marco\"/data-app=\"midia-kit-opa\"/g' app/midia-kit-opa/midia-kit.css)",
+      "Bash(sed -i 's/data-app=\"midia-kit-marco\"/data-app=\"midia-kit-opa\"/g' app/midia-kit-opa/page.tsx)",
+      "Bash(curl -s -o /dev/null -w \"midia-kit-opa:   HTTP %{http_code} em %{time_total}s\\\\n\" http://localhost:3000/midia-kit-opa)",
+      "Bash(curl -s -o /dev/null -w \"midia-kit-marco: HTTP %{http_code} em %{time_total}s\\\\n\" http://localhost:3000/midia-kit-marco)",
+      "Bash(curl -s -o /dev/null -w \"midia-kit-opa: HTTP %{http_code} em %{time_total}s\\\\n\" http://localhost:3000/midia-kit-opa)",
+      "Bash(curl -s -o /dev/null -w \"midia-kit-opa: HTTP %{http_code}\\\\n\" http://localhost:3000/midia-kit-opa)",
+      "Bash(curl -s -o /dev/null -w \"Página: HTTP %{http_code}\\\\n\" http://localhost:3000/midia-kit-opa)",
+      "Bash(curl -s -o /dev/null -w \"Vídeo:  HTTP %{http_code}  \\(%{size_download} bytes, %{content_type}\\)\\\\n\" \"http://localhost:3000/midiakit/fundo-video-opa.mp4\")"
     ]
   }
 }
