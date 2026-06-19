@@ -7,15 +7,9 @@ export default function MidiaKitMarcoPage() {
           PÁGINA 1 · CAPA
       ────────────────────────────── */}
       <section className="hero">
+        <img className="hero-photo" src="/midiakit/barcos-e-velas-ilhabela-opa.webp" alt="" aria-hidden="true" />
         <div className="hero-bg" />
         <div className="hero-overlay" />
-
-        <div className="hero-logo">
-          <img src={LOGO_OPA} alt="OPA Imóveis Ilhabela" />
-        </div>
-        <span className="hero-badge">Mídia Kit · 2026 · Versão Executiva</span>
-
-        <div className="hero-monogram">MH</div>
 
         <div className="hero-content">
           <span className="hero-eyebrow">Mídia Kit · 2026</span>
@@ -61,10 +55,7 @@ export default function MidiaKitMarcoPage() {
           </p>
         </div>
         <div className="split-image">
-          <div className="split-image-placeholder">
-            <span className="ph-initials">MH</span>
-            <span className="ph-label">Marco Henrique · OPA Imóveis</span>
-          </div>
+          <img src="/midiakit/marco-foto.webp" alt="Marco Henrique · OPA Imóveis Ilhabela" />
         </div>
       </section>
 
@@ -78,6 +69,10 @@ export default function MidiaKitMarcoPage() {
               Quem vem para Ilhabela quer uma vida sofisticada que não precise se anunciar. Tem
               entre 25 e 54 anos, vem de São Paulo, São José dos Campos e Campinas, e trata tempo
               como bem mais valioso.
+            </p>
+            <p className="s-p">
+              É o mesmo perfil que consome náutica, automóveis, relógios, arquitetura, hotelaria,
+              moda, gastronomia, aviação executiva e wellness.
             </p>
             <p className="s-p">
               Ilhabela tem um estilo de vida próprio. As marcas que se associam a ele se conectam a
@@ -172,6 +167,11 @@ export default function MidiaKitMarcoPage() {
               </div>
             </div>
           </div>
+
+          <p className="alcance-conclusao">
+            <strong>78% do público entre 25 e 54 anos.</strong> As mesmas origens dos compradores de
+            alto padrão em Ilhabela. A audiência online e o público real coincidem.
+          </p>
         </div>
       </section>
 
@@ -277,21 +277,7 @@ export default function MidiaKitMarcoPage() {
 
         <div className="rodape-qr">
           <div className="qr-box">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="2" y="2" width="18" height="18" rx="1" stroke="white" strokeWidth="2" fill="none" />
-              <rect x="7" y="7" width="8" height="8" fill="white" />
-              <rect x="28" y="2" width="18" height="18" rx="1" stroke="white" strokeWidth="2" fill="none" />
-              <rect x="33" y="7" width="8" height="8" fill="white" />
-              <rect x="2" y="28" width="18" height="18" rx="1" stroke="white" strokeWidth="2" fill="none" />
-              <rect x="7" y="33" width="8" height="8" fill="white" />
-              <rect x="28" y="28" width="4" height="4" fill="white" />
-              <rect x="34" y="28" width="4" height="4" fill="white" />
-              <rect x="40" y="28" width="6" height="4" fill="white" />
-              <rect x="28" y="34" width="4" height="4" fill="white" />
-              <rect x="34" y="34" width="4" height="10" fill="white" />
-              <rect x="40" y="36" width="6" height="4" fill="white" />
-              <rect x="28" y="40" width="4" height="6" fill="white" />
-            </svg>
+            <img src="/midiakit/qr-code-marco-midiakit-ong.png" alt="QR Code para agendamento com Marco Henrique" />
           </div>
           <span className="qr-label">Agendamento</span>
         </div>
