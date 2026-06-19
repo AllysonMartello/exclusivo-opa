@@ -18,7 +18,7 @@ export default function Hero() {
 
   const handleCtaClick = (e: React.MouseEvent) => {
     e.preventDefault();
-    document.getElementById("contato")?.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("composicao")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
