@@ -131,35 +131,36 @@ export default function TechnicalSpecs() {
                   </motion.div>
                 ))}
               </div>
-
-              {/* Highlighted Price Card */}
-              <div className="flex justify-center">
-                {[specs[priceIndex]].map((spec) => (
-                  <motion.div 
-                    key="price-card"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.1, duration: 0.4 }}
-                    className="flex flex-col items-center text-center p-8 sm:p-10 md:p-14 rounded-[2rem] md:rounded-[3rem] bg-white text-primary-1 shadow-[0_32px_64px_-15px_rgba(0,0,0,0.3)] border-4 border-primary-2 max-w-lg w-full"
-                  >
-                    <div className="text-primary-2 mb-8 bg-primary-2/10 p-5 rounded-full">
-                      {spec.icon}
-                    </div>
-                    <h4 className="text-primary-1/80 text-sm md:text-base uppercase tracking-[0.4em] font-bold mb-4">{spec.label}</h4>
-                    <p className="text-5xl md:text-6xl font-serif font-bold text-primary-1 leading-tight tracking-tight">
-                      {spec.value}
-                    </p>
-                    <div className="mt-8 pt-8 border-t border-primary-1/10 w-full">
-                      <span className="text-xs md:text-sm text-primary-1/70 uppercase tracking-[0.2em] font-bold">
-                        {t.technicalSpecs.priceFooter}
-                      </span>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
             </motion.div>
           )}
         </AnimatePresence>
+
+        {/* Highlighted Price Card - Always Visible */}
+        <div className="flex justify-center mt-12 md:mt-16">
+          {[specs[priceIndex]].map((spec) => (
+            <motion.div 
+              key="price-card"
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1, duration: 0.4 }}
+              className="flex flex-col items-center text-center p-8 sm:p-10 md:p-14 rounded-[2rem] md:rounded-[3rem] bg-white text-primary-1 shadow-[0_32px_64px_-15px_rgba(0,0,0,0.3)] border-4 border-primary-2 max-w-lg w-full"
+            >
+              <div className="text-primary-2 mb-8 bg-primary-2/10 p-5 rounded-full">
+                {spec.icon}
+              </div>
+              <h4 className="text-primary-1/80 text-sm md:text-base uppercase tracking-[0.4em] font-bold mb-4">{spec.label}</h4>
+              <p className="text-5xl md:text-6xl font-serif font-bold text-primary-1 leading-tight tracking-tight">
+                {spec.value}
+              </p>
+              <div className="mt-8 pt-8 border-t border-primary-1/10 w-full">
+                <span className="text-xs md:text-sm text-primary-1/70 uppercase tracking-[0.2em] font-bold">
+                  {t.technicalSpecs.priceFooter}
+                </span>
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );
