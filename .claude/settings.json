@@ -33,7 +33,15 @@
       "Bash(curl -s -o /dev/null -w \"midia-kit-opa: HTTP %{http_code} em %{time_total}s\\\\n\" http://localhost:3000/midia-kit-opa)",
       "Bash(curl -s -o /dev/null -w \"midia-kit-opa: HTTP %{http_code}\\\\n\" http://localhost:3000/midia-kit-opa)",
       "Bash(curl -s -o /dev/null -w \"Página: HTTP %{http_code}\\\\n\" http://localhost:3000/midia-kit-opa)",
-      "Bash(curl -s -o /dev/null -w \"Vídeo:  HTTP %{http_code}  \\(%{size_download} bytes, %{content_type}\\)\\\\n\" \"http://localhost:3000/midiakit/fundo-video-opa.mp4\")"
+      "Bash(curl -s -o /dev/null -w \"Vídeo:  HTTP %{http_code}  \\(%{size_download} bytes, %{content_type}\\)\\\\n\" \"http://localhost:3000/midiakit/fundo-video-opa.mp4\")",
+      "Bash(head -339 app/engenho-CA006944/_i18n/translations.ts)",
+      "Bash(echo \"\")",
+      "Bash(echo '// O site é exibido em português em ambos os seletores de idioma.')",
+      "Bash(echo 'export const translations: Record<Lang, Dictionary> = { pt, en: pt };')",
+      "Bash(cp /tmp/translations_head.ts app/engenho-CA006944/_i18n/translations.ts)",
+      "Bash(cd \"c:/Users/allys/OneDrive/Documentos/exclusivo-opa\" && npx tsc --noEmit -p tsconfig.json 2>&1 | grep -i \"engenho-CA006944\" | head -40; echo \"=== tsc exit ===\"; npx tsc --noEmit -p tsconfig.json > /tmp/tsc_full.txt 2>&1; echo \"total errors: $\\(grep -c 'error TS' /tmp/tsc_full.txt\\)\")",
+      "Read(//tmp/**)",
+      "Bash(cd \"c:/Users/allys/OneDrive/Documentos/exclusivo-opa\" && echo \"=== Refs a /assets/engenho-CA006944 nos componentes \\(base names\\) ===\" && grep -rhoE '/assets/engenho-CA006944/[a-zA-Z0-9._-]+' app/engenho-CA006944/ | sed -E 's/-\\(desktop|mobile\\)\\(\\\\.\\(avif|jpg|webp\\)\\)?$//; s/\\\\.\\(avif|jpg|webp|mp3|svg|png\\)$//' | sort -u > /tmp/refs.txt && echo \"--- Referências encontradas ---\" && cat /tmp/refs.txt)"
     ]
   }
 }
