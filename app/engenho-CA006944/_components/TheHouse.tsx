@@ -1,8 +1,9 @@
 "use client";
 
+import { useState } from "react";
 import InteractiveBentoGallery, { MediaItemType } from "./ui/interactive-bento-gallery";
-import { UtensilsCrossed, Waves, Bath, Home, Sun, Wind, FileText, Anchor, Compass, Trees, Sofa } from "lucide-react";
-import { motion } from "motion/react";
+import { UtensilsCrossed, Waves, Bath, Home, Sun, Wind, FileText, Anchor, Compass, Trees, Sofa, ChevronDown, ChevronUp } from "lucide-react";
+import { motion, AnimatePresence } from "motion/react";
 import { useT } from "../_i18n/LanguageContext";
 
 const detailIcons = [
@@ -20,6 +21,8 @@ const mediaConfig: { url: string; span: string }[] = [
 
 export default function TheHouse() {
   const t = useT();
+  const [isExpanded, setIsExpanded] = useState(false);
+  const INITIAL_COUNT = 6;
 
   const mediaItems: MediaItemType[] = mediaConfig.map((cfg, i) => ({
     id: i,
@@ -46,27 +49,41 @@ export default function TheHouse() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {t.theHouse.details.map((text, index) => {
-              const Icon = detailIcons[index] ?? Home;
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "0px" }}
-                  transition={{ delay: index * 0.05, duration: 0.5, ease: [0.21, 0.47, 0.32, 0.98] }}
-                  className="relative bg-white/40 backdrop-blur-md p-5 rounded-2xl border border-white/60 hover:bg-white hover:shadow-md transition-all duration-300 flex items-center gap-4 group"
-                >
-                  <div className="flex-shrink-0 w-11 h-11 rounded-full bg-white shadow-sm flex items-center justify-center text-primary-2 group-hover:bg-primary-2 group-hover:text-white transition-all duration-300">
-                    <Icon size={20} strokeWidth={1.5} />
-                  </div>
-                  <p className="text-text-sec text-sm md:text-base leading-snug">
-                    {text}
-                  </p>
-                </motion.div>
-              );
-            })}
+            <AnimatePresence>
+              {(isExpanded ? t.theHouse.details : t.theHouse.details.slice(0, INITIAL_COUNT)).map((text, index) => {
+                const Icon = detailIcons[index] ?? Home;
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    transition={{ delay: (index % 6) * 0.05, duration: 0.3 }}
+                    className="relative bg-white/40 backdrop-blur-md p-5 rounded-2xl border border-white/60 hover:bg-white hover:shadow-md transition-all duration-300 flex items-center gap-4 group"
+                  >
+                    <div className="flex-shrink-0 w-11 h-11 rounded-full bg-white shadow-sm flex items-center justify-center text-primary-2 group-hover:bg-primary-2 group-hover:text-white transition-all duration-300">
+                      <Icon size={20} strokeWidth={1.5} />
+                    </div>
+                    <p className="text-text-sec text-sm md:text-base leading-snug">
+                      {text}
+                    </p>
+                  </motion.div>
+                );
+              })}
+            </AnimatePresence>
           </div>
+
+          {t.theHouse.details.length > INITIAL_COUNT && (
+            <div className="mt-8 md:mt-10 flex justify-center">
+              <button
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="flex items-center gap-2 px-6 py-3 bg-white border border-primary-2/20 text-primary-2 rounded-full font-medium hover:bg-primary-2 hover:text-white transition-colors duration-300 shadow-sm hover:shadow-md"
+              >
+                {isExpanded ? "Ver menos diferenciais" : `Ver todos os diferenciais (${t.theHouse.details.length})`}
+                {isExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+              </button>
+            </div>
+          )}
         </div>
       </div>
     </section>
