@@ -83,7 +83,7 @@ export default function VirtualTour() {
             ) : (
               <iframe
                 title={t.virtualTour.title}
-                src="https://my.matterport.com/show/?m=nNXRHwVvsxc&play=1"
+                src="https://my.matterport.com/show/?m=tL9pSrTiUNR&play=1"
                 allowFullScreen
                 allow="xr-spatial-tracking"
                 loading="lazy"
