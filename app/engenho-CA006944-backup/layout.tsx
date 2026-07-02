@@ -5,9 +5,9 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
   ...buildMetadata({
-    title: "Engenho D'Água — Casa pronta à beira do canal | OPA Ilhabela",
+    title: "Engenho D’Água — Casa de Alto Padrão à Venda em Ilhabela | OPA Imóveis",
     description:
-      "Casa terminada e mobiliada em Engenho D'Água, com píer náutico na praia da frente, restaurantes a caminhar e vila ao lado. Curadoria OPA Imóveis.",
+      "Casa exclusiva à beira-mar em Ilhabela, com vista para o canal e arquitetura premium. Curadoria OPA Imóveis. Agende uma visita.",
     path: "/engenho-CA006944",
     image: "/assets/engenho-CA006944/engenho-CA006944-fachada-frontal-entrada-vista-mar.jpg",
   }),

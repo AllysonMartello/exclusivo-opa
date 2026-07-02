@@ -1,90 +1,74 @@
 "use client";
-
-import { useState } from "react";
-import InteractiveBentoGallery, { MediaItemType } from "./ui/interactive-bento-gallery";
-import { UtensilsCrossed, Waves, Bath, Home, Sun, Wind, FileText, Anchor, Compass, Trees, Sofa, ChevronDown, ChevronUp } from "lucide-react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { useT } from "../_i18n/LanguageContext";
 
-const detailIcons = [
-  Waves, Trees, Compass, Anchor, Bath, Sofa, Home, UtensilsCrossed, Waves, Wind, Sofa, Home, Sun, FileText, Anchor
-];
-
-const mediaConfig: { url: string; span: string }[] = [
-  { url: "/assets/engenho-CA006944/engenho-CA006944-fachada-frontal-entrada-vista-mar", span: "col-span-2 row-span-2 sm:col-span-1 sm:row-span-2 md:col-span-2 md:row-span-2" },
-  { url: "/assets/engenho-CA006944/engenho-CA006944-sala-estar-cozinha-integrada-vista-mar", span: "col-span-2 row-span-2 sm:col-span-2 sm:row-span-2 md:col-span-2 md:row-span-2" },
-  { url: "/assets/engenho-CA006944/engenho-CA006944-varanda-piscina-vista-panoramica-mar", span: "col-span-2 row-span-2 sm:col-span-1 sm:row-span-2 md:col-span-2 md:row-span-2" },
-  { url: "/assets/engenho-CA006944/engenho-CA006944-cozinha-ilha-living-vista-mar", span: "col-span-2 row-span-2 sm:col-span-1 sm:row-span-2 md:col-span-2 md:row-span-2" },
-  { url: "/assets/engenho-CA006944/engenho-CA006944-suite-cama-tv-vista-mar-01", span: "col-span-2 row-span-2 sm:col-span-1 sm:row-span-2 md:col-span-2 md:row-span-2" },
-  { url: "/assets/engenho-CA006944/engenho-CA006944-varanda-vista-panoramica-mar-piscina", span: "col-span-2 row-span-2 sm:col-span-1 sm:row-span-2 md:col-span-2 md:row-span-2" },
+const houseImages = [
+  "/assets/engenho-CA006944/piscina-varanda-gourmet-desktop.jpg",
+  "/assets/engenho-CA006944/engenho-CA006944-sala-jantar-living-vista-panoramica-mar-desktop.jpg",
+  "/assets/engenho-CA006944/engenho-CA006944-cozinha-gourmet-ilha-sala-jantar-desktop.jpg",
+  "/assets/engenho-CA006944/engenho-CA006944-banheiro-banheira-ducha-acesso-externo-desktop.jpg",
+  "/assets/engenho-CA006944/engenho-CA006944-entrada-porta-pivotante-vista-coqueiros-desktop.jpg"
 ];
 
 export default function TheHouse() {
-  const t = useT();
-  const [isExpanded, setIsExpanded] = useState(false);
-  const INITIAL_COUNT = 6;
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const mediaItems: MediaItemType[] = mediaConfig.map((cfg, i) => ({
-    id: i,
-    type: "image",
-    title: t.theHouse.media[i].title,
-    desc: t.theHouse.media[i].desc,
-    url: cfg.url,
-    span: cfg.span,
-  }));
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % houseImages.length);
+    }, 4000); // Change image every 4 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <section id="a-casa" className="py-16 md:py-24 bg-bg-alt">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <InteractiveBentoGallery
-          mediaItems={mediaItems}
-          title={t.theHouse.galleryTitle}
-          description={t.theHouse.galleryDescription}
-        />
-
-        <div className="mt-20 md:mt-32 max-w-6xl mx-auto">
-          <div className="text-center mb-10 md:mb-16">
-            <span className="text-primary-2 uppercase tracking-widest text-xs font-bold mb-4 block">{t.theHouse.differentialsEyebrow}</span>
-            <h3 className="text-2xl sm:text-3xl md:text-4xl font-serif text-primary-1">{t.theHouse.differentialsTitle}</h3>
+    <section className="bg-white text-primary-1">
+      <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
+        <div className="flex items-center justify-center py-24 px-8 lg:px-16 xl:px-24">
+          <div className="max-w-xl w-full">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-4xl md:text-6xl font-serif mb-12 text-primary-1 tracking-tight"
+            >
+              Sobre a Casa
+            </motion.h2>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="space-y-8 text-lg md:text-xl text-text-sec leading-[1.8] font-light"
+            >
+              <p>A casa fecha o conjunto. Foi desenhada, construída, mobiliada e equipada para uma família entrar e começar a vida no mesmo dia. Não há obra para acompanhar. Não há projeto para aprovar. Não há marceneiro para esperar.</p>
+              <p>A arquitetura conversa com Ilhabela. Pedra, madeira, vidro, e a entrada de luz que vem do canal. Os espaços principais foram dimensionados para receber: cozinha aberta, sala em pé-direito alto, varanda contínua voltada para a água. Os dormitórios foram dimensionados para acolher.</p>
+              <p className="text-primary-1 font-medium">É uma casa de família, não um projeto de revista. Mas tem o cuidado de revista nos detalhes que importam.</p>
+            </motion.div>
           </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            <AnimatePresence>
-              {(isExpanded ? t.theHouse.details : t.theHouse.details.slice(0, INITIAL_COUNT)).map((text, index) => {
-                const Icon = detailIcons[index] ?? Home;
-                return (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.95 }}
-                    transition={{ delay: (index % 6) * 0.05, duration: 0.3 }}
-                    className="relative bg-white/40 backdrop-blur-md p-5 rounded-2xl border border-white/60 hover:bg-white hover:shadow-md transition-all duration-300 flex items-center gap-4 group"
-                  >
-                    <div className="flex-shrink-0 w-11 h-11 rounded-full bg-white shadow-sm flex items-center justify-center text-primary-2 group-hover:bg-primary-2 group-hover:text-white transition-all duration-300">
-                      <Icon size={20} strokeWidth={1.5} />
-                    </div>
-                    <p className="text-text-sec text-sm md:text-base leading-snug">
-                      {text}
-                    </p>
-                  </motion.div>
-                );
-              })}
-            </AnimatePresence>
-          </div>
-
-          {t.theHouse.details.length > INITIAL_COUNT && (
-            <div className="mt-8 md:mt-10 flex justify-center">
-              <button
-                onClick={() => setIsExpanded(!isExpanded)}
-                className="flex items-center gap-2 px-6 py-3 bg-white border border-primary-2/20 text-primary-2 rounded-full font-medium hover:bg-primary-2 hover:text-white transition-colors duration-300 shadow-sm hover:shadow-md"
-              >
-                {isExpanded ? "Ver menos diferenciais" : `Ver todos os diferenciais (${t.theHouse.details.length})`}
-                {isExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-              </button>
-            </div>
-          )}
         </div>
+        
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="relative w-full h-[50vh] lg:h-auto overflow-hidden bg-gray-100"
+        >
+          <AnimatePresence mode="popLayout">
+            <motion.img
+              key={currentImageIndex}
+              src={houseImages[currentImageIndex]}
+              alt="Imagens da Casa"
+              initial={{ opacity: 0, scale: 1.05 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1.5, ease: "easeInOut" }}
+              className="absolute inset-0 w-full h-full object-cover"
+              loading="lazy"
+            />
+          </AnimatePresence>
+        </motion.div>
       </div>
     </section>
   );

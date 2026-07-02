@@ -4,15 +4,17 @@ import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Header from "./_components/Header";
 import Hero from "./_components/Hero";
-import FichaResumida from "./_components/FichaResumida";
-import TheHouse from "./_components/TheHouse";
-import ALeitura from "./_components/ALeitura";
-import ImageAccordion from "./_components/ImageAccordion";
-import Galeria from "./_components/Galeria";
 import VirtualTour from "./_components/VirtualTour";
+import ZoomShowcase from "./_components/ZoomShowcase";
 import Location from "./_components/Location";
-import AEstrutura from "./_components/AEstrutura";
-import AConversa from "./_components/AConversa";
+import TheHouse from "./_components/TheHouse";
+import Experience from "./_components/Experience";
+import ForWho from "./_components/ForWho";
+import TechnicalSpecs from "./_components/TechnicalSpecs";
+import TheOPA from "./_components/TheOPA";
+import MarcosView from "./_components/MarcosView";
+import FinalCTA from "./_components/FinalCTA";
+import Footer from "./_components/Footer";
 import LeadFormModal from "./_components/LeadFormModal";
 import CustomCursor from "./_components/CustomCursor";
 
@@ -36,14 +38,17 @@ function EngenhoInner() {
     <main data-app="engenho" className="w-full min-h-screen bg-bg-main relative">
       <Header />
       <Hero />
-      <FichaResumida />
-      <TheHouse />
-      <ALeitura />
-      <Galeria />
       <VirtualTour />
+      <ZoomShowcase />
       <Location />
-      <AEstrutura />
-      <AConversa />
+      <TheHouse />
+      <Experience />
+      <ForWho />
+      <TechnicalSpecs />
+      <TheOPA />
+      {/* <MarcosView /> */}
+      <FinalCTA />
+      <Footer />
       <CustomCursor />
       <LeadFormModal isOpen={isLeadFormOpen} onClose={() => setIsLeadFormOpen(false)} />
     </main>
