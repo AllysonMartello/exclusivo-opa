@@ -22,7 +22,7 @@ export default function TheHouse() {
   }, []);
 
   return (
-    <section className="bg-white text-primary-1">
+    <section id="a-casa" className="bg-white text-primary-1">
       <div className="grid grid-cols-1 lg:grid-cols-2 min-h-screen">
         <div className="flex items-center justify-center py-24 px-8 lg:px-16 xl:px-24">
           <div className="max-w-xl w-full">

@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 
 export default function ALeitura() {
   return (
-    <section className="py-32 bg-[#F8F9FA] text-primary-1">
+    <section id="experiencia" className="py-32 bg-[#F8F9FA] text-primary-1">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
@@ -49,11 +49,8 @@ export default function ALeitura() {
           </motion.div>
           
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="flex flex-col">
-            <div className="aspect-[4/3] rounded-3xl overflow-hidden mb-8 shadow-sm relative">
-              <picture className="block absolute inset-0 w-full h-full">
-                <source type="image/webp" srcSet="/assets/engenho-CA006944/engenho-CA006944-entrada-porta-pivotante-vista-coqueiros-desktop.webp" />
-                <img src="/assets/engenho-CA006944/engenho-CA006944-entrada-porta-pivotante-vista-coqueiros-desktop.jpg" alt="A documentação" className="w-full h-full object-cover" loading="lazy" />
-              </picture>
+            <div className="aspect-[4/3] rounded-3xl overflow-hidden mb-8 shadow-sm relative bg-gray-100">
+              <img src="/assets/engenho-CA006944/engenho-CA006944-entrada-porta-pivotante-vista-coqueiros.webp" alt="A documentação" className="w-full h-full object-cover absolute inset-0" loading="lazy" />
             </div>
             <h3 className="text-3xl font-serif mb-4 text-primary-1">A documentação</h3>
             <p className="text-xl text-text-sec font-light leading-relaxed">Escritura registrada. Habite-se em ordem. IPTU em dia. Sem cessão, sem inventário aberto, sem pendência de regularização. A negociação parte de terreno firme.</p>
