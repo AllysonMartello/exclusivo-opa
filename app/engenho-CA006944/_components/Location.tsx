@@ -74,7 +74,7 @@ export default function Location() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-4xl md:text-6xl font-serif mb-8 text-primary-1 tracking-tight"
+              className="text-3xl md:text-5xl font-serif mb-6 text-primary-1 tracking-tight"
             >
               {lang === "pt" ? "O Endereço" : "The Location"}
             </motion.h2>
@@ -83,7 +83,7 @@ export default function Location() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-lg md:text-xl text-text-sec leading-[1.8] font-light mb-12"
+              className="text-base md:text-lg text-text-sec leading-[1.8] font-light mb-8"
             >
               {lang === "pt" 
                 ? "Engenho D'Água é um dos bairros mais antigos da costa sul de Ilhabela. Vizinhança estável, com famílias que mantêm casa na região há gerações. A praia tem mar protegido pelo canal e entrada rasa, com perfil indicado para crianças e para embarcações pequenas."
@@ -136,7 +136,7 @@ export default function Location() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="font-medium text-primary-1 text-2xl pt-4 border-t border-gray-200"
+              className="font-medium text-primary-1 text-xl md:text-2xl pt-4 border-t border-gray-200"
             >
               {lang === "pt" 
                 ? "É um dos poucos endereços da ilha onde a vida acontece sem deslocamento. O carro fica para quando dá vontade de sair."

@@ -37,7 +37,7 @@ export default function AConversa() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-5xl md:text-7xl font-serif mb-10 tracking-tight"
+          className="text-3xl md:text-5xl font-serif mb-8 tracking-tight"
         >
           {lang === "pt" ? "Venha conhecer o Engenho" : "Come visit Engenho"}
         </motion.h2>
@@ -47,7 +47,7 @@ export default function AConversa() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="max-w-3xl mx-auto space-y-6 text-xl md:text-2xl text-white/70 leading-[1.7] font-light mb-16"
+          className="max-w-3xl mx-auto space-y-6 text-lg md:text-xl text-white/70 leading-[1.7] font-light mb-12"
         >
           <p>
             {lang === "pt"
@@ -61,7 +61,7 @@ export default function AConversa() {
               : "Before the visit, a quick conversation to understand what you are looking for and if this is indeed the ideal home."
             }
           </p>
-          <p className="text-white/90 font-medium text-2xl md:text-3xl pt-6">
+          <p className="text-white/90 font-medium text-xl md:text-2xl pt-6">
             {lang === "pt"
               ? "A partir daí, o resto é conduzido com critério."
               : "From then on, everything else is handled with criteria."

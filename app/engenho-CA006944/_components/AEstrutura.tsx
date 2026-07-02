@@ -34,7 +34,7 @@ export default function AEstrutura() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-6xl font-serif mb-12 text-white tracking-tight"
+          className="text-3xl md:text-5xl font-serif mb-8 text-white tracking-tight"
         >
           {lang === "pt" ? "Transparência e Segurança" : "Transparency and Safety"}
         </motion.h2>
@@ -43,7 +43,7 @@ export default function AEstrutura() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="max-w-4xl space-y-8 text-xl md:text-2xl text-white/90 leading-[1.8] font-light"
+          className="max-w-4xl space-y-6 text-lg md:text-xl text-white/90 leading-[1.8] font-light"
         >
           <p>
             {lang === "pt"
@@ -61,7 +61,7 @@ export default function AEstrutura() {
             ))}
           </div>
 
-          <p className="font-medium text-white text-2xl pt-4">
+          <p className="font-medium text-white text-xl md:text-2xl pt-4">
             {lang === "pt"
               ? "O comprador recebe o dossiê completo antes da assinatura."
               : "The buyer receives the complete dossier before signing."

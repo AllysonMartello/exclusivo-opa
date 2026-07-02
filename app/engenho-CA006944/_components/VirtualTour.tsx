@@ -12,7 +12,7 @@ export default function VirtualTour() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-serif mb-16 text-primary-1 tracking-tight text-center"
+          className="text-3xl md:text-4xl font-serif mb-12 text-primary-1 tracking-tight text-center"
         >
           {lang === "pt" ? "Veja além das imagens, ande por cada ambiente" : "See beyond the images, walk through every room"}
         </motion.h2>
