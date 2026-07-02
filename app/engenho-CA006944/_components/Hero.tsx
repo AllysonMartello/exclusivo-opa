@@ -11,43 +11,14 @@ export default function Hero() {
     <section className="relative min-h-[100dvh] w-full flex items-center justify-center overflow-hidden pt-32 pb-16 md:py-32">
       <div className="absolute inset-0 z-0">
         <picture className="block absolute inset-0 w-full h-full">
-          {/* Mobile: foto vertical dedicada (media query força uso independente de DPR) */}
-          <source
-            type="image/avif"
-            media="(max-width: 767px)"
-            srcSet={`${BASE}/engenho-CA006944-varanda-piscina-vista-panoramica-mar-mobile.avif`}
-          />
-          <source
-            type="image/webp"
-            media="(max-width: 767px)"
-            srcSet={`${BASE}/engenho-CA006944-varanda-piscina-vista-panoramica-mar-mobile.webp`}
-          />
-          <source
-            type="image/jpeg"
-            media="(max-width: 767px)"
-            srcSet={`${BASE}/engenho-CA006944-varanda-piscina-vista-panoramica-mar-mobile.jpg`}
-          />
-          {/* Tablet/Desktop */}
-          <source
-            type="image/avif"
-            srcSet={`${BASE}/engenho-CA006944-varanda-piscina-vista-panoramica-mar-desktop.avif 1024w, ${BASE}/engenho-CA006944-varanda-piscina-vista-panoramica-mar-desktop.avif 1920w`}
-            sizes="100vw"
-          />
-          <source
-            type="image/webp"
-            srcSet={`${BASE}/engenho-CA006944-varanda-piscina-vista-panoramica-mar-desktop.webp 1024w, ${BASE}/engenho-CA006944-varanda-piscina-vista-panoramica-mar-desktop.webp 1920w`}
-            sizes="100vw"
-          />
           <img
-            src={`${BASE}/engenho-CA006944-varanda-piscina-vista-panoramica-mar-desktop.jpg`}
-            srcSet={`${BASE}/engenho-CA006944-varanda-piscina-vista-panoramica-mar-mobile.jpg 767w, ${BASE}/engenho-CA006944-varanda-piscina-vista-panoramica-mar-desktop.jpg 1920w`}
-            sizes="100vw"
+            src={`${BASE}/engenho-CA006944-varanda-piscina-vista-panoramica-mar.webp`}
             alt={t.hero.imageAlt}
             width={1920}
             height={1080}
             fetchPriority="high"
             decoding="async"
-            className="image-cover"
+            className="w-full h-full object-cover"
           />
         </picture>
         <div className="absolute inset-0 bg-black/50" />

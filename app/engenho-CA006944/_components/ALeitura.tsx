@@ -20,10 +20,7 @@ export default function ALeitura() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-20">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex flex-col">
             <div className="aspect-[4/3] rounded-3xl overflow-hidden mb-8 shadow-sm relative">
-              <picture className="block absolute inset-0 w-full h-full">
-                <source type="image/webp" srcSet="/assets/engenho-CA006944/engenho-CA006944-sala-jantar-living-vista-panoramica-mar-desktop.webp" />
-                <img src="/assets/engenho-CA006944/engenho-CA006944-sala-jantar-living-vista-panoramica-mar-desktop.jpg" alt="A vista" className="w-full h-full object-cover" loading="lazy" />
-              </picture>
+              <img src="/assets/engenho-CA006944/engenho-CA006944-sala-estar-jantar-sofa-vista-mar.webp" alt="A vista" className="w-full h-full object-cover absolute inset-0" loading="lazy" />
             </div>
             <h3 className="text-3xl font-serif mb-4 text-primary-1">
               {lang === "pt" ? "O Privilégio do Olhar" : "The Privilege of the View"}
@@ -38,10 +35,7 @@ export default function ALeitura() {
           
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="flex flex-col">
             <div className="aspect-[4/3] rounded-3xl overflow-hidden mb-8 shadow-sm relative">
-              <picture className="block absolute inset-0 w-full h-full">
-                <source type="image/webp" srcSet="/assets/engenho-CA006944/engenho-CA006944-sala-jantar-cozinha-living-tv-vista-jardim-desktop.webp" />
-                <img src="/assets/engenho-CA006944/engenho-CA006944-sala-jantar-cozinha-living-tv-vista-jardim-desktop.jpg" alt="O estado" className="w-full h-full object-cover" loading="lazy" />
-              </picture>
+              <img src="/assets/engenho-CA006944/engenho-CA006944-sala-jantar-cozinha-living-tv-vista-jardim.webp" alt="O estado" className="w-full h-full object-cover absolute inset-0" loading="lazy" />
             </div>
             <h3 className="text-3xl font-serif mb-4 text-primary-1">
               {lang === "pt" ? "O estado" : "The Condition"}
@@ -56,10 +50,7 @@ export default function ALeitura() {
           
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="flex flex-col">
             <div className="aspect-[4/3] rounded-3xl overflow-hidden mb-8 shadow-sm relative">
-              <picture className="block absolute inset-0 w-full h-full">
-                <source type="image/webp" srcSet="/assets/engenho-CA006944/engenho-CA006944-suite-cama-tv-vista-mar-01-desktop.webp" />
-                <img src="/assets/engenho-CA006944/engenho-CA006944-suite-cama-tv-vista-mar-01-desktop.jpg" alt="A planta" className="w-full h-full object-cover" loading="lazy" />
-              </picture>
+              <img src="/assets/engenho-CA006944/piscina-varanda-gourmet.jpg" alt="A planta" className="w-full h-full object-cover absolute inset-0" loading="lazy" />
             </div>
             <h3 className="text-3xl font-serif mb-4 text-primary-1">
               {lang === "pt" ? "A planta" : "The Floor Plan"}

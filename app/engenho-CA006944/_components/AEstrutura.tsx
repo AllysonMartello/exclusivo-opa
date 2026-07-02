@@ -25,7 +25,7 @@ export default function AEstrutura() {
   return (
     <section 
       className="relative py-32 bg-cover bg-center bg-fixed bg-no-repeat"
-      style={{ backgroundImage: "url('/assets/engenho-CA006944/engenho-CA006944-varanda-vista-panoramica-mar-piscina-desktop.jpg')" }}
+      style={{ backgroundImage: "url('/assets/engenho-CA006944/engenho-CA006944-varanda-vista-panoramica-mar-piscina.webp')" }}
     >
       <div className="absolute inset-0 bg-black/70"></div>
       

@@ -12,7 +12,7 @@ export default function AConversa() {
       <div className="absolute inset-0 z-0">
         <picture>
           <img 
-            src="/assets/engenho-CA006944/engenho-CA006944-fachada-frontal-entrada-vista-mar-desktop.jpg" 
+            src="/assets/engenho-CA006944/engenho-CA006944-fachada-frontal-entrada-vista-mar.webp" 
             alt="Fachada" 
             className="w-full h-full object-cover opacity-20 mix-blend-luminosity"
             loading="lazy"

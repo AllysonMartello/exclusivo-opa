@@ -4,18 +4,15 @@ import { motion } from "motion/react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const images = [
-  "engenho-CA006944-entrada-porta-pivotante-vista-coqueiros-desktop",
-  "engenho-CA006944-fachada-frontal-entrada-vista-mar-desktop",
-  "engenho-CA006944-cozinha-gourmet-ilha-geladeira-living-mobile",
-  "engenho-CA006944-cozinha-gourmet-ilha-sala-jantar-desktop",
-  "engenho-CA006944-cozinha-ilha-living-vista-mar-desktop",
-  "engenho-CA006944-sala-jantar-living-vista-panoramica-mar-mobile",
-  "engenho-CA006944-varanda-vista-panoramica-mar-piscina-desktop",
-  "piscina-varanda-gourmet-desktop",
-  "engenho-CA006944-varanda-piscina-vista-panoramica-mar-desktop",
-  "engenho-CA006944-banheiro-ducha-box-cuba-espelho-desktop",
-  "engenho-CA006944-banheiro-banheira-ducha-acesso-externo-desktop",
-  "engenho-CA006944-living-tv-varanda-aberta-vista-jardim-mobile"
+  "engenho-CA006944-fachada-frontal-entrada-vista-mar.webp",
+  "engenho-CA006944-sala-estar-cozinha-integrada-vista-mar.webp",
+  "engenho-CA006944-sala-jantar-living-vista-panoramica-mar.webp",
+  "piscina-varanda-gourmet.jpg",
+  "engenho-CA006944-living-tv-varanda-aberta-vista-jardim.webp",
+  "engenho-CA006944-varanda-piscina-vista-panoramica-mar.webp",
+  "engenho-CA006944-suite-cama-vista-mar-jardim.webp",
+  "engenho-CA006944-suite-cama-tv-armario-vista-mar.webp",
+  "engenho-CA006944-banheiro-banheira-nicho-iluminado.webp"
 ];
 
 export default function Galeria() {
@@ -46,7 +43,7 @@ export default function Galeria() {
               className="snap-center shrink-0 w-full h-full relative"
             >
               <img
-                src={`/assets/engenho-CA006944/${img}.jpg`}
+                src={`/assets/engenho-CA006944/${img}`}
                 alt={`Galeria ${index + 1}`}
                 className="w-full h-full object-cover"
                 loading="lazy"
