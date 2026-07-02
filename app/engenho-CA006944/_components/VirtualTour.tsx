@@ -1,7 +1,10 @@
 "use client";
 import { motion } from "motion/react";
+import { useLanguage } from "../_i18n/LanguageContext";
 
 export default function VirtualTour() {
+  const { lang } = useLanguage();
+
   return (
     <section id="tour" className="py-32 bg-white text-primary-1 border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
@@ -11,7 +14,7 @@ export default function VirtualTour() {
           viewport={{ once: true }}
           className="text-4xl md:text-5xl font-serif mb-16 text-primary-1 tracking-tight text-center"
         >
-          Veja além das imagens, ande por cada ambiente
+          {lang === "pt" ? "Veja além das imagens, ande por cada ambiente" : "See beyond the images, walk through every room"}
         </motion.h2>
 
         <motion.div
@@ -43,7 +46,7 @@ export default function VirtualTour() {
             rel="noopener noreferrer"
             className="px-8 py-4 bg-primary-1 text-white rounded-full font-medium tracking-wide hover:bg-primary-1/90 transition-colors shadow-lg hover:shadow-xl"
           >
-            Ver tour virtual
+            {lang === "pt" ? "Ver tour virtual" : "View virtual tour"}
           </a>
         </motion.div>
       </div>

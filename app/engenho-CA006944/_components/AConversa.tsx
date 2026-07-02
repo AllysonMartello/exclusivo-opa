@@ -1,8 +1,11 @@
 "use client";
 import { motion } from "motion/react";
 import { ArrowRight, MessageCircle } from "lucide-react";
+import { useLanguage } from "../_i18n/LanguageContext";
 
 export default function AConversa() {
+  const { lang } = useLanguage();
+
   return (
     <section className="relative min-h-[90vh] flex items-center py-32 bg-primary-1 text-white overflow-hidden">
       {/* Background Image with Overlay */}
@@ -36,7 +39,7 @@ export default function AConversa() {
           viewport={{ once: true }}
           className="text-5xl md:text-7xl font-serif mb-10 tracking-tight"
         >
-          Venha conhecer o Engenho
+          {lang === "pt" ? "Venha conhecer o Engenho" : "Come visit Engenho"}
         </motion.h2>
         
         <motion.div 
@@ -46,9 +49,24 @@ export default function AConversa() {
           transition={{ delay: 0.1 }}
           className="max-w-3xl mx-auto space-y-6 text-xl md:text-2xl text-white/70 leading-[1.7] font-light mb-16"
         >
-          <p>A visita é com hora marcada. Não há plantão, não há tráfego de visitantes.</p>
-          <p>Antes da visita, uma conversa rápida para entender o que vocês procuram e se essa é, de fato, a casa ideal.</p>
-          <p className="text-white/90 font-medium text-2xl md:text-3xl pt-6">A partir daí, o resto é conduzido com critério.</p>
+          <p>
+            {lang === "pt"
+              ? "A visita é com hora marcada. Não há plantão, não há tráfego de visitantes."
+              : "Visits are scheduled by appointment only. There is no open house, no visitor traffic."
+            }
+          </p>
+          <p>
+            {lang === "pt"
+              ? "Antes da visita, uma conversa rápida para entender o que vocês procuram e se essa é, de fato, a casa ideal."
+              : "Before the visit, a quick conversation to understand what you are looking for and if this is indeed the ideal home."
+            }
+          </p>
+          <p className="text-white/90 font-medium text-2xl md:text-3xl pt-6">
+            {lang === "pt"
+              ? "A partir daí, o resto é conduzido com critério."
+              : "From then on, everything else is handled with criteria."
+            }
+          </p>
         </motion.div>
         
         <motion.div
@@ -59,13 +77,21 @@ export default function AConversa() {
           className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 mb-16 bg-white/5 border border-white/10 rounded-3xl p-8 md:p-10 backdrop-blur-md max-w-3xl mx-auto"
         >
           <div className="text-center md:text-left">
-            <p className="uppercase tracking-[0.2em] text-white/50 text-xs font-semibold mb-2">Valor de Venda</p>
-            <p className="font-medium tracking-tight text-4xl md:text-5xl text-white">R$ 8.500.000<span className="text-2xl text-white/50">,00</span></p>
+            <p className="uppercase tracking-[0.2em] text-white/50 text-xs font-semibold mb-2">
+              {lang === "pt" ? "Valor de Venda" : "Sale Price"}
+            </p>
+            <p className="font-medium tracking-tight text-4xl md:text-5xl text-white">
+              R$ 8.500.000<span className="text-2xl text-white/50">,00</span>
+            </p>
           </div>
           <div className="hidden md:block w-px h-16 bg-white/10"></div>
           <div className="text-center md:text-left">
-            <p className="uppercase tracking-[0.2em] text-white/50 text-xs font-semibold mb-2">IPTU (Anual)</p>
-            <p className="font-medium tracking-tight text-2xl md:text-3xl text-white/90">R$ 10.963<span className="text-xl text-white/50">,00</span></p>
+            <p className="uppercase tracking-[0.2em] text-white/50 text-xs font-semibold mb-2">
+              {lang === "pt" ? "IPTU (Anual)" : "IPTU (Annual)"}
+            </p>
+            <p className="font-medium tracking-tight text-2xl md:text-3xl text-white/90">
+              R$ 10.963<span className="text-xl text-white/50">,00</span>
+            </p>
           </div>
         </motion.div>
         
@@ -77,7 +103,7 @@ export default function AConversa() {
           onClick={() => window.dispatchEvent(new CustomEvent("open-lead-form"))}
           className="group relative bg-white text-primary-1 px-10 md:px-14 py-5 md:py-6 rounded-full font-medium hover:bg-gray-50 transition-all duration-300 mb-24 flex items-center justify-center gap-4 mx-auto text-lg md:text-xl shadow-[0_0_40px_rgb(255,255,255,0.1)] hover:shadow-[0_0_60px_rgb(255,255,255,0.2)] hover:-translate-y-1"
         >
-          Conversar com a OPA 
+          {lang === "pt" ? "Conversar com a OPA" : "Talk to OPA"}
           <ArrowRight size={24} className="transition-transform group-hover:translate-x-1.5 text-primary-1" />
         </motion.button>
 
@@ -88,7 +114,9 @@ export default function AConversa() {
           transition={{ delay: 0.5 }}
           className="w-full pt-16 border-t border-white/10 flex flex-col items-center"
         >
-          <span className="uppercase tracking-[0.2em] text-white/40 text-xs font-semibold mb-12">Corretores Responsáveis</span>
+          <span className="uppercase tracking-[0.2em] text-white/40 text-xs font-semibold mb-12">
+            {lang === "pt" ? "Corretores Responsáveis" : "Responsible Brokers"}
+          </span>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-32 w-full max-w-4xl">
             {/* Cristian */}
@@ -118,7 +146,7 @@ export default function AConversa() {
           className="w-full mt-16 pt-8 border-t border-white/5 text-center"
         >
           <p className="text-white/30 font-light text-xs tracking-widest uppercase">
-            © 2026 OPA Imóveis. Todos os direitos reservados.
+            {lang === "pt" ? "© 2026 OPA Imóveis. Todos os direitos reservados." : "© 2026 OPA Imóveis. All rights reserved."}
           </p>
         </motion.div>
       </div>

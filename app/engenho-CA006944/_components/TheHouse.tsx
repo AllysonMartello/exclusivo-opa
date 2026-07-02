@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { useLanguage } from "../_i18n/LanguageContext";
 
 const houseImages = [
   "/assets/engenho-CA006944/piscina-varanda-gourmet-desktop.jpg",
@@ -11,6 +12,7 @@ const houseImages = [
 ];
 
 export default function TheHouse() {
+  const { lang } = useLanguage();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
@@ -32,7 +34,7 @@ export default function TheHouse() {
               viewport={{ once: true }}
               className="text-4xl md:text-6xl font-serif mb-12 text-primary-1 tracking-tight"
             >
-              Sobre a Casa
+              {lang === "pt" ? "Sobre a Casa" : "About the House"}
             </motion.h2>
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -41,9 +43,24 @@ export default function TheHouse() {
               transition={{ delay: 0.2 }}
               className="space-y-8 text-lg md:text-xl text-text-sec leading-[1.8] font-light"
             >
-              <p>A casa fecha o conjunto. Foi desenhada, construída, mobiliada e equipada para uma família entrar e começar a vida no mesmo dia. Não há obra para acompanhar. Não há projeto para aprovar. Não há marceneiro para esperar.</p>
-              <p>A arquitetura conversa com Ilhabela. Pedra, madeira, vidro, e a entrada de luz que vem do canal. Os espaços principais foram dimensionados para receber: cozinha aberta, sala em pé-direito alto, varanda contínua voltada para a água. Os dormitórios foram dimensionados para acolher.</p>
-              <p className="text-primary-1 font-medium">É uma casa de família, não um projeto de revista. Mas tem o cuidado de revista nos detalhes que importam.</p>
+              <p>
+                {lang === "pt" 
+                  ? "A casa fecha o conjunto. Foi desenhada, construída, mobiliada e equipada para uma família entrar e começar a vida no mesmo dia. Não há obra para acompanhar. Não há projeto para aprovar. Não há marceneiro para esperar."
+                  : "The house completes the picture. It was designed, built, furnished, and equipped for a family to move in and start life on the very same day. No construction to monitor. No project to approve. No carpenter to wait for."
+                }
+              </p>
+              <p>
+                {lang === "pt"
+                  ? "A arquitetura conversa com Ilhabela. Pedra, madeira, vidro, e a entrada de luz que vem do canal. Os espaços principais foram dimensionados para receber: cozinha aberta, sala em pé-direito alto, varanda contínua voltada para a água. Os dormitórios foram dimensionados para acolher."
+                  : "The architecture speaks to Ilhabela. Stone, wood, glass, and the daylight coming from the channel. The main spaces were scaled to host: open kitchen, high-ceiling living room, continuous balcony facing the water. The bedrooms were scaled to nurture."
+                }
+              </p>
+              <p className="text-primary-1 font-medium">
+                {lang === "pt"
+                  ? "É uma casa de família, não um projeto de revista. Mas tem o cuidado de revista nos detalhes que importam."
+                  : "It is a family home, not a magazine project. But it has magazine-level care in the details that matter."
+                }
+              </p>
             </motion.div>
           </div>
         </div>

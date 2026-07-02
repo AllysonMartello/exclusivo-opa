@@ -1,8 +1,27 @@
 "use client";
 import { motion } from "motion/react";
 import { CheckCircle2 } from "lucide-react";
+import { useLanguage } from "../_i18n/LanguageContext";
 
 export default function AEstrutura() {
+  const { lang } = useLanguage();
+
+  const items = lang === "pt" ? [
+    "Escritura registrada sem ônus",
+    "Habite-se emitido",
+    "IPTU em dia",
+    "Área construída averbada",
+    "Conservação técnica avaliada",
+    "Análise de salinidade e drenagem"
+  ] : [
+    "Deed registered with no encumbrances",
+    "Occupancy permit (Habite-se) issued",
+    "Property taxes up to date",
+    "Built area fully registered",
+    "Technical conservation evaluated",
+    "Salinity and drainage analysis"
+  ];
+
   return (
     <section 
       className="relative py-32 bg-cover bg-center bg-fixed bg-no-repeat"
@@ -17,7 +36,7 @@ export default function AEstrutura() {
           viewport={{ once: true }}
           className="text-4xl md:text-6xl font-serif mb-12 text-white tracking-tight"
         >
-          Transparência e Segurança
+          {lang === "pt" ? "Transparência e Segurança" : "Transparency and Safety"}
         </motion.h2>
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
@@ -26,17 +45,15 @@ export default function AEstrutura() {
           transition={{ delay: 0.2 }}
           className="max-w-4xl space-y-8 text-xl md:text-2xl text-white/90 leading-[1.8] font-light"
         >
-          <p>Toda casa que entra na curadoria da OPA passa por verificação documental e técnica antes de aparecer aqui. E esta passou com excelência:</p>
+          <p>
+            {lang === "pt"
+              ? "Toda casa que entra na curadoria da OPA passa por verificação documental e técnica antes de aparecer aqui. E esta passou com excelência:"
+              : "Every home that joins the OPA curation goes through documentary and technical verification before appearing here. And this one passed with excellence:"
+            }
+          </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 text-left text-lg max-w-3xl mx-auto py-4">
-            {[
-              "Escritura registrada sem ônus",
-              "Habite-se emitido",
-              "IPTU em dia",
-              "Área construída averbada",
-              "Conservação técnica avaliada",
-              "Análise de salinidade e drenagem"
-            ].map((item, i) => (
+            {items.map((item, i) => (
               <div key={i} className="flex items-center gap-4 bg-white/5 border border-white/10 p-4 md:p-5 rounded-2xl backdrop-blur-sm">
                 <CheckCircle2 className="text-white opacity-80 shrink-0" size={24} />
                 <span className="font-light text-white/95">{item}</span>
@@ -44,7 +61,12 @@ export default function AEstrutura() {
             ))}
           </div>
 
-          <p className="font-medium text-white text-2xl pt-4">O comprador recebe o dossiê completo antes da assinatura.</p>
+          <p className="font-medium text-white text-2xl pt-4">
+            {lang === "pt"
+              ? "O comprador recebe o dossiê completo antes da assinatura."
+              : "The buyer receives the complete dossier before signing."
+            }
+          </p>
         </motion.div>
       </div>
     </section>
