@@ -2,15 +2,17 @@
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import { Anchor, Utensils, ShoppingBag, ChevronDown } from "lucide-react";
+import { useLanguage } from "../_i18n/LanguageContext";
 
 export default function Location() {
+  const { lang } = useLanguage();
   const [activeTab, setActiveTab] = useState<number | null>(0);
 
   const toggleTab = (index: number) => {
     setActiveTab(activeTab === index ? null : index);
   };
 
-  const tabs = [
+  const tabs = lang === "pt" ? [
     {
       title: "Píer Náutico",
       icon: <Anchor size={20} />,
@@ -25,6 +27,22 @@ export default function Location() {
       title: "Conveniência",
       icon: <ShoppingBag size={20} />,
       content: "O Minimax, mercado de referência da região, fica a poucos minutos a pé. A vila, com farmácia, padaria e o comércio local, está ao lado."
+    }
+  ] : [
+    {
+      title: "Nautical Pier",
+      icon: <Anchor size={20} />,
+      content: "In front of the house, on the beach, is the nautical boarding and landing pier. From here you can head out by boat without needing to take a car to a marina and without any schedule. The crossing to São Sebastião and the entrance to the channel start just a few steps from the gate."
+    },
+    {
+      title: "Gastronomy",
+      icon: <Utensils size={20} />,
+      content: "The main restaurants on the south coast are within walking distance. Portinho. Restaurante Braz. Restaurante Capitano. Praia. Manapani. Porto Engenho. Pitanga. Seven culinary options between breakfast and dinner, all without needing a car."
+    },
+    {
+      title: "Convenience",
+      icon: <ShoppingBag size={20} />,
+      content: "Minimax, the region's reference market, is just a few minutes' walk away. The village, with a pharmacy, bakery, and local shops, is right next door."
     }
   ];
 
@@ -58,7 +76,7 @@ export default function Location() {
               viewport={{ once: true }}
               className="text-4xl md:text-6xl font-serif mb-8 text-primary-1 tracking-tight"
             >
-              O Endereço
+              {lang === "pt" ? "O Endereço" : "The Location"}
             </motion.h2>
             
             <motion.p
@@ -67,7 +85,10 @@ export default function Location() {
               viewport={{ once: true }}
               className="text-lg md:text-xl text-text-sec leading-[1.8] font-light mb-12"
             >
-              Engenho D'Água é um dos bairros mais antigos da costa sul de Ilhabela. Vizinhança estável, com famílias que mantêm casa na região há gerações. A praia tem mar protegido pelo canal e entrada rasa, com perfil indicado para crianças e para embarcações pequenas.
+              {lang === "pt" 
+                ? "Engenho D'Água é um dos bairros mais antigos da costa sul de Ilhabela. Vizinhança estável, com famílias que mantêm casa na região há gerações. A praia tem mar protegido pelo canal e entrada rasa, com perfil indicado para crianças e para embarcações pequenas."
+                : "Engenho D'Água is one of the oldest neighborhoods on the south coast of Ilhabela. Stable neighborhood, with families who have kept houses in the region for generations. The beach has a sea protected by the channel and a shallow entrance, with a profile suitable for children and small boats."
+              }
             </motion.p>
 
             <motion.div 
@@ -117,7 +138,10 @@ export default function Location() {
               viewport={{ once: true }}
               className="font-medium text-primary-1 text-2xl pt-4 border-t border-gray-200"
             >
-              É um dos poucos endereços da ilha onde a vida acontece sem deslocamento. O carro fica para quando dá vontade de sair.
+              {lang === "pt" 
+                ? "É um dos poucos endereços da ilha onde a vida acontece sem deslocamento. O carro fica para quando dá vontade de sair."
+                : "It is one of the few addresses on the island where life happens without driving. The car is only for when you feel like going away."
+              }
             </motion.p>
           </div>
         </div>

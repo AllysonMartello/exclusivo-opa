@@ -4,11 +4,10 @@ import { motion, AnimatePresence } from "motion/react";
 import { useLanguage } from "../_i18n/LanguageContext";
 
 const houseImages = [
-  "/assets/engenho-CA006944/piscina-varanda-gourmet-desktop.jpg",
-  "/assets/engenho-CA006944/engenho-CA006944-sala-jantar-living-vista-panoramica-mar-desktop.jpg",
-  "/assets/engenho-CA006944/engenho-CA006944-cozinha-gourmet-ilha-sala-jantar-desktop.jpg",
-  "/assets/engenho-CA006944/engenho-CA006944-banheiro-banheira-ducha-acesso-externo-desktop.jpg",
-  "/assets/engenho-CA006944/engenho-CA006944-entrada-porta-pivotante-vista-coqueiros-desktop.jpg"
+  "/assets/engenho-CA006944/piscina-varanda-gourmet.jpg",
+  "/assets/engenho-CA006944/engenho-CA006944-sala-jantar-living-vista-panoramica-mar.webp",
+  "/assets/engenho-CA006944/engenho-CA006944-cozinha-gourmet-ilha-sala-jantar.webp",
+  "/assets/engenho-CA006944/engenho-CA006944-varanda-vista-panoramica-mar-piscina.webp"
 ];
 
 export default function TheHouse() {
