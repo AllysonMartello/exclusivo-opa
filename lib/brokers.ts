@@ -44,6 +44,13 @@ export const INSTITUTIONAL_ACESSOS: AccessCardData[] = [
     color: "#E1306C",
   },
   {
+    href: "https://www.facebook.com/opailhabela/",
+    icon: "facebook",
+    title: "Facebook",
+    desc: "Curta nossa página no Facebook",
+    color: "#1877F2",
+  },
+  {
     href: "https://opailhabela.com.br/anuncie-seu-imovel/",
     icon: "home",
     title: "Cadastre seu imóvel",
