@@ -23,6 +23,13 @@ export const INSTITUTIONAL_ACESSOS: AccessCardData[] = [
     color: "#0071C6",
   },
   {
+    href: "https://wa.me/5512992570299?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20loca%C3%A7%C3%A3o%20e%20temporada.&utm_source=linkbio_opa&utm_medium=linkbio&utm_campaign=locacao",
+    icon: "whatsapp",
+    title: "Locação e Temporada",
+    desc: "Fale com nossa equipe especialista",
+    color: "#25D366",
+  },
+  {
     href: "https://opailhabela.com.br/blog",
     icon: "book",
     title: "Nosso Blog",
