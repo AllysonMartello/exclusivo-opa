@@ -23,7 +23,8 @@ export type HubIcon =
   | "threads"
   | "map"
   | "ferry"
-  | "facebook";
+  | "facebook"
+  | "key";
 
 export type AccessCardData = {
   href: string;
@@ -165,6 +166,14 @@ function IconFacebook({ color }: { color: string }) {
   );
 }
 
+function IconKey({ color }: { color: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7 icon-draw">
+      <path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4" />
+    </svg>
+  );
+}
+
 const ICON_MAP: Record<HubIcon, React.ComponentType<{ color: string }>> = {
   globe: IconGlobe,
   book: IconBook,
@@ -178,6 +187,7 @@ const ICON_MAP: Record<HubIcon, React.ComponentType<{ color: string }>> = {
   map: IconMap,
   ferry: IconFerry,
   facebook: IconFacebook,
+  key: IconKey,
 };
 
 function ImovelCard({ item, index }: { item: ImovelCardData; index: number }) {
