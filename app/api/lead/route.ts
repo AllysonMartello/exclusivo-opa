@@ -17,6 +17,7 @@ const SITE_LABELS = {
   "captacao-exclusiva": "Captação Exclusiva",
   "lancamento-opa-elite": "Lançamento OPA",
   "sao-jose-dos-campos": "Apartamento Rua da Alegria, SJC",
+  "engenho-CA006944": "Engenho D'Água (CA006944)",
 } as const;
 
 type SiteKey = keyof typeof SITE_LABELS;
