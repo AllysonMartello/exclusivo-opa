@@ -6,7 +6,7 @@ export default function VirtualTour() {
   const { lang } = useLanguage();
 
   return (
-    <section id="tour" className="py-32 bg-white text-primary-1 border-t border-gray-100">
+    <section id="tour" className="py-16 md:py-24 bg-white text-primary-1 border-t border-gray-100">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
