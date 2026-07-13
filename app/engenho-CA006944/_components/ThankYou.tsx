@@ -57,8 +57,8 @@ export default function ThankYou() {
             fetchPriority="high"
           />
         </picture>
-        {/* Overlay azul suave */}
-        <div className="absolute inset-0 bg-primary-2/50" />
+        {/* Overlay azul marinho mais forte */}
+        <div className="absolute inset-0 bg-primary-1/80" />
       </div>
 
       <Header />
