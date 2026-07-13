@@ -53,7 +53,7 @@ export default function Hero() {
               href="#tour"
               className="bg-white/10 backdrop-blur-md hover:bg-white/20 text-white px-6 md:px-8 py-3.5 md:py-4 rounded-full flex items-center justify-center gap-2 transition-colors duration-300 text-sm md:text-base font-medium border border-white/20 w-full sm:w-auto"
             >
-              <Play size={18} /> {lang === "en" ? "View gallery" : "Ver galeria"}
+              <Play size={18} /> {lang === "en" ? "View Full Tour" : "Ver Tour Completo"}
             </a>
           </div>
         </div>
