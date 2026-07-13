@@ -36,11 +36,11 @@ function EngenhoInner() {
     <main data-app="engenho" className="w-full min-h-screen bg-bg-main relative">
       <Header />
       <Hero />
+      <VirtualTour />
       <FichaResumida />
       <TheHouse />
       <ALeitura />
       <Galeria />
-      <VirtualTour />
       <Location />
       <AEstrutura />
       <AConversa />
