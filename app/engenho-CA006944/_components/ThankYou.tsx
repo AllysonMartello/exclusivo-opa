@@ -50,25 +50,15 @@ export default function ThankYou() {
       {/* Imagem de fundo */}
       <div className="absolute inset-0 z-0">
         <picture>
-          <source
-            media="(max-width: 767px)"
-            srcSet="/assets/engenho-CA006944/engenho-CA006944-sala-jantar-vista-panoramica-mar-mobile.avif"
-            type="image/avif"
-          />
-          <source
-            media="(min-width: 768px)"
-            srcSet="/assets/engenho-CA006944/engenho-CA006944-sala-jantar-vista-panoramica-mar-desktop.avif"
-            type="image/avif"
-          />
           <img
-            src="/assets/engenho-CA006944/engenho-CA006944-sala-jantar-vista-panoramica-mar-desktop.jpg"
+            src="/assets/engenho-CA006944/engenho-CA006944-varanda-piscina-vista-panoramica-mar.webp"
             alt={t.thankYou.imageAlt}
             className="w-full h-full object-cover"
             fetchPriority="high"
           />
         </picture>
-        {/* Overlay escuro suave */}
-        <div className="absolute inset-0 bg-primary-1/60" />
+        {/* Overlay azul suave */}
+        <div className="absolute inset-0 bg-primary-2/50" />
       </div>
 
       <Header />
