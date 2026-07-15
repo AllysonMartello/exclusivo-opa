@@ -42,8 +42,8 @@ export default function ALeitura() {
             </h3>
             <p className="text-base md:text-lg text-text-sec font-light leading-relaxed">
               {lang === "pt"
-                ? "Cozinha completa. Ar-condicionado nos ambientes principais. Aquecimento solar. Mobiliário desenhado para os espaços. A próxima família entra com roupa e livros. O resto já está lá."
-                : "Full kitchen. Air conditioning in the main areas. Solar heating. Specially designed furniture. The next family only needs to bring clothes and books. Everything else is ready."
+                ? "Cozinha completa. Ar-condicionado nos ambientes principais. Aquecimento a Gas dos chuveiros e piscina aquecida a energia. Mobiliário desenhado para os espaços. A próxima família entra com roupa e livros. O resto já está lá."
+                : "Full kitchen. Air conditioning in the main areas. Gas heating for the showers and electric heated pool. Specially designed furniture. The next family only needs to bring clothes and books. Everything else is ready."
               }
             </p>
           </motion.div>
