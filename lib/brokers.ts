@@ -2,7 +2,18 @@ import type { AccessCardData, ImovelCardData } from "@/components/LinksHub";
 
 export const IMOVEIS_EXCLUSIVOS: ImovelCardData[] = [
   {
-    href: "/siriuba-2",
+    href: "https://exclusivo.opailhabela.com.br/engenho-CA006944?utm_source=linkbio&utm_medium=linkbio&utm_campaign=engenho_d_agua",
+    img: "/assets/engenho-CA006944/piscina-varanda-gourmet.jpg",
+    badge: "Exclusivo",
+    badgePulse: false,
+    title: "Casa Contemporânea no Engenho D'água",
+    location: "Engenho D'água, Ilhabela — SP",
+    code: "CA006944",
+    description:
+      "Um endereço raro à beira do canal de São Sebastião. Casa mobiliada, com vista panorâmica para o mar, píer na praia em frente e a poucos passos da Vila e gastronomia.",
+  },
+  {
+    href: "/siriuba-2?utm_source=linkbio&utm_medium=linkbio&utm_campaign=siriuba_2",
     img: "/assets/siriuba-2/hero-desktop.avif",
     badge: "Lançamento",
     badgePulse: true,
