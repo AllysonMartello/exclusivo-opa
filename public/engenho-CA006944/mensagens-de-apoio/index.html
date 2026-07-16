@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mensagens para Leads — Engenho D'Água | OPA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --azul:#166188;
+  --azul-escuro:#104761;
+  --azul-claro:#e8f4f8;
+  --azul-nevoa:#f3f8fa;
+  --texto:#27343b;
+  --muted:#6b7780;
+  --linha:#dfe8ec;
+  --branco:#ffffff;
+  --fundo:#f8fbfc;
+  --verde:#477765;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  color:var(--texto);
+  background:var(--fundo);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  color:#fff;
+  background:
+    linear-gradient(rgba(16,71,97,.75),rgba(16,71,97,.95)),
+    url('/assets/engenho-CA006944/engenho-CA006944-varanda-piscina-vista-panoramica-mar.webp') center/cover no-repeat;
+  padding:38px 24px 78px;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+  background-size:66px 66px;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  width:430px;
+  height:430px;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:50%;
+  right:-160px;
+  top:-210px;
+}
+
+.hero-inner{
+  width:min(100%,930px);
+  margin:0 auto;
+  position:relative;
+  z-index:2;
+}
+
+.topbar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+  margin-bottom:84px;
+}
+
+.logo{
+  height:35px;
+  filter:brightness(0) invert(1);
+  opacity:.92;
+}
+
+.material{
+  font-size:9px;
+  font-weight:600;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.45);
+}
+
+.kicker{
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:3.5px;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.50);
+  margin-bottom:15px;
+}
+
+.hero h1{
+  font-size:clamp(43px,7vw,68px);
+  line-height:1.04;
+  letter-spacing:-2.5px;
+  font-weight:300;
+  margin-bottom:18px;
+}
+
+.property{
+  font-size:14px;
+  letter-spacing:.4px;
+  color:rgba(255,255,255,.70);
+  margin-bottom:22px;
+}
+
+.hero-text{
+  max-width:660px;
+  font-size:15px;
+  line-height:1.75;
+  color:rgba(255,255,255,.68);
+}
+
+.page{
+  width:min(100%,930px);
+  margin:0 auto;
+  padding:70px 24px 96px;
+}
+
+.intro{
+  display:grid;
+  grid-template-columns:180px 1fr;
+  gap:38px;
+  align-items:start;
+  padding-bottom:38px;
+  border-bottom:1px solid var(--linha);
+  margin-bottom:28px;
+}
+
+.intro-label{
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:2.4px;
+  text-transform:uppercase;
+  color:var(--azul);
+}
+
+.intro p{
+  font-size:14px;
+  line-height:1.75;
+  color:var(--muted);
+}
+
+.notice{
+  margin-bottom:30px;
+  padding:14px 17px;
+  border-radius:10px;
+  background:var(--azul-claro);
+  color:var(--azul-escuro);
+  font-size:12px;
+  line-height:1.55;
+}
+
+.messages{
+  display:grid;
+  gap:22px;
+}
+
+.message-card{
+  background:#fff;
+  border:1px solid var(--linha);
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 10px 35px rgba(23,76,102,.045);
+}
+
+.message-head{
+  display:grid;
+  grid-template-columns:84px 1fr auto;
+  gap:22px;
+  align-items:center;
+  padding:24px 26px;
+  border-bottom:1px solid var(--linha);
+}
+
+.number{
+  font-size:42px;
+  font-weight:200;
+  line-height:1;
+  color:var(--azul);
+}
+
+.message-title{
+  font-size:15px;
+  font-weight:600;
+  margin-bottom:4px;
+}
+
+.message-context{
+  font-size:12px;
+  color:var(--muted);
+  line-height:1.5;
+}
+
+.copy-button{
+  border:1px solid var(--linha);
+  background:#fff;
+  color:var(--azul);
+  border-radius:999px;
+  padding:9px 13px;
+  font-family:inherit;
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:1.4px;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:.2s ease;
+}
+
+.copy-button:hover{
+  background:var(--azul);
+  border-color:var(--azul);
+  color:#fff;
+}
+
+.message-body{
+  padding:28px 110px 32px 132px;
+  position:relative;
+}
+
+.message-body::before{
+  content:"";
+  position:absolute;
+  left:83px;
+  top:31px;
+  bottom:32px;
+  width:2px;
+  background:var(--azul-claro);
+}
+
+.message-copy{
+  white-space:pre-line;
+  font-size:15px;
+  line-height:1.8;
+  color:#293941;
+}
+
+.placeholder{
+  display:inline-block;
+  margin-top:5px;
+  color:var(--azul);
+  font-weight:600;
+}
+
+.tip{
+  margin-top:18px;
+  padding-top:15px;
+  border-top:1px dashed var(--linha);
+  font-size:11px;
+  line-height:1.6;
+  color:var(--muted);
+}
+
+.tip strong{
+  color:var(--azul);
+  font-weight:600;
+}
+
+.footer{
+  background:linear-gradient(135deg,var(--azul-escuro),var(--azul));
+  color:#fff;
+  padding:66px 24px;
+  text-align:center;
+}
+
+.footer-inner{
+  width:min(100%,680px);
+  margin:0 auto;
+}
+
+.footer img{
+  height:34px;
+  filter:brightness(0) invert(1);
+  opacity:.82;
+  margin-bottom:28px;
+}
+
+.footer h2{
+  font-size:28px;
+  font-weight:300;
+  letter-spacing:-.6px;
+  margin-bottom:10px;
+}
+
+.footer p{
+  font-size:13px;
+  line-height:1.7;
+  color:rgba(255,255,255,.60);
+}
+
+.toast{
+  position:fixed;
+  left:50%;
+  bottom:24px;
+  transform:translate(-50%,20px);
+  opacity:0;
+  pointer-events:none;
+  background:#163f54;
+  color:#fff;
+  border-radius:999px;
+  padding:11px 17px;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:.3px;
+  transition:.25s ease;
+  z-index:20;
+  box-shadow:0 12px 30px rgba(0,0,0,.18);
+}
+
+.toast.show{
+  opacity:1;
+  transform:translate(-50%,0);
+}
+
+@media(max-width:720px){
+  .hero{
+    padding:30px 22px 62px;
+  }
+
+  .topbar{
+    margin-bottom:62px;
+  }
+
+  .material{
+    display:none;
+  }
+
+  .page{
+    padding:54px 18px 72px;
+  }
+
+  .intro{
+    grid-template-columns:1fr;
+    gap:10px;
+  }
+
+  .message-head{
+    grid-template-columns:60px 1fr;
+    gap:14px;
+    padding:22px 20px;
+  }
+
+  .number{
+    font-size:34px;
+  }
+
+  .copy-button{
+    grid-column:2;
+    justify-self:start;
+    margin-top:5px;
+  }
+
+  .message-body{
+    padding:24px 22px 28px;
+  }
+
+  .message-body::before{
+    display:none;
+  }
+
+  .message-copy{
+    font-size:14px;
+  }
+}
+
+@media print{
+  *{
+    -webkit-print-color-adjust:exact!important;
+    print-color-adjust:exact!important;
+  }
+
+  .hero{
+    padding-top:48px;
+    padding-bottom:65px;
+  }
+
+  .topbar{
+    margin-bottom:55px;
+  }
+
+  .page{
+    padding-top:45px;
+  }
+
+  .message-card{
+    page-break-inside:avoid;
+    box-shadow:none;
+  }
+
+  .copy-button,
+  .toast{
+    display:none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="topbar">
+      <img class="logo" src="https://exclusivo.opailhabela.com.br/assets/logo/logo-opa.svg" alt="OPA">
+      <span class="material">Material para corretores parceiros</span>
+    </div>
+
+    <div class="kicker">Material de apoio comercial</div>
+    <h1>Mensagens para Leads</h1>
+    <div class="property">Engenho D'Água · Código CA006944</div>
+    <p class="hero-text">Ideias de abordagem para diferentes momentos da conversa. Adapte os textos à sua linguagem e ao contexto de cada lead.</p>
+  </div>
+</header>
+
+<main class="page">
+
+  <section class="intro">
+    <div class="intro-label">Como usar</div>
+    <p>As mensagens não foram feitas para disparo em massa. Elas funcionam melhor quando o corretor identifica o argumento que combina com o momento e com o perfil de cada pessoa.</p>
+  </section>
+
+  <div class="notice">
+    Os links da página exclusiva e do tour virtual já estão inseridos.
+  </div>
+
+  <section class="messages">
+
+    <article class="message-card">
+      <div class="message-head">
+        <span class="number">1</span>
+        <div>
+          <h2 class="message-title">Ativação: lead que pode ter perfil para a casa</h2>
+          <p class="message-context">Quando você identifica alguém que valoriza arquitetura contemporânea, vista e uma rotina mais prática em Ilhabela.</p>
+        </div>
+        <button class="copy-button" data-target="msg1">Copiar mensagem</button>
+      </div>
+
+      <div class="message-body">
+        <div class="message-copy" id="msg1">Oi [nome], tudo bem?
+
+Lembrei de você porque apareceu uma casa no Engenho D'Água que reúne duas coisas difíceis de encontrar em Ilhabela: vista para o mar e acesso simples.
+
+É nova, contemporânea, tem 4 suítes, suíte master no pavimento principal e um gourmet independente e climatizado.
+
+Está pronta, mobiliada e porteira fechada.
+
+Dá uma olhada:
+<span class="placeholder">https://exclusivo.opailhabela.com.br/engenho-CA006944</span></div>
+
+        <div class="tip"><strong>Argumento central:</strong> não vender apenas a vista. Apresentar a combinação entre arquitetura atual, mobilidade e casa pronta.</div>
+      </div>
+    </article>
+
+    <article class="message-card">
+      <div class="message-head">
+        <span class="number">2</span>
+        <div>
+          <h2 class="message-title">Follow-up: enviou o material e quer retomar</h2>
+          <p class="message-context">Dois ou três dias depois. O tour virtual ajuda a retomar sem transformar a conversa em cobrança.</p>
+        </div>
+        <button class="copy-button" data-target="msg2">Copiar mensagem</button>
+      </div>
+
+      <div class="message-body">
+        <div class="message-copy" id="msg2">[Nome], conseguiu ver a casa do Engenho?
+
+O tour virtual ajuda a entender bem como a planta funciona: a rotina inteira no pavimento principal e as outras três suítes no andar de baixo.
+
+Te mando aqui:
+<span class="placeholder">https://discover.matterport.com/space/tL9pSrTiUNR</span>
+
+Me diz o que achou.</div>
+
+        <div class="tip"><strong>Melhor momento:</strong> depois que o lead já abriu a página, mas ainda não comentou o que mais chamou atenção.</div>
+      </div>
+    </article>
+
+    <article class="message-card">
+      <div class="message-head">
+        <span class="number">3</span>
+        <div>
+          <h2 class="message-title">Relacionamento: manter a casa na cabeça do lead</h2>
+          <p class="message-context">Sem link e sem pressão. Um detalhe específico abre conversa e reforça o valor do endereço.</p>
+        </div>
+        <button class="copy-button" data-target="msg3">Copiar mensagem</button>
+      </div>
+
+      <div class="message-body">
+        <div class="message-copy" id="msg3">[Nome], um detalhe daquela casa que te mandei.
+
+Ela fica no começo do Engenho. Você sobe pouco, mas já abre uma vista enorme para o canal, o centro, o campo da aviação e o píer do Saco da Capela.
+
+É uma combinação rara por aqui: vista sem complicar a rotina.</div>
+
+        <div class="tip"><strong>Por que funciona:</strong> traduz o diferencial territorial da casa em uma situação concreta, sem repetir a ficha técnica.</div>
+      </div>
+    </article>
+
+    <article class="message-card">
+      <div class="message-head">
+        <span class="number">4</span>
+        <div>
+          <h2 class="message-title">Reativação: lead que deixou de responder</h2>
+          <p class="message-context">Semanas ou meses depois. Respeita o tempo da pessoa e abre espaço para entender se o plano mudou.</p>
+        </div>
+        <button class="copy-button" data-target="msg4">Copiar mensagem</button>
+      </div>
+
+      <div class="message-body">
+        <div class="message-copy" id="msg4">Oi [nome], faz um tempo que conversamos sobre a casa no Engenho D'Água.
+
+Ela continua no seu radar ou o que você procura mudou?
+
+Pergunto só para saber se ainda faz sentido te manter atualizado.</div>
+
+        <div class="tip"><strong>Evite:</strong> criar urgência artificial ou perguntar várias vezes se a pessoa viu o material.</div>
+      </div>
+    </article>
+
+    <article class="message-card">
+      <div class="message-head">
+        <span class="number">5</span>
+        <div>
+          <h2 class="message-title">Convite para visita: lead que demonstrou interesse</h2>
+          <p class="message-context">Quando o lead já entendeu o imóvel e precisa avançar para a percepção presencial.</p>
+        </div>
+        <button class="copy-button" data-target="msg5">Copiar mensagem</button>
+      </div>
+
+      <div class="message-body">
+        <div class="message-copy" id="msg5">[Nome], acho que vale conhecer essa casa pessoalmente.
+
+O Marco apresenta a arquitetura e a forma como os ambientes funcionam.
+
+A visita ajuda a perceber duas coisas que o material não entrega por completo: a amplitude da vista e a facilidade do acesso.
+
+Qual dia funciona melhor para você?</div>
+
+        <div class="tip"><strong>Condução:</strong> a visita é com hora marcada e começa por uma conversa breve para confirmar se a casa faz sentido para o perfil do comprador.</div>
+      </div>
+    </article>
+
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <img src="https://exclusivo.opailhabela.com.br/assets/logo/logo-opa.svg" alt="OPA">
+    <h2>O imóvel certo, para a pessoa certa.</h2>
+    <p>Material de apoio para apresentar o CA006944 com clareza, contexto e os argumentos que realmente diferenciam a casa.</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast">Mensagem copiada</div>
+
+<script>
+const toast = document.getElementById('toast');
+let toastTimer;
+
+document.querySelectorAll('.copy-button').forEach(button => {
+  button.addEventListener('click', async () => {
+    const target = document.getElementById(button.dataset.target);
+    const text = target.innerText.trim();
+
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch (error) {
+      const area = document.createElement('textarea');
+      area.value = text;
+      area.style.position = 'fixed';
+      area.style.opacity = '0';
+      document.body.appendChild(area);
+      area.select();
+      document.execCommand('copy');
+      area.remove();
+    }
+
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 1800);
+  });
+});
+</script>
+
+</body>
+</html>
