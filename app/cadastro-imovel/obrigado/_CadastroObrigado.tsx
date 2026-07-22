@@ -7,9 +7,7 @@ import { MessageCircle, CheckCircle2, Home } from "lucide-react";
 import { pushClickWhatsApp } from "@/lib/analytics";
 
 const WHATSAPP_NUMBER = "5512974068058";
-const WHATSAPP_MESSAGE = encodeURIComponent(
-  "Olá! Acabei de cadastrar meu imóvel pelo site e gostaria de dar continuidade."
-);
+const WHATSAPP_MESSAGE = encodeURIComponent("Terminei de cadastrar");
 
 export default function CadastroObrigado() {
   useEffect(() => {
