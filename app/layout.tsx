@@ -31,7 +31,12 @@ export const metadata: Metadata = {
   description:
     "Conheça os lançamentos exclusivos Opa Ilhabela: Composição, Morro da Cruz e Siriúba 2.",
   icons: {
-    icon: "/assets/logo/logo-opa-nova.svg",
+    // O PNG vem primeiro porque o WhatsApp nao renderiza SVG no preview do link.
+    icon: [
+      { url: "/icon-opa.png", type: "image/png", sizes: "512x512" },
+      { url: "/assets/logo/logo-opa-nova.svg", type: "image/svg+xml" },
+    ],
+    apple: "/apple-icon.png",
   },
   openGraph: {
     title: "Exclusivo Opa Ilhabela | Lançamentos",
