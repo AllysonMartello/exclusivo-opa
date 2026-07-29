@@ -7,7 +7,8 @@ export const metadata: Metadata = {
     title: "Mídia Kit 2026 · OPA Imóveis Ilhabela",
     description:
       "Mídia Kit executivo da OPA Imóveis Ilhabela — alcance, audiência e formatos de parceria de marca no mercado de alto padrão de Ilhabela.",
-    path: "/midia-kit-opa",
+    path: "/kit-opa",
+    image: null,
   }),
   other: {
     "theme-color": "#166188",

@@ -7,7 +7,8 @@ export const metadata: Metadata = {
     title: "Mídia Kit 2026 · Marco Henrique | OPA Imóveis Ilhabela",
     description:
       "Mídia Kit executivo de Marco Henrique — corretor, arquiteto e empresário em Ilhabela. Alcance, audiência e formatos de parceria de marca.",
-    path: "/midia-kit-marco",
+    path: "/kit-marco",
+    image: null,
   }),
   other: {
     "theme-color": "#166188",

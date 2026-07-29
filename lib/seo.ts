@@ -7,7 +7,8 @@ export type PageSeo = {
   title: string;
   description: string;
   path: string;
-  image?: string;
+  /** Caminho da imagem de preview. Use `null` para compartilhar o link sem foto. */
+  image?: string | null;
   noindex?: boolean;
 };
 
@@ -19,10 +20,10 @@ export function buildMetadata({
   noindex,
 }: PageSeo): Metadata {
   const url = new URL(path, publicEnv.NEXT_PUBLIC_SITE_URL).toString();
-  const ogImage = new URL(
-    image ?? DEFAULT_OG_IMAGE,
-    publicEnv.NEXT_PUBLIC_SITE_URL,
-  ).toString();
+  const ogImage =
+    image === null
+      ? null
+      : new URL(image ?? DEFAULT_OG_IMAGE, publicEnv.NEXT_PUBLIC_SITE_URL).toString();
 
   return {
     title,
@@ -36,13 +37,13 @@ export function buildMetadata({
       siteName: "OPA Imóveis Ilhabela",
       locale: "pt_BR",
       type: "website",
-      images: [{ url: ogImage, width: 1200, height: 630 }],
+      ...(ogImage ? { images: [{ url: ogImage, width: 1200, height: 630 }] } : {}),
     },
     twitter: {
-      card: "summary_large_image",
+      card: ogImage ? "summary_large_image" : "summary",
       title,
       description,
-      images: [ogImage],
+      ...(ogImage ? { images: [ogImage] } : {}),
     },
   };
 }
