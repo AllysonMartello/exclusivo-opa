@@ -43,10 +43,9 @@ const LINKS: LinkItem[] = [
   },
   {
     title: "Materiais para Postagens",
-    desc: "Em breve...",
-    href: "#",
+    desc: "Fotos e vídeos para divulgação",
+    href: "https://drive.google.com/drive/folders/1IcWR9DcnaxjfnewTJaCOt-QJ_Mnbi8PA?usp=sharing",
     icon: ImageIcon,
-    disabled: true,
   },
 ];
 
