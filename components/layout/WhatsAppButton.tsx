@@ -12,25 +12,29 @@ const WA_HREF = `https://wa.me/5512974068058?text=${encodeURIComponent(
 
 const BROKER_SLUGS = Object.keys(BROKERS);
 
+// Paginas de apresentacao, sem captacao direta: o botao flutuante nao aparece.
+const ROTAS_SEM_BOTAO = ["/siriuba-2/jornada"];
+
 export default function WhatsAppButton() {
   const pathname = usePathname();
   const isBrokerPage = BROKER_SLUGS.some(
     (slug) => pathname === `/${slug}` || pathname.startsWith(`/${slug}/`),
   );
+  const oculto = isBrokerPage || ROTAS_SEM_BOTAO.includes(pathname);
 
   const [showBubble, setShowBubble] = useState(false);
 
   useEffect(() => {
-    if (isBrokerPage) return;
+    if (oculto) return;
     const show = setTimeout(() => setShowBubble(true), 2500);
     const hide = setTimeout(() => setShowBubble(false), 6500);
     return () => {
       clearTimeout(show);
       clearTimeout(hide);
     };
-  }, [isBrokerPage]);
+  }, [oculto]);
 
-  if (isBrokerPage) return null;
+  if (oculto) return null;
 
   return (
     <div
