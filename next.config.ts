@@ -48,6 +48,9 @@ const nextConfig: NextConfig = {
       { source: "/sobre-o-imovel-siriuba2.html", destination: "/sobre-o-imovel-siriuba-2", permanent: true },
       { source: "/midia-kit-marco", destination: "/kit-marco", permanent: true },
       { source: "/midia-kit-opa", destination: "/kit-opa", permanent: true },
+      { source: "/links-internos", destination: "/interno", permanent: true },
+      { source: "/acessos", destination: "/interno", permanent: true },
+      { source: "/central", destination: "/interno", permanent: true },
     ];
   },
 };
