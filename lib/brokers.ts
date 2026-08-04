@@ -12,17 +12,6 @@ export const IMOVEIS_EXCLUSIVOS: ImovelCardData[] = [
     description:
       "Um endereço raro à beira do canal de São Sebastião. Casa mobiliada, com vista panorâmica para o mar, píer na praia em frente e a poucos passos da Vila e gastronomia.",
   },
-  {
-    href: "/siriuba-2?utm_source=linkbio&utm_medium=linkbio&utm_campaign=siriuba_2",
-    img: "/assets/siriuba-2/hero-desktop.avif",
-    badge: "Lançamento",
-    badgePulse: true,
-    title: "Casa Contemporânea Siriúba 2",
-    location: "Siriúba, Ilhabela — SP",
-    code: "CA007139",
-    description:
-      "Residência contemporânea com arquitetura integrada à natureza, amplas áreas externas e vista privilegiada. Projeto exclusivo em lançamento.",
-  },
 ];
 
 export const INSTITUTIONAL_ACESSOS: AccessCardData[] = [
