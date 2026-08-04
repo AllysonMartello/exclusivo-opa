@@ -17,7 +17,8 @@ import {
   ClipboardList,
   Handshake,
   Layers,
-  X
+  X,
+  ChevronDown
 } from "lucide-react";
 
 export type InternalLinkItem = {
@@ -129,6 +130,7 @@ const INTERNAL_LINKS: InternalLinkItem[] = [
 export default function InternalLinksHub() {
   const [search, setSearch] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
+  const [isMobileSheetOpen, setIsMobileSheetOpen] = useState(false);
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
@@ -174,6 +176,8 @@ export default function InternalLinksHub() {
     (cat) => selectedCategory === "all" || selectedCategory === cat.id
   );
 
+  const activeCategoryObj = CATEGORIES.find((c) => c.id === selectedCategory) || CATEGORIES[0];
+
   return (
     <div className="min-h-screen bg-[#0A2634] text-slate-100 font-sans selection:bg-[#2A82B0] selection:text-white pb-24 antialiased">
       {/* Toast Notification */}
@@ -193,6 +197,98 @@ export default function InternalLinksHub() {
         )}
       </AnimatePresence>
 
+      {/* iOS-Style Bottom Sheet Action Sheet for Mobile Category Selection */}
+      <AnimatePresence>
+        {isMobileSheetOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsMobileSheetOpen(false)}
+              className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 sm:hidden"
+            />
+
+            {/* Bottom Sheet */}
+            <motion.div
+              initial={{ y: "100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "100%" }}
+              transition={{ type: "spring", stiffness: 350, damping: 30 }}
+              className="fixed bottom-0 left-0 right-0 z-50 bg-[#0C2D3E] border-t border-white/20 rounded-t-[32px] p-6 pb-10 shadow-2xl sm:hidden max-h-[85vh] flex flex-col"
+            >
+              {/* iOS Drag Handle */}
+              <div className="w-12 h-1.5 rounded-full bg-white/25 mx-auto mb-6 shrink-0" />
+
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <h3 className="text-lg font-semibold text-white tracking-tight">Filtrar por Categoria</h3>
+                  <p className="text-xs text-slate-400 font-light mt-0.5">Selecione uma seção para visualizar os links</p>
+                </div>
+                <button
+                  onClick={() => setIsMobileSheetOpen(false)}
+                  className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-slate-300 hover:text-white"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+
+              {/* iOS List Options Container */}
+              <div className="bg-[#061B25] border border-white/10 rounded-2xl overflow-hidden divide-y divide-white/5">
+                {CATEGORIES.map((cat) => {
+                  const Icon = cat.icon;
+                  const isSelected = selectedCategory === cat.id;
+                  const count =
+                    cat.id === "all"
+                      ? INTERNAL_LINKS.length
+                      : INTERNAL_LINKS.filter((i) => i.category === cat.id).length;
+
+                  return (
+                    <button
+                      key={cat.id}
+                      onClick={() => {
+                        setSelectedCategory(cat.id);
+                        setIsMobileSheetOpen(false);
+                      }}
+                      className={`w-full flex items-center justify-between p-4 transition-colors ${
+                        isSelected
+                          ? "bg-[#2A82B0]/20 text-white font-semibold"
+                          : "text-slate-300 hover:bg-white/5 font-medium"
+                      }`}
+                    >
+                      <div className="flex items-center gap-3.5">
+                        <div
+                          className={`w-9 h-9 rounded-xl flex items-center justify-center ${
+                            isSelected
+                              ? "bg-[#2A82B0] text-white"
+                              : "bg-white/5 text-slate-400"
+                          }`}
+                        >
+                          <Icon className="w-4.5 h-4.5" />
+                        </div>
+                        <span className="text-sm tracking-wide">{cat.label}</span>
+                      </div>
+
+                      <div className="flex items-center gap-3">
+                        <span className="text-xs text-slate-400 bg-white/5 px-2.5 py-1 rounded-full border border-white/5">
+                          {count} {count === 1 ? "link" : "links"}
+                        </span>
+                        {isSelected && (
+                          <div className="w-6 h-6 rounded-full bg-[#2A82B0] flex items-center justify-center text-white">
+                            <Check className="w-3.5 h-3.5" />
+                          </div>
+                        )}
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+
       <div className="max-w-6xl mx-auto px-5 sm:px-8 pt-12 sm:pt-16">
         {/* Header Branding */}
         <div className="flex flex-col items-center text-center mb-12 sm:mb-16">
@@ -200,7 +296,7 @@ export default function InternalLinksHub() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-xs font-semibold uppercase tracking-[0.25em] text-[#55B3E6] mb-6"
+            className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.25em] text-[#55B3E6] mb-6"
           >
             PAINEL INTERNO DE ACESSOS · OPA IMÓVEIS ILHABELA
           </motion.p>
@@ -263,9 +359,32 @@ export default function InternalLinksHub() {
             </div>
           </div>
 
-          {/* Clean Pill Selector Tabs (OPA Style Toggle) */}
-          <div className="flex items-center justify-center gap-2 flex-wrap">
-            <div className="bg-[#061B25] p-1.5 rounded-full border border-white/10 inline-flex items-center gap-1 max-w-full overflow-x-auto no-scrollbar">
+          {/* MOBILE iOS-Style Category Trigger (Visible only on mobile) */}
+          <div className="w-full max-w-3xl mx-auto sm:hidden">
+            <button
+              onClick={() => setIsMobileSheetOpen(true)}
+              className="w-full bg-[#061B25] hover:bg-[#08222F] border border-white/15 rounded-full px-6 py-3.5 flex items-center justify-between text-white font-medium shadow-xl transition-all active:scale-[0.98]"
+            >
+              <div className="flex items-center gap-3 truncate">
+                <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider shrink-0">CATEGORIA:</span>
+                <span className="text-xs font-semibold text-[#55B3E6] uppercase tracking-wider truncate">
+                  {activeCategoryObj.label}
+                </span>
+              </div>
+              <div className="flex items-center gap-2 shrink-0">
+                <span className="text-[11px] bg-white/10 px-2.5 py-0.5 rounded-full text-slate-300">
+                  {selectedCategory === "all"
+                    ? INTERNAL_LINKS.length
+                    : INTERNAL_LINKS.filter((i) => i.category === selectedCategory).length}
+                </span>
+                <ChevronDown className="w-4 h-4 text-slate-400" />
+              </div>
+            </button>
+          </div>
+
+          {/* DESKTOP Clean Pill Selector Tabs (Visible on sm and up) */}
+          <div className="hidden sm:flex items-center justify-center gap-2 flex-wrap">
+            <div className="bg-[#061B25] p-1.5 rounded-full border border-white/10 inline-flex items-center gap-1">
               {CATEGORIES.map((cat) => {
                 const isActive = selectedCategory === cat.id;
 
