@@ -7,7 +7,7 @@ import {
   Copy,
   Check,
   ExternalLink,
-  Share2,
+  ArrowRight,
   Folder,
   FileText,
   UserCheck,
@@ -17,7 +17,7 @@ import {
   ClipboardList,
   Handshake,
   Layers,
-  Sparkle
+  X
 } from "lucide-react";
 
 export type InternalLinkItem = {
@@ -27,39 +27,35 @@ export type InternalLinkItem = {
   description: string;
   category: "marco" | "opa" | "engenho";
   badge: string;
-  isExternalSharepoint?: boolean;
   icon: React.ElementType;
-  accentColor: string;
 };
 
 const CATEGORIES = [
-  { id: "all", label: "Todos os Acessos", icon: Layers },
-  { id: "marco", label: "Marco Henrique", icon: UserCheck },
-  { id: "opa", label: "Sites OPA", icon: Globe },
-  { id: "engenho", label: "Engenho D'Água", icon: Home },
+  { id: "all", label: "TODOS OS ACESSOS", icon: Layers },
+  { id: "marco", label: "MARCO HENRIQUE", icon: UserCheck },
+  { id: "opa", label: "SITES OPA", icon: Globe },
+  { id: "engenho", label: "ENGENHO D'ÁGUA", icon: Home },
 ] as const;
 
 const INTERNAL_LINKS: InternalLinkItem[] = [
   // LINKS E ACESSOS MARCO
   {
     id: "midia-kit-marco",
-    title: "Mídia Kit Marco",
+    title: "Mídia Kit Marco Henrique",
     url: "https://exclusivo.opailhabela.com.br/midia-kit-marco",
     description: "Apresentação institucional, perfil do público, métricas de audiência e formatos de parceria do corretor Marco Henrique.",
     category: "marco",
     badge: "Mídia Kit",
     icon: FileText,
-    accentColor: "#3B82F6", // Blue
   },
   {
     id: "linkbio-marco",
-    title: "Linkbio Marco",
+    title: "Linkbio Marco Henrique",
     url: "https://exclusivo.opailhabela.com.br/marco",
     description: "Hub de links exclusivo do corretor Marco Henrique para redes sociais e contato com clientes.",
     category: "marco",
     badge: "Linkbio",
     icon: UserCheck,
-    accentColor: "#10B981", // Emerald
   },
 
   // SITES DA OPA
@@ -69,29 +65,26 @@ const INTERNAL_LINKS: InternalLinkItem[] = [
     url: "https://exclusivo.opailhabela.com.br/",
     description: "Portal principal de links da OPA Imóveis Ilhabela com imóveis exclusivos e acessos institucionais.",
     category: "opa",
-    badge: "Linkbio OPA",
+    badge: "Site Principal",
     icon: Globe,
-    accentColor: "#0071C6", // OPA Brand Blue
   },
   {
     id: "lancamento-opa",
     title: "Lançamento OPA",
     url: "https://exclusivo.opailhabela.com.br/lancamento-opa",
-    description: "Página de lançamentos de imóveis e empreendimentos exclusivos da OPA Imóveis.",
+    description: "Página de lançamentos de imóveis e oportunidades exclusivas da OPA Imóveis.",
     category: "opa",
-    badge: "Lançamentos",
+    badge: "Lançamento",
     icon: Sparkles,
-    accentColor: "#8B5CF6", // Purple
   },
   {
     id: "cadastro-imovel",
     title: "Cadastro de Imóvel",
     url: "https://exclusivo.opailhabela.com.br/cadastro-imovel",
-    description: "Formulário direto para proprietários e captação de novos imóveis em Ilhabela.",
+    description: "Formulário direto para proprietários cadastrarem novos imóveis em Ilhabela.",
     category: "opa",
     badge: "Captação",
     icon: ClipboardList,
-    accentColor: "#F59E0B", // Amber
   },
   {
     id: "midia-kit-opa",
@@ -101,7 +94,6 @@ const INTERNAL_LINKS: InternalLinkItem[] = [
     category: "opa",
     badge: "Mídia Kit",
     icon: FileText,
-    accentColor: "#06B6D4", // Cyan
   },
 
   // LINKS E ACESSOS ENGENHO
@@ -112,9 +104,7 @@ const INTERNAL_LINKS: InternalLinkItem[] = [
     description: "Pasta oficial no SharePoint contendo arquivos brutos, fotos em alta resolução, vídeos e documentos originais do imóvel.",
     category: "engenho",
     badge: "SharePoint / Arquivos",
-    isExternalSharepoint: true,
     icon: Folder,
-    accentColor: "#0284C7", // SharePoint Sky Blue
   },
   {
     id: "pagina-exclusiva-engenho",
@@ -124,17 +114,15 @@ const INTERNAL_LINKS: InternalLinkItem[] = [
     category: "engenho",
     badge: "Site do Imóvel",
     icon: Home,
-    accentColor: "#EC4899", // Pink/Rose
   },
   {
     id: "material-corretores-engenho",
     title: "Material para Corretores",
     url: "https://exclusivo.opailhabela.com.br/engenho-CA006944/parcerias",
-    description: "Portal de apoio a parceiros com ficha resumida, fotos selecionadas, regras de comissão e mensagens prontas para corretores.",
+    description: "Portal de apoio a parceiros com ficha resumida, fotos selecionadas, regras de comissão e mensagens prontas para vendas.",
     category: "engenho",
     badge: "Parcerias & Vendas",
     icon: Handshake,
-    accentColor: "#14B8A6", // Teal
   },
 ];
 
@@ -149,18 +137,18 @@ export default function InternalLinksHub() {
     setCopiedId(id);
     setToastMessage(`Link de "${title}" copiado!`);
     setTimeout(() => setCopiedId(null), 2500);
-    setTimeout(() => setToastMessage(null), 3000);
+    setTimeout(() => setToastMessage(null), 3500);
   };
 
-  const copyCategoryLinksText = (catId: string, catLabel: string) => {
+  const copyCategoryLinksText = (catId: string, catTitle: string) => {
     const items = INTERNAL_LINKS.filter(
       (item) => catId === "all" || item.category === catId
     );
-    const formattedText = `📌 *${catLabel.toUpperCase()} - ACESSOS OPA*\n\n` +
-      items.map((i) => `🔹 *${i.title}*\n${i.url}`).join("\n\n");
+    const formattedText = `📌 *${catTitle} - OPA IMÓVEIS*\n\n` +
+      items.map((i) => `• *${i.title}*\n  ${i.url}`).join("\n\n");
 
     navigator.clipboard.writeText(formattedText);
-    setToastMessage(`Links da seção "${catLabel}" copiados em formato de mensagem!`);
+    setToastMessage(`Links da seção "${catTitle}" copiados em texto!`);
     setTimeout(() => setToastMessage(null), 3500);
   };
 
@@ -183,51 +171,39 @@ export default function InternalLinksHub() {
     { id: "opa", title: "SITES DA OPA", desc: "Portais principais, lançamentos, cadastro de imóveis e mídia kit" },
     { id: "engenho", title: "LINKS E ACESSOS ENGENHO", desc: "Arquivos no SharePoint, página do imóvel CA006944 e portal de corretores" },
   ].filter(
-    (cat) =>
-      selectedCategory === "all" || selectedCategory === cat.id
+    (cat) => selectedCategory === "all" || selectedCategory === cat.id
   );
 
   return (
-    <div className="min-h-screen bg-[#0B131F] text-slate-100 selection:bg-sky-500 selection:text-white pb-24">
-      {/* Background Glow Overlay */}
-      <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        <div className="absolute -top-40 -left-40 w-96 h-96 bg-sky-600/15 rounded-full blur-3xl" />
-        <div className="absolute top-1/3 -right-40 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 left-1/3 w-96 h-96 bg-indigo-600/15 rounded-full blur-3xl" />
-      </div>
-
-      {/* Toast Alert */}
+    <div className="min-h-screen bg-[#0A2634] text-slate-100 font-sans selection:bg-[#2A82B0] selection:text-white pb-24 antialiased">
+      {/* Toast Notification */}
       <AnimatePresence>
         {toastMessage && (
           <motion.div
-            initial={{ opacity: 0, y: 50, scale: 0.9 }}
+            initial={{ opacity: 0, y: 40, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.9 }}
-            className="fixed bottom-6 right-6 z-50 bg-sky-500 text-white font-medium px-5 py-3 rounded-xl shadow-2xl flex items-center gap-3 border border-sky-400/40 backdrop-blur-md"
+            exit={{ opacity: 0, y: 20, scale: 0.95 }}
+            className="fixed bottom-8 right-6 z-50 bg-[#2A82B0] text-white font-medium px-5 py-3.5 rounded-full shadow-2xl flex items-center gap-3 border border-white/20 backdrop-blur-md"
           >
-            <div className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center shrink-0">
-              <Check className="w-4 h-4 text-white" />
+            <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+              <Check className="w-3.5 h-3.5 text-white" />
             </div>
-            <span className="text-sm">{toastMessage}</span>
+            <span className="text-sm font-medium tracking-wide">{toastMessage}</span>
           </motion.div>
         )}
       </AnimatePresence>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 pt-10 sm:pt-14">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8 pt-12 sm:pt-16">
         {/* Header Branding */}
-        <div className="flex flex-col items-center text-center mb-10">
-          <motion.div
+        <div className="flex flex-col items-center text-center mb-12 sm:mb-16">
+          <motion.p
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-semibold uppercase tracking-wider mb-5 shadow-inner"
+            className="text-xs font-semibold uppercase tracking-[0.25em] text-[#55B3E6] mb-6"
           >
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-sky-500" />
-            </span>
-            <span>Uso Interno & Equipe OPA</span>
-          </motion.div>
+            PAINEL INTERNO DE ACESSOS · OPA IMÓVEIS ILHABELA
+          </motion.p>
 
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <motion.img
@@ -236,14 +212,14 @@ export default function InternalLinksHub() {
             transition={{ duration: 0.6 }}
             src="/assets/logo/logo-opa-nova.svg"
             alt="OPA Imóveis Ilhabela"
-            className="h-16 sm:h-20 mb-6 drop-shadow-[0_10px_20px_rgba(0,113,198,0.3)]"
+            className="h-16 sm:h-20 mb-8 drop-shadow-md"
           />
 
           <motion.h1
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-3"
+            className="text-3xl sm:text-5xl font-semibold text-white tracking-tight mb-4"
           >
             Central de Links & Acessos
           </motion.h1>
@@ -252,9 +228,9 @@ export default function InternalLinksHub() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-slate-300 text-sm sm:text-base max-w-2xl leading-relaxed font-light"
+            className="text-slate-300 text-base sm:text-lg max-w-2xl font-light leading-relaxed"
           >
-            Todos os links rápidos, páginas exclusivas, portais e materiais de apoio reunidos em um único lugar organizado.
+            Todos os links essenciais, mídias kits e materiais de apoio organizados para rápida consulta e compartilhamento.
           </motion.p>
         </div>
 
@@ -263,81 +239,72 @@ export default function InternalLinksHub() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.25 }}
-          className="bg-slate-900/80 backdrop-blur-xl border border-slate-800/80 p-4 sm:p-5 rounded-2xl shadow-2xl mb-10 space-y-4"
+          className="flex flex-col gap-6 mb-14"
         >
-          {/* Search Box */}
-          <div className="relative">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" />
-            <input
-              type="text"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder="Pesquisar por nome, link, palavra-chave ou categoria..."
-              className="w-full bg-slate-950/70 border border-slate-800 rounded-xl pl-12 pr-10 py-3.5 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-sky-500/70 focus:ring-2 focus:ring-sky-500/20 transition-all"
-            />
-            {search && (
-              <button
-                onClick={() => setSearch("")}
-                className="absolute right-3.5 top-1/2 -translate-y-1/2 text-xs font-semibold text-slate-400 hover:text-white bg-slate-800 hover:bg-slate-700 px-2 py-1 rounded-md transition-colors"
-              >
-                Limpar
-              </button>
-            )}
+          {/* Main White Pill Search Bar (Matching OPA search UI) */}
+          <div className="relative w-full max-w-3xl mx-auto">
+            <div className="bg-white rounded-full p-2 pl-6 shadow-2xl border border-white/20 flex items-center gap-3 transition-all focus-within:ring-4 focus-within:ring-[#2A82B0]/30">
+              <Search className="w-5 h-5 text-slate-400 shrink-0" />
+              <input
+                type="text"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                placeholder="Pesquisar por nome, palavra-chave ou link..."
+                className="w-full bg-transparent text-[#0A2634] font-medium text-sm sm:text-base placeholder:text-slate-400 focus:outline-none py-2 pr-4"
+              />
+              {search ? (
+                <button
+                  onClick={() => setSearch("")}
+                  className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 flex items-center justify-center transition-colors shrink-0 mr-1"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              ) : null}
+            </div>
           </div>
 
-          {/* Category Pills */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-1 pt-1 no-scrollbar">
-            {CATEGORIES.map((cat) => {
-              const Icon = cat.icon;
-              const isActive = selectedCategory === cat.id;
-              const count =
-                cat.id === "all"
-                  ? INTERNAL_LINKS.length
-                  : INTERNAL_LINKS.filter((i) => i.category === cat.id).length;
+          {/* Clean Pill Selector Tabs (OPA Style Toggle) */}
+          <div className="flex items-center justify-center gap-2 flex-wrap">
+            <div className="bg-[#061B25] p-1.5 rounded-full border border-white/10 inline-flex items-center gap-1 max-w-full overflow-x-auto no-scrollbar">
+              {CATEGORIES.map((cat) => {
+                const isActive = selectedCategory === cat.id;
 
-              return (
-                <button
-                  key={cat.id}
-                  onClick={() => setSelectedCategory(cat.id)}
-                  className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-medium whitespace-nowrap transition-all duration-200 ${
-                    isActive
-                      ? "bg-sky-500 text-white shadow-lg shadow-sky-500/25 font-semibold"
-                      : "bg-slate-950/50 text-slate-400 hover:text-white hover:bg-slate-800/80 border border-slate-800/60"
-                  }`}
-                >
-                  <Icon className="w-3.5 h-3.5" />
-                  <span>{cat.label}</span>
-                  <span
-                    className={`px-1.5 py-0.5 rounded-full text-[10px] ${
+                return (
+                  <button
+                    key={cat.id}
+                    onClick={() => setSelectedCategory(cat.id)}
+                    className={`px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider transition-all duration-200 whitespace-nowrap ${
                       isActive
-                        ? "bg-white/25 text-white"
-                        : "bg-slate-800 text-slate-400"
+                        ? "bg-white text-[#0A2634] shadow-md"
+                        : "text-slate-300 hover:text-white hover:bg-white/5"
                     }`}
                   >
-                    {count}
-                  </span>
-                </button>
-              );
-            })}
+                    {cat.label}
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </motion.div>
 
         {/* Links Sections */}
         {filteredLinks.length === 0 ? (
-          <div className="text-center py-16 bg-slate-900/40 rounded-2xl border border-slate-800/50">
-            <p className="text-slate-400 text-base mb-2">Nenhum resultado encontrado para &quot;{search}&quot;</p>
+          <div className="text-center py-20 bg-[#071E29] rounded-[28px] border border-white/10">
+            <p className="text-slate-300 text-base mb-3 font-light">
+              Nenhum acessos encontrado para &quot;{search}&quot;
+            </p>
             <button
               onClick={() => {
                 setSearch("");
                 setSelectedCategory("all");
               }}
-              className="text-xs text-sky-400 hover:text-sky-300 underline font-medium"
+              className="text-xs text-[#55B3E6] hover:text-white uppercase tracking-widest font-semibold underline underline-offset-4"
             >
-              Resetar filtros de busca
+              Resetar pesquisa
             </button>
           </div>
         ) : (
-          <div className="space-y-12">
+          <div className="space-y-16">
             {categoriesToDisplay.map((catGroup) => {
               const itemsInGroup = filteredLinks.filter(
                 (item) => item.category === catGroup.id
@@ -352,18 +319,15 @@ export default function InternalLinksHub() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5 }}
-                  className="space-y-5"
+                  className="space-y-6"
                 >
-                  {/* Category Title & Quick Copy All */}
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-800/80">
+                  {/* Category Title & Quick Copy Link */}
+                  <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3 pb-4 border-b border-white/10">
                     <div>
-                      <div className="flex items-center gap-2">
-                        <Sparkle className="w-4 h-4 text-sky-400" />
-                        <h2 className="text-lg font-bold text-white tracking-wide uppercase">
-                          {catGroup.title}
-                        </h2>
-                      </div>
-                      <p className="text-xs text-slate-400 mt-0.5">
+                      <h2 className="text-xl sm:text-2xl font-medium tracking-tight text-white">
+                        {catGroup.title}
+                      </h2>
+                      <p className="text-xs text-slate-400 font-light mt-1">
                         {catGroup.desc}
                       </p>
                     </div>
@@ -372,16 +336,15 @@ export default function InternalLinksHub() {
                       onClick={() =>
                         copyCategoryLinksText(catGroup.id, catGroup.title)
                       }
-                      className="self-start sm:self-auto inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-medium border border-slate-700/60 transition-colors shadow-sm"
-                      title="Copiar todos os links desta categoria em formato de texto para enviar no WhatsApp"
+                      className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#55B3E6] hover:text-white transition-colors underline decoration-[#55B3E6]/40 underline-offset-4 self-start sm:self-auto"
                     >
-                      <Share2 className="w-3.5 h-3.5 text-sky-400" />
-                      <span>Copiar Seção</span>
+                      <span>Copiar Todos os Links</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
                     </button>
                   </div>
 
                   {/* Cards Grid */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                     {itemsInGroup.map((item) => {
                       const Icon = item.icon;
                       const isCopied = copiedId === item.id;
@@ -389,74 +352,55 @@ export default function InternalLinksHub() {
                       return (
                         <div
                           key={item.id}
-                          className="group relative bg-slate-900/90 hover:bg-slate-850 border border-slate-800 hover:border-slate-700/90 rounded-2xl p-5 transition-all duration-300 shadow-xl flex flex-col justify-between overflow-hidden"
+                          className="group bg-[#0E3142] hover:bg-[#123A4E] border border-white/10 hover:border-white/20 rounded-[24px] p-6 transition-all duration-300 shadow-xl flex flex-col justify-between"
                         >
-                          {/* Top Accent Line */}
-                          <div
-                            className="absolute top-0 left-0 right-0 h-1 transition-opacity duration-300 opacity-60 group-hover:opacity-100"
-                            style={{ backgroundColor: item.accentColor }}
-                          />
-
                           <div>
-                            {/* Card Header: Icon + Badge */}
-                            <div className="flex items-start justify-between gap-3 mb-3">
-                              <div
-                                className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-105"
-                                style={{
-                                  backgroundColor: `${item.accentColor}1A`,
-                                  color: item.accentColor,
-                                }}
-                              >
-                                <Icon className="w-5 h-5" />
-                              </div>
-
-                              <span
-                                className="inline-flex items-center gap-1 text-[11px] font-semibold px-2.5 py-1 rounded-full uppercase tracking-wider border"
-                                style={{
-                                  backgroundColor: `${item.accentColor}12`,
-                                  borderColor: `${item.accentColor}33`,
-                                  color: item.accentColor,
-                                }}
-                              >
+                            {/* Category Badge & Icon */}
+                            <div className="flex items-center justify-between gap-3 mb-4">
+                              <span className="text-[10px] uppercase tracking-widest font-semibold text-[#55B3E6] bg-[#55B3E6]/10 border border-[#55B3E6]/20 px-3 py-1 rounded-full">
                                 {item.badge}
                               </span>
+
+                              <div className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-300 group-hover:text-white transition-colors">
+                                <Icon className="w-4.5 h-4.5" />
+                              </div>
                             </div>
 
                             {/* Title & Description */}
-                            <h3 className="text-base font-bold text-white group-hover:text-sky-300 transition-colors mb-1.5">
+                            <h3 className="text-lg font-semibold text-white tracking-tight group-hover:text-[#55B3E6] transition-colors mb-2">
                               {item.title}
                             </h3>
-                            <p className="text-slate-300 text-xs leading-relaxed mb-4 font-light">
+                            <p className="text-slate-300 text-sm font-light leading-relaxed mb-5">
                               {item.description}
                             </p>
 
-                            {/* URL Display */}
-                            <div className="bg-slate-950/70 border border-slate-800/80 rounded-xl px-3 py-2 text-[11px] font-mono text-slate-400 truncate mb-4 select-all">
+                            {/* URL Display Box */}
+                            <div className="bg-[#061B25]/80 border border-white/5 rounded-xl px-3.5 py-2.5 text-xs font-mono text-slate-400 truncate mb-6 select-all">
                               {item.url}
                             </div>
                           </div>
 
                           {/* Action Buttons */}
-                          <div className="flex items-center gap-2 pt-2 border-t border-slate-800/60">
+                          <div className="flex items-center gap-3 pt-4 border-t border-white/10">
                             {/* Copy Link Button */}
                             <button
                               onClick={() =>
                                 copyToClipboard(item.url, item.id, item.title)
                               }
-                              className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl text-xs font-semibold transition-all duration-200 ${
+                              className={`flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-full text-xs font-medium transition-all shadow-md ${
                                 isCopied
-                                  ? "bg-emerald-500/20 text-emerald-300 border border-emerald-500/40"
-                                  : "bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white border border-slate-700/50"
+                                  ? "bg-emerald-600 text-white"
+                                  : "bg-[#2A82B0] hover:bg-[#227099] text-white"
                               }`}
                             >
                               {isCopied ? (
                                 <>
-                                  <Check className="w-3.5 h-3.5 text-emerald-400" />
+                                  <Check className="w-3.5 h-3.5" />
                                   <span>Copiado!</span>
                                 </>
                               ) : (
                                 <>
-                                  <Copy className="w-3.5 h-3.5 text-slate-400 group-hover:text-white" />
+                                  <Copy className="w-3.5 h-3.5" />
                                   <span>Copiar Link</span>
                                 </>
                               )}
@@ -467,10 +411,10 @@ export default function InternalLinksHub() {
                               href={item.url}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="flex items-center justify-center gap-1.5 py-2.5 px-4 rounded-xl text-xs font-semibold bg-sky-600 hover:bg-sky-500 text-white transition-all shadow-md shadow-sky-600/20 shrink-0"
+                              className="bg-white hover:bg-slate-100 text-[#0A2634] font-semibold text-xs px-5 py-2.5 rounded-full shadow-md flex items-center justify-center gap-1.5 transition-all shrink-0"
                             >
                               <span>Abrir</span>
-                              <ExternalLink className="w-3.5 h-3.5 opacity-90" />
+                              <ExternalLink className="w-3.5 h-3.5 text-[#0A2634]" />
                             </a>
                           </div>
                         </div>
@@ -483,16 +427,16 @@ export default function InternalLinksHub() {
           </div>
         )}
 
-        {/* Footer info */}
+        {/* Clean Footer */}
         <motion.footer
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="mt-20 pt-8 border-t border-slate-800/80 text-center text-xs text-slate-500 flex flex-col items-center gap-2"
+          transition={{ duration: 1, delay: 0.4 }}
+          className="mt-24 pt-8 border-t border-white/10 text-center text-xs text-slate-400 font-light flex flex-col items-center gap-2"
         >
           <p>© {new Date().getFullYear()} OPA Imóveis Ilhabela · Central de Acessos Internos</p>
-          <p className="text-[11px] text-slate-600">
-            Dica: Adicione esta página aos seus favoritos no navegador para acesso imediato.
+          <p className="text-[11px] text-slate-500">
+            Dica: Adicione esta página aos seus favoritos do navegador para acesso direto.
           </p>
         </motion.footer>
       </div>
