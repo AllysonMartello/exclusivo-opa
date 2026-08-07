@@ -96,6 +96,15 @@ const INTERNAL_LINKS: InternalLinkItem[] = [
     badge: "Mídia Kit",
     icon: FileText,
   },
+  {
+    id: "blog-opa",
+    title: "Blog OPA Imóveis",
+    url: "https://opailhabela.com.br/blog",
+    description: "Blog oficial da OPA Imóveis Ilhabela com conteúdos, dicas e novidades do mercado imobiliário.",
+    category: "opa",
+    badge: "Blog",
+    icon: Globe,
+  },
 
   // LINKS E ACESSOS ENGENHO
   {
