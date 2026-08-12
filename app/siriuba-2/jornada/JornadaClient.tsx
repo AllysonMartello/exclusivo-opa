@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 /* Fases da jornada: dia inicial, dia final, classe da celula e nome exibido no HUD. */
 const FASES = [
@@ -17,6 +17,12 @@ function faseDoDia(d: number) {
 
 export default function JornadaClient() {
   const rootRef = useRef<HTMLDivElement>(null);
+  const [showWelcome, setShowWelcome] = useState(true);
+
+  useEffect(() => {
+    const t = setTimeout(() => setShowWelcome(false), 1800);
+    return () => clearTimeout(t);
+  }, []);
 
   useEffect(() => {
     const root = rootRef.current;
@@ -228,6 +234,13 @@ export default function JornadaClient() {
 
   return (
     <div data-app="jornada" ref={rootRef}>
+      {/* ============ BEM-VINDO ============ */}
+      <div id="welcome-overlay" className={showWelcome ? "" : "hide"}>
+        <div className="welcome-text">
+          Bem-vindo<span>.</span>
+        </div>
+      </div>
+
       {/* ============ HUD ============ */}
       <div className="hud" id="hud" aria-hidden="true">
         <div className="shell">
