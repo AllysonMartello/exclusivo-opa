@@ -304,10 +304,7 @@ export default function JornadaClient() {
             </span>
           </div>
         </div>
-        <div className="scrollcue">
-          Role para percorrer
-          <i />
-        </div>
+
       </header>
 
       {/* ============ JORNADA (ritmo + fases) ============ */}
