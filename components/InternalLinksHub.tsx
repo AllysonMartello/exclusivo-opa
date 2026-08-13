@@ -41,6 +41,15 @@ const CATEGORIES = [
 const INTERNAL_LINKS: InternalLinkItem[] = [
   // LINKS E ACESSOS MARCO
   {
+    id: "markito-gestao",
+    title: "App de Gestão (Markito)",
+    url: "https://markito.gcompass.com.br/",
+    description: "Sistema de gestão interna. Login: opaimoveisilhabela@gmail.com | Senha: Senha123@",
+    category: "marco",
+    badge: "Sistema",
+    icon: Layers,
+  },
+  {
     id: "midia-kit-marco",
     title: "Mídia Kit Marco Henrique",
     url: "https://exclusivo.opailhabela.com.br/midia-kit-marco",
