@@ -1,0 +1,70 @@
+[     422ms] TypeError: Cannot read properties of null (reading 'replace')
+    at http://localhost:3939/completo/linkbio.html:25:8758
+    at Object.registerChunk (http://localhost:3939/completo/linkbio.html:25:8824)
+    at F (http://localhost:3939/completo/linkbio.html:25:8440)
+    at Array.forEach (<anonymous>)
+    at http://localhost:3939/completo/linkbio.html:25:10599
+    at http://localhost:3939/completo/linkbio.html:25:10611
+[     425ms] TypeError: Cannot read properties of null (reading 'replace')
+    at http://localhost:3939/completo/linkbio.html:25:8758
+    at Object.registerChunk (http://localhost:3939/completo/linkbio.html:25:8824)
+    at F (http://localhost:3939/completo/linkbio.html:25:8440)
+    at Array.forEach (<anonymous>)
+    at http://localhost:3939/completo/linkbio.html:25:10599
+    at http://localhost:3939/completo/linkbio.html:25:10611
+[     425ms] TypeError: Cannot read properties of null (reading 'replace')
+    at http://localhost:3939/completo/linkbio.html:25:8758
+    at Object.registerChunk (http://localhost:3939/completo/linkbio.html:25:8824)
+    at F (http://localhost:3939/completo/linkbio.html:25:8440)
+    at Array.forEach (<anonymous>)
+    at http://localhost:3939/completo/linkbio.html:25:10599
+    at http://localhost:3939/completo/linkbio.html:25:10611
+[     425ms] TypeError: Cannot read properties of null (reading 'replace')
+    at http://localhost:3939/completo/linkbio.html:25:8758
+    at Object.registerChunk (http://localhost:3939/completo/linkbio.html:25:8824)
+    at F (http://localhost:3939/completo/linkbio.html:25:8440)
+    at Array.forEach (<anonymous>)
+    at http://localhost:3939/completo/linkbio.html:25:10599
+    at http://localhost:3939/completo/linkbio.html:25:10611
+[     425ms] TypeError: Cannot read properties of null (reading 'replace')
+    at http://localhost:3939/completo/linkbio.html:25:8758
+    at Object.registerChunk (http://localhost:3939/completo/linkbio.html:25:8824)
+    at F (http://localhost:3939/completo/linkbio.html:25:8440)
+    at Array.forEach (<anonymous>)
+    at http://localhost:3939/completo/linkbio.html:25:10599
+    at http://localhost:3939/completo/linkbio.html:25:10611
+[     425ms] TypeError: Cannot read properties of null (reading 'replace')
+    at http://localhost:3939/completo/linkbio.html:25:8758
+    at Object.registerChunk (http://localhost:3939/completo/linkbio.html:25:8824)
+    at Object.F [as push] (http://localhost:3939/completo/linkbio.html:25:8440)
+    at http://localhost:3939/completo/linkbio.html:28:51
+[     425ms] TypeError: Cannot read properties of null (reading 'replace')
+    at http://localhost:3939/completo/linkbio.html:25:8758
+    at Object.registerChunk (http://localhost:3939/completo/linkbio.html:25:8824)
+    at Object.F [as push] (http://localhost:3939/completo/linkbio.html:25:8440)
+    at http://localhost:3939/completo/linkbio.html:39:51
+[     425ms] TypeError: Cannot read properties of null (reading 'replace')
+    at http://localhost:3939/completo/linkbio.html:25:8758
+    at Object.registerChunk (http://localhost:3939/completo/linkbio.html:25:8824)
+    at Object.F [as push] (http://localhost:3939/completo/linkbio.html:25:8440)
+    at http://localhost:3939/completo/linkbio.html:42:51
+[     425ms] TypeError: Cannot read properties of null (reading 'replace')
+    at http://localhost:3939/completo/linkbio.html:25:8758
+    at Object.registerChunk (http://localhost:3939/completo/linkbio.html:25:8824)
+    at Object.F [as push] (http://localhost:3939/completo/linkbio.html:25:8440)
+    at http://localhost:3939/completo/linkbio.html:45:51
+[     425ms] TypeError: Cannot read properties of null (reading 'replace')
+    at http://localhost:3939/completo/linkbio.html:25:8758
+    at Object.registerChunk (http://localhost:3939/completo/linkbio.html:25:8824)
+    at Object.F [as push] (http://localhost:3939/completo/linkbio.html:25:8440)
+    at http://localhost:3939/completo/linkbio.html:109:51
+[     425ms] TypeError: Cannot read properties of null (reading 'replace')
+    at http://localhost:3939/completo/linkbio.html:25:8758
+    at Object.registerChunk (http://localhost:3939/completo/linkbio.html:25:8824)
+    at Object.F [as push] (http://localhost:3939/completo/linkbio.html:25:8440)
+    at http://localhost:3939/completo/linkbio.html:112:51
+[     445ms] TypeError: Cannot read properties of null (reading 'replace')
+    at http://localhost:3939/completo/linkbio.html:25:8758
+    at Object.registerChunk (http://localhost:3939/completo/linkbio.html:25:8824)
+    at Object.F [as push] (http://localhost:3939/completo/linkbio.html:25:8440)
+    at http://localhost:3939/completo/linkbio.html:169:51

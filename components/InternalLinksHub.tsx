@@ -70,6 +70,15 @@ const INTERNAL_LINKS: InternalLinkItem[] = [
 
   // SITES DA OPA
   {
+    id: "pop-cadastro-imovel",
+    title: "POP de Cadastro de Imóvel",
+    url: "/interno/pop-cadastro",
+    description: "Procedimento Operacional Padrão e Checklist para lançamento e cadastro de imóveis.",
+    category: "opa",
+    badge: "Processos / POP",
+    icon: ClipboardList,
+  },
+  {
     id: "linkbio-opa",
     title: "Linkbio OPA (Página Principal)",
     url: "https://exclusivo.opailhabela.com.br/",

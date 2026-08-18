@@ -1,0 +1,265 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic:
+      - generic:
+        - generic:
+          - generic: Dia 1 / 50
+          - generic: Início
+    - banner [ref=e3]:
+      - generic [ref=e5]:
+        - generic [ref=e6]: Lançamento OPA · Siriúba 2 · Ilhabela
+        - generic [ref=e7]:
+          - generic [ref=e8]:
+            - generic [ref=e9]: "2"
+            - generic [ref=e10]: dias · 18 mai — 07 jul 2026
+          - generic [ref=e11]:
+            - heading "Um lançamento não é um anúncio. É uma novela . E essa durou 50 capítulos." [level=1] [ref=e12]:
+              - text: Um lançamento não é um anúncio. É uma
+              - generic [ref=e13]: novela
+              - text: . E essa durou 50 capítulos.
+            - paragraph [ref=e14]: Cada quadrado abaixo é um dia. O lançamento levou 20 dias. Os 30 seguintes foram de manutenção, até a casa ter dono.
+        - 'img "Grade de 50 dias, colorida por fase: início, captação, pré-lançamento e lançamento nos 20 primeiros dias; manutenção nos 30 seguintes." [ref=e15]':
+          - 'generic "Dia 1: Início"'
+          - 'generic "Dia 2: Início"'
+          - 'generic "Dia 3: Início"'
+          - 'generic "Dia 4: Início"'
+          - 'generic "Dia 5: Início"'
+          - 'generic "Dia 6: Captação"'
+          - 'generic "Dia 7: Captação"'
+          - 'generic "Dia 8: Captação"'
+          - 'generic "Dia 9: Captação"'
+          - 'generic "Dia 10: Captação"'
+          - 'generic "Dia 11: Captação"'
+          - 'generic "Dia 12: Captação"'
+          - 'generic "Dia 13: Pré-lançamento"'
+          - 'generic "Dia 14: Pré-lançamento"'
+          - 'generic "Dia 15: Pré-lançamento"'
+          - 'generic "Dia 16: Pré-lançamento"'
+          - 'generic "Dia 17: Lançamento"'
+          - 'generic "Dia 18: Lançamento"'
+          - 'generic "Dia 19: Lançamento"'
+          - 'generic "Dia 20: Lançamento"'
+          - 'generic "Dia 21: Manutenção"'
+          - 'generic "Dia 22: Manutenção"'
+          - 'generic "Dia 23: Manutenção"'
+          - 'generic "Dia 24: Manutenção"'
+          - 'generic "Dia 25: Manutenção"'
+          - 'generic "Dia 26: Manutenção"'
+          - 'generic "Dia 27: Manutenção"'
+          - 'generic "Dia 28: Manutenção"'
+          - 'generic "Dia 29: Manutenção"'
+          - 'generic "Dia 30: Manutenção"'
+          - 'generic "Dia 31: Manutenção"'
+          - 'generic "Dia 32: Manutenção"'
+          - 'generic "Dia 33: Manutenção"'
+          - 'generic "Dia 34: Manutenção"'
+          - 'generic "Dia 35: Manutenção"'
+          - 'generic "Dia 36: Manutenção"'
+          - 'generic "Dia 37: Manutenção"'
+          - 'generic "Dia 38: Manutenção"'
+          - 'generic "Dia 39: Manutenção"'
+          - 'generic "Dia 40: Manutenção"'
+          - 'generic "Dia 41: Manutenção"'
+          - 'generic "Dia 42: Manutenção"'
+          - 'generic "Dia 43: Manutenção"'
+          - 'generic "Dia 44: Manutenção"'
+          - 'generic "Dia 45: Manutenção"'
+          - 'generic "Dia 46: Manutenção"'
+          - 'generic "Dia 47: Manutenção"'
+          - 'generic "Dia 48: Manutenção"'
+          - 'generic "Dia 49: Manutenção"'
+          - 'generic "Dia 50: Vendido"'
+        - generic [ref=e16]:
+          - generic [ref=e17]: 20 dias de lançamento
+          - generic [ref=e18]: 30 dias de manutenção
+          - generic [ref=e19]: 26 peças de conteúdo
+          - generic [ref=e20]: 1 comprador certo
+      - generic [ref=e21]: Role para percorrer
+    - generic [ref=e24]:
+      - generic [ref=e25]:
+        - heading "20 dias de lançamento. 30 de manutenção." [level=2] [ref=e26]
+        - paragraph [ref=e27]: Cada imóvel da OPA é tratado como uma narrativa. Quatro fases nos primeiros 20 dias constroem a história; depois, manutenção até o comprador certo aparecer.
+      - generic [ref=e28]:
+        - generic [ref=e29]:
+          - generic [ref=e30]: "0"
+          - generic [ref=e31]: Peças de conteúdo
+          - generic [ref=e32]: 21 em vídeo, 5 estáticas.
+        - generic [ref=e33]:
+          - generic [ref=e34]: "0"
+          - generic [ref=e35]: Dias de lançamento
+          - generic [ref=e36]: Depois, 30 de manutenção.
+        - generic [ref=e37]:
+          - generic [ref=e38]: "0"
+          - generic [ref=e39]: Fotos profissionais
+          - generic [ref=e40]: Mais drone, tour e página.
+        - generic [ref=e41]:
+          - generic [ref=e42]: "0"
+          - generic [ref=e43]: Dias até a venda
+          - generic [ref=e44]: 18 de maio a 7 de julho.
+      - generic [ref=e47]:
+        - generic [ref=e48]:
+          - generic [ref=e49]: Dia 1 a 5
+          - heading "Início" [level=3] [ref=e50]
+          - paragraph [ref=e51]: A casa entra e a equipe se mexe. Reunião e visita de cada corretor, gravadas na hora.
+        - generic [ref=e52]:
+          - generic [ref=e53]: Dia 6 a 12
+          - heading "Captação" [level=3] [ref=e54]
+          - paragraph [ref=e55]: Fotógrafo, drone e câmera de cinema. O making-of vira conteúdo.
+        - generic [ref=e56]:
+          - generic [ref=e57]: Dia 13 a 16
+          - heading "Pré-lançamento" [level=3] [ref=e58]
+          - paragraph [ref=e59]: Página exclusiva, tour virtual e kit de parceria no ar antes do tráfego chegar.
+        - generic [ref=e60]:
+          - generic [ref=e61]: Dia 17 a 20
+          - heading "Lançamento" [level=3] [ref=e62]
+          - paragraph [ref=e63]: Reels, carrosséis e nativos saem nos perfis da OPA, do Marco e dos parceiros.
+        - generic [ref=e64]:
+          - generic [ref=e65]: Dia 21 a 50
+          - heading "Manutenção" [level=3] [ref=e66]
+          - paragraph [ref=e67]: Remarketing e visibilidade constante, até o comprador certo aparecer.
+    - generic [ref=e69]:
+      - generic [ref=e70]:
+        - heading "26 peças que não existiam em 18 de maio." [level=2] [ref=e71]
+        - paragraph [ref=e72]: Tudo se apoiou numa base de 49 fotos, drone, página exclusiva e tour virtual.
+      - generic [ref=e73]:
+        - generic [ref=e74]:
+          - heading "Vídeo 0" [level=3] [ref=e75]:
+            - text: Vídeo
+            - generic [ref=e76]: "0"
+          - list [ref=e77]:
+            - listitem [ref=e78]:
+              - text: Reels audiovisuais
+              - strong [ref=e79]: "7"
+            - listitem [ref=e80]:
+              - text: Reels nativos
+              - strong [ref=e81]: "9"
+            - listitem [ref=e82]:
+              - text: Remarketing vídeo
+              - strong [ref=e83]: "4"
+            - listitem [ref=e84]:
+              - text: Cinematográfico
+              - strong [ref=e85]: "1"
+        - generic [ref=e86]:
+          - heading "Estático 0" [level=3] [ref=e87]:
+            - text: Estático
+            - generic [ref=e88]: "0"
+          - list [ref=e89]:
+            - listitem [ref=e90]:
+              - text: Remarketing estático
+              - strong [ref=e91]: "3"
+            - listitem [ref=e92]:
+              - text: Carrosséis
+              - strong [ref=e93]: "2"
+        - generic [ref=e94]:
+          - heading "A base + a rede" [level=3] [ref=e95]
+          - list [ref=e96]:
+            - listitem [ref=e97]:
+              - text: Fotos profissionais
+              - strong [ref=e98]: "49"
+            - listitem [ref=e99]:
+              - text: Página + tour virtual
+              - strong [ref=e100]: Sim
+            - listitem [ref=e101]:
+              - text: Kit de parceria
+              - strong [ref=e102]: Completo
+          - paragraph [ref=e103]: Fora da contagem de peças, mas foi o kit que qualquer corretor parceiro usou para vender sem produzir nada por conta própria.
+    - generic [ref=e105]:
+      - generic [ref=e106]:
+        - heading "Veja com os próprios olhos." [level=2] [ref=e107]
+        - paragraph [ref=e108]: Os três materiais que sustentaram o lançamento, prontos para acessar agora.
+      - generic [ref=e109]:
+        - link "Principal diferencial Tour virtual Andar pela casa inteira sem sair de casa. Morando longe, isso influenciou na venda. my.matterport.com →" [ref=e110] [cursor=pointer]:
+          - /url: https://my.matterport.com/show/?m=tL9pSrTiUNR&play=1
+          - generic [ref=e111]: Principal diferencial
+          - generic [ref=e112]: Tour virtual
+          - generic [ref=e113]: Andar pela casa inteira sem sair de casa. Morando longe, isso influenciou na venda.
+          - generic [ref=e114]: my.matterport.com →
+        - generic [ref=e115]:
+          - generic [ref=e116]: Fechou a venda
+          - generic [ref=e117]: Rede de parceiros
+          - generic [ref=e118]: Quem fechou foi o corretor parceiro. A OPA possibilitou a parceria e entregou o material de apoio e a matéria-prima para ele vender.
+      - generic [ref=e119]:
+        - link "Página exclusiva → exclusivo.opailhabela.com.br/siriuba-2" [ref=e120] [cursor=pointer]:
+          - /url: https://exclusivo.opailhabela.com.br/siriuba-2
+          - generic [ref=e121]: Página exclusiva →
+          - generic [ref=e122]: exclusivo.opailhabela.com.br/siriuba-2
+        - link "Vídeo cinematográfico → youtube.com" [ref=e123] [cursor=pointer]:
+          - /url: https://www.youtube.com/watch?v=7XWgckz3SPU
+          - generic [ref=e124]: Vídeo cinematográfico →
+          - generic [ref=e125]: youtube.com
+        - link "Drive para corretores → Fotos, vídeos e kit de parceria" [ref=e126] [cursor=pointer]:
+          - /url: https://drive.google.com/drive/folders/1nInhiljDrIETJzVKFpd2CiJTH4Zs24Ay?usp=sharing
+          - generic [ref=e127]: Drive para corretores →
+          - generic [ref=e128]: Fotos, vídeos e kit de parceria
+    - generic [ref=e130]:
+      - heading "Produzir é metade. Fazer chegar é a outra." [level=2] [ref=e132]
+      - generic [ref=e133]:
+        - article [ref=e134]:
+          - generic [ref=e135]: Instagram
+          - strong [ref=e136]: Reels e carrossel
+          - paragraph [ref=e137]: OPA, Marco e corretores parceiros.
+        - article [ref=e138]:
+          - generic [ref=e139]: Facebook
+          - strong [ref=e140]: Reels
+          - paragraph [ref=e141]: Público de 45 a 65+ anos.
+        - article [ref=e142]:
+          - generic [ref=e143]: TikTok
+          - strong [ref=e144]: Descoberta
+          - paragraph [ref=e145]: Quem ainda não conhecia a OPA.
+        - article [ref=e146]:
+          - generic [ref=e147]: Google Ads
+          - strong [ref=e148]: Intenção ativa
+          - paragraph [ref=e149]: Quem já procurava casa em Ilhabela.
+      - generic [ref=e150]:
+        - generic [ref=e151]:
+          - text: "0"
+          - generic [ref=e152]: Views por trimestre
+        - paragraph [ref=e153]: A casa entrou numa rede que soma mais de 1,2 milhão de visualizações por trimestre, cerca de 13 mil pessoas por dia.
+    - generic [ref=e155]:
+      - generic [ref=e156]:
+        - heading [level=2] [ref=e157]:
+          - text: Dois mil reais.Ajustados
+          - emphasis [ref=e158]: todo dia
+          - text: .
+        - paragraph [ref=e159]: "A verba foi pequena de propósito. O que fez diferença não foi quanto, foi o quanto se mexeu nela: palavra-chave e métrica revistas todo dia, por 50 dias seguidos."
+      - generic [ref=e160]:
+        - generic [ref=e161]: "01"
+        - generic [ref=e162]:
+          - generic [ref=e163]: Dia 1 ao 30 · Google Ads
+          - heading "Busca ativa, otimizada diariamente" [level=3] [ref=e164]
+          - paragraph [ref=e165]: Campanha para alcançar quem já procurava imóvel em Ilhabela, com palavras-chave e métricas revistas todo dia.
+          - generic [ref=e166]:
+            - generic [ref=e167]: Otimização diária
+            - generic [ref=e168]: R$ 2.000 no total
+      - generic [ref=e169]:
+        - generic [ref=e170]: "02"
+        - generic [ref=e171]:
+          - generic [ref=e172]: Após 20 a 30 dias · Rede Google
+          - heading "Remarketing para quem já demonstrou interesse" [level=3] [ref=e173]
+          - paragraph [ref=e174]: Sete criativos para reencontrar quem visitou a página exclusiva ou assistiu ao conteúdo e não avançou de primeira.
+          - generic [ref=e175]:
+            - generic [ref=e176]: 3 estáticos
+            - generic [ref=e177]: 4 em vídeo
+    - generic [ref=e179]:
+      - heading [level=2] [ref=e180]:
+        - text: 50 dias depois,a casa tinha
+        - emphasis [ref=e181]: dono
+        - text: .
+      - paragraph [ref=e182]: "Este é o padrão de lançamento da OPA: produção completa, narrativa contínua e uma rede que distribui. O Siriúba 2 foi o capítulo mais recente."
+      - generic [ref=e183]:
+        - generic [ref=e184]:
+          - generic [ref=e185]: "26"
+          - generic [ref=e186]: Peças
+        - generic [ref=e187]:
+          - generic [ref=e188]: "50"
+          - generic [ref=e189]: Dias
+        - generic [ref=e190]:
+          - generic [ref=e191]: "4"
+          - generic [ref=e192]: Plataformas
+        - generic [ref=e193]:
+          - generic [ref=e194]: 1,2 mi
+          - generic [ref=e195]: Views/trimestre
+  - generic [ref=e196]:
+    - link "Falar no WhatsApp":
+      - /url: https://wa.me/5512974068058?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20OPA%20Ilhabela.
+  - alert [ref=e197]

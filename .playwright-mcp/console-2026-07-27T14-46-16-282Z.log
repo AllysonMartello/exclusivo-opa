@@ -1,0 +1,12 @@
+[     185ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3951/assets/images/ilhabela-foto-de-cima-drone-opa-ilhabela.jpg:0
+[     185ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3951/assets/brokers/marco-henrique.png:0
+[     204ms] Error: Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at rX (http://localhost:3951/_next/static/chunks/0kwvup6k1m2gq.js:1:46254)
+    at iu (http://localhost:3951/_next/static/chunks/0kwvup6k1m2gq.js:1:97295)
+    at sd (http://localhost:3951/_next/static/chunks/0kwvup6k1m2gq.js:1:137985)
+    at http://localhost:3951/_next/static/chunks/0kwvup6k1m2gq.js:1:132871
+    at se (http://localhost:3951/_next/static/chunks/0kwvup6k1m2gq.js:1:132972)
+    at s$ (http://localhost:3951/_next/static/chunks/0kwvup6k1m2gq.js:1:159536)
+    at MessagePort.O (http://localhost:3951/_next/static/chunks/0kwvup6k1m2gq.js:1:7701)
+[     218ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3951/assets/images/ilhabela-foto-de-cima-drone-opa-ilhabela.jpg:0
+[     219ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3951/assets/brokers/marco-henrique.png:0

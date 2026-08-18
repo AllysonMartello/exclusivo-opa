@@ -1,0 +1,321 @@
+- generic [active] [ref=f4e1]:
+  - main [ref=f4e2]:
+    - generic [ref=f4e4]:
+      - link "OPA Imóveis - Início" [ref=f4e5] [cursor=pointer]:
+        - /url: /siriuba-2
+        - img "OPA Imóveis" [ref=f4e6]
+      - navigation [ref=f4e7]:
+        - link "A Casa" [ref=f4e8] [cursor=pointer]:
+          - /url: "#a-casa"
+        - link "Experiência" [ref=f4e9] [cursor=pointer]:
+          - /url: "#experiencia"
+        - link "Tour Virtual" [ref=f4e10] [cursor=pointer]:
+          - /url: "#tour"
+      - generic [ref=f4e11]:
+        - group "Idioma" [ref=f4e12]:
+          - button "Português" [pressed] [ref=f4e16]: PT
+          - generic [ref=f4e17]: "|"
+          - button "English" [ref=f4e18]: EN
+        - button "Agendar Visita" [ref=f4e19]
+    - generic [ref=f4e20]:
+      - img "Casa contemporânea no Siriúba 2" [ref=f4e23]
+      - generic [ref=f4e26]:
+        - generic [ref=f4e27]: Siriúba 2, Ilhabela
+        - heading "Uma casa contemporânea no Siriúba 2" [level=1] [ref=f4e28]
+        - paragraph [ref=f4e29]: Entre a Vila e a Ponta das Canas, com 4 suítes grandes, piscina generosa, duas salas, varanda, escritura definitiva e uma relação muito bonita entre o mar e o verde.
+        - generic [ref=f4e30]:
+          - button "Quero entender se faz sentido para mim" [ref=f4e31]
+          - link "Tour Virtual" [ref=f4e34] [cursor=pointer]:
+            - /url: "#tour"
+    - generic [ref=f4e39]:
+      - heading "Esteja dentro da casa, da sua tela..." [level=2] [ref=f4e40]
+      - button "Acessar tour virtual" [ref=f4e42] [cursor=pointer]:
+        - img "Pré-visualização do tour virtual" [ref=f4e44]
+      - generic [ref=f4e49]:
+        - generic [ref=f4e50]: Ver cada ponto sem filtros
+        - generic [ref=f4e55]: Verificar proporções e tamanho real das salas
+        - generic [ref=f4e62]: Visão da planta baixa interativa
+        - generic [ref=f4e66]: Testar a circulação entre a casa e a piscina
+        - generic [ref=f4e70]: Medir espaços para o seu projeto com precisão
+      - button "Acessar tour virtual" [ref=f4e78]
+    - img "Sala integrada" [ref=f4e83]
+    - generic [ref=f4e86]:
+      - generic [ref=f4e87]:
+        - generic [ref=f4e88]: Localização Estratégica em Ilhabela
+        - heading "Siriúba 2, norte de Ilhabela" [level=2] [ref=f4e93]
+        - generic [ref=f4e94]:
+          - paragraph [ref=f4e95]: A casa está no Siriúba 2, em uma posição muito interessante do norte da ilha. Não é extremo norte. E também não está colada ao centro.
+          - paragraph [ref=f4e96]: "Ela fica no meio do caminho entre a Vila e a Ponta das Canas. Isso entrega uma combinação rara: acesso às boas praias do norte, conexão com esportes náuticos e uma distância ainda confortável do centro histórico."
+          - paragraph [ref=f4e97]: "Outro ponto importante: a relação de nível com a via principal."
+          - paragraph [ref=f4e98]: A casa tem uma vista aberta para o mar e um pôr do sol muito bonito, sem exigir uma subida excessiva. Em Ilhabela, isso faz diferença.
+        - generic [ref=f4e99]:
+          - heading [level=3] [ref=f4e100]
+          - list [ref=f4e105]:
+            - listitem [ref=f4e106] [cursor=pointer]:
+              - generic [ref=f4e107]:
+                - generic [ref=f4e108]: Praia do Viana
+                - generic [ref=f4e116]: 3 min
+            - listitem [ref=f4e117] [cursor=pointer]:
+              - generic [ref=f4e118]:
+                - generic [ref=f4e119]: Praia do Siriúba
+                - generic [ref=f4e125]: 2 min
+            - listitem [ref=f4e126] [cursor=pointer]:
+              - generic [ref=f4e127]:
+                - generic [ref=f4e128]: Praia da Armação
+                - generic [ref=f4e134]: 7 min
+            - listitem [ref=f4e135] [cursor=pointer]:
+              - generic [ref=f4e136]:
+                - generic [ref=f4e137]: Centro Histórico (Vila)
+                - generic [ref=f4e142]: 12 min
+      - generic [ref=f4e143]:
+        - link "Abrir no Google Maps" [ref=f4e144] [cursor=pointer]:
+          - /url: https://www.google.com/maps/place/Praia+do+Siri%C3%BAba,+Ilhabela+-+SP/@-23.7403,-45.3347,15z
+          - img "Mapa de Siriúba 2, Ilhabela" [ref=f4e146]
+        - generic [ref=f4e153]:
+          - paragraph [ref=f4e154]: Coordenadas
+          - paragraph [ref=f4e155]: 23°44'25"S 45°20'05"W
+    - generic [ref=f4e157]:
+      - generic [ref=f4e158]:
+        - generic [ref=f4e159]:
+          - heading "Uma casa contemporânea, ampla e pronta para receber" [level=2] [ref=f4e160]
+          - paragraph [ref=f4e161]: Essa casa tem uma proposta mais clean. Mais clara. Mais atual. São dois pavimentos completos, cada um com sala, cozinha e estar próprios. No térreo, tudo se integra com acesso direto à piscina. No superior, um segundo núcleo funciona de forma independente. Uma casa para viver com conforto, mas também para reunir.
+        - generic [ref=f4e162]:
+          - generic [ref=f4e164] [cursor=pointer]:
+            - img "Vídeo cinematográfico" [ref=f4e166]
+            - generic: Vídeo cinematográfico
+            - generic:
+              - paragraph: Veja a casa em movimento — luz, mar e arquitetura em poucos minutos.
+          - generic [ref=f4e167] [cursor=pointer]:
+            - img "Vista para o mar" [ref=f4e170]
+            - generic [ref=f4e171]:
+              - heading "Vista para o mar" [level=3] [ref=f4e172]
+              - paragraph [ref=f4e173]: A relação da casa com o horizonte é direta e constante.
+          - generic [ref=f4e174] [cursor=pointer]:
+            - img "Piscina" [ref=f4e177]
+            - generic [ref=f4e178]:
+              - heading "Piscina" [level=3] [ref=f4e179]
+              - paragraph [ref=f4e180]: Espaço de lazer privativo com vista privilegiada do norte da ilha.
+          - generic [ref=f4e181] [cursor=pointer]:
+            - img "Ambientes integrados" [ref=f4e184]
+            - generic [ref=f4e185]:
+              - heading "Ambientes integrados" [level=3] [ref=f4e186]
+              - paragraph [ref=f4e187]: No térreo, sala, cozinha gourmet e deck funcionam como um único grande espaço com acesso direto à piscina.
+          - generic [ref=f4e188] [cursor=pointer]:
+            - img "Luz natural" [ref=f4e191]
+            - generic [ref=f4e192]:
+              - heading "Luz natural" [level=3] [ref=f4e193]
+              - paragraph [ref=f4e194]: Grandes aberturas garantem iluminação durante todo o dia.
+          - generic [ref=f4e195] [cursor=pointer]:
+            - img "Área externa" [ref=f4e198]
+            - generic [ref=f4e199]:
+              - heading "Área externa" [level=3] [ref=f4e200]
+              - paragraph [ref=f4e201]: Piscina, espreguiçadeiras, espaço gourmet com churrasqueira e área para refeições ao ar livre. Tudo integrado ao verde da Siriúba.
+          - generic [ref=f4e202] [cursor=pointer]:
+            - img "Detalhes" [ref=f4e205]
+            - generic [ref=f4e206]:
+              - heading "Detalhes" [level=3] [ref=f4e207]
+              - paragraph [ref=f4e208]: Acabamentos contemporâneos e marcenaria funcional.
+          - generic [ref=f4e209] [cursor=pointer]:
+            - img "Estrutura" [ref=f4e212]
+            - generic [ref=f4e213]:
+              - heading "Estrutura" [level=3] [ref=f4e214]
+              - paragraph [ref=f4e215]: Segurança e durabilidade em uma estrutura totalmente renovada.
+      - generic [ref=f4e216]:
+        - generic [ref=f4e217]:
+          - generic [ref=f4e218]: Diferenciais
+          - heading "O que a casa oferece na prática" [level=3] [ref=f4e219]
+        - generic [ref=f4e220]:
+          - paragraph [ref=f4e227]: Vista aberta para o mar e belíssimo pôr do sol
+          - paragraph [ref=f4e233]: Integração e relação muito bonita entre o mar e o verde
+          - paragraph [ref=f4e239]: Norte de Ilhabela, no meio do caminho entre a Vila e a Ponta das Canas
+          - paragraph [ref=f4e245]: Boa relação de nível e acesso com a via principal
+          - paragraph [ref=f4e251]: 4 suítes grandes, ambientes amplos e bem resolvidos
+          - paragraph [ref=f4e257]: Duas salas e uma varanda desenhadas para convivência
+          - paragraph [ref=f4e263]: Dois pavimentos com núcleos independentes de sala e cozinha
+          - paragraph [ref=f4e271]: Espaço gourmet com churrasqueira integrado à área externa
+          - paragraph [ref=f4e278]: Piscina generosa integrada à área externa
+          - paragraph [ref=f4e285]: Ar-condicionado central, casa 100% climatizada
+          - paragraph [ref=f4e291]: Lavabo no pavimento térreo
+          - paragraph [ref=f4e297]: Projeto contemporâneo e clean, pronto para receber
+          - paragraph [ref=f4e306]: Energia solar instalada
+          - paragraph [ref=f4e312]: Escritura definitiva e matrícula regular
+    - generic [ref=f4e314]:
+      - generic [ref=f4e315]:
+        - generic [ref=f4e316]: Como seria viver aqui…
+        - heading "A Vivência" [level=2] [ref=f4e317]
+      - generic [ref=f4e318]:
+        - generic [ref=f4e319]:
+          - img "O início silencioso" [ref=f4e323]
+          - generic [ref=f4e324]:
+            - generic [ref=f4e325]: Manhã
+            - heading "O início silencioso" [level=3] [ref=f4e326]
+            - paragraph [ref=f4e327]: A casa começa silenciosa. A luz entra suave. O mar ainda está mais calmo. É o momento de abrir tudo, deixar o ar circular e tomar um café olhando para fora, sem pressa.
+        - generic [ref=f4e328]:
+          - img "A casa ganha vida" [ref=f4e332]
+          - generic [ref=f4e333]:
+            - generic [ref=f4e334]: Tarde
+            - heading "A casa ganha vida" [level=3] [ref=f4e335]
+            - paragraph [ref=f4e336]: A luz fica mais forte e o mar começa a brilhar. A piscina reflete no teto da sala, movimentando o ambiente e trazendo vida para todos os espaços integrados.
+        - generic [ref=f4e337]:
+          - img "Protagonismo íntimo" [ref=f4e341]
+          - generic [ref=f4e342]:
+            - generic [ref=f4e343]: Noite
+            - heading "Protagonismo íntimo" [level=3] [ref=f4e344]
+            - paragraph [ref=f4e345]: A casa fica mais contida. Mais silenciosa. A iluminação interna assume o protagonismo. A sala, a área externa e a piscina funcionam de forma mais íntima.
+      - paragraph [ref=f4e347]: "\"Porque no fim, não é sobre como a casa é. É sobre como ela funciona ao longo do seu dia.\""
+    - generic [ref=f4e349]:
+      - generic [ref=f4e350]:
+        - generic [ref=f4e351]: A Vivência
+        - heading "Para reunir a família e criar memória" [level=2] [ref=f4e352]
+        - paragraph [ref=f4e353]: Essa é uma casa onde a família consegue se encontrar com conforto. Pais. Filhos. Netos. Amigos próximos. A casa tem espaço, mas não perde a conexão.
+      - generic [ref=f4e354]:
+        - generic [ref=f4e356] [cursor=pointer]:
+          - generic [ref=f4e357]:
+            - generic [ref=f4e358]: A Vista
+            - paragraph [ref=f4e359]: "\"O mar aparece: Uma vista aberta e um pôr do sol muito bonito.\""
+          - generic [ref=f4e360]: Clique aqui se for você
+        - generic [ref=f4e366] [cursor=pointer]:
+          - generic [ref=f4e367]:
+            - generic [ref=f4e368]: Integração
+            - paragraph [ref=f4e369]: "\"O verde entra: Relação muito bonita entre a arquitetura contemporânea e a natureza.\""
+          - generic [ref=f4e370]: Clique aqui se for você
+        - generic [ref=f4e376] [cursor=pointer]:
+          - generic [ref=f4e377]:
+            - generic [ref=f4e378]: Lazer
+            - paragraph [ref=f4e379]: "\"A piscina puxa a convivência: Generosa, com espreguiçadeiras e espaço gourmet ao redor. Pronta para os filhos e netos.\""
+          - generic [ref=f4e380]: Clique aqui se for você
+        - generic [ref=f4e386] [cursor=pointer]:
+          - generic [ref=f4e387]:
+            - generic [ref=f4e388]: Convivência
+            - paragraph [ref=f4e389]: "\"A varanda vira o lugar natural para ficar com os amigos.\""
+          - generic [ref=f4e390]: Clique aqui se for você
+      - generic [ref=f4e396]:
+        - paragraph [ref=f4e397]: "\"Mais do que uma casa de veraneio, ela funciona como cenário para tempo de qualidade.\""
+        - button "Quero entender se faz sentido para minha família" [ref=f4e398]
+    - generic [ref=f4e400]:
+      - heading "Ficha Técnica" [level=2] [ref=f4e402]
+      - generic [ref=f4e404]:
+        - generic [ref=f4e405]:
+          - heading "Área Construída" [level=4] [ref=f4e412]
+          - paragraph [ref=f4e413]: 427 m²
+        - generic [ref=f4e414]:
+          - heading "Área do Terreno" [level=4] [ref=f4e419]
+          - paragraph [ref=f4e420]: 891,2 m²
+        - generic [ref=f4e421]:
+          - heading "Suítes" [level=4] [ref=f4e426]
+          - paragraph [ref=f4e427]: 4 Suítes
+        - generic [ref=f4e428]:
+          - heading "Quartos" [level=4] [ref=f4e433]
+          - paragraph [ref=f4e434]: 4 Quartos
+        - generic [ref=f4e435]:
+          - heading "Salas" [level=4] [ref=f4e440]
+          - paragraph [ref=f4e441]: 2 Salas
+        - generic [ref=f4e442]:
+          - heading "Climatização" [level=4] [ref=f4e448]
+          - paragraph [ref=f4e449]: Ar-condicionado central, 100% climatizada
+        - generic [ref=f4e450]:
+          - heading "Pavimentos" [level=4] [ref=f4e455]
+          - paragraph [ref=f4e456]: 2 (térreo + superior, com núcleos independentes)
+        - generic [ref=f4e457]:
+          - heading "Churrasqueira" [level=4] [ref=f4e464]
+          - paragraph [ref=f4e465]: Espaço gourmet integrado
+        - generic [ref=f4e466]:
+          - heading "Lavabo" [level=4] [ref=f4e471]
+          - paragraph [ref=f4e472]: Sim (térreo)
+        - generic [ref=f4e473]:
+          - heading "Cozinhas" [level=4] [ref=f4e480]
+          - paragraph [ref=f4e481]: 2 (completas e equipadas)
+        - generic [ref=f4e482]:
+          - heading "Capacidade" [level=4] [ref=f4e489]
+          - paragraph [ref=f4e490]: Até 8 pessoas com conforto
+        - generic [ref=f4e491]:
+          - heading "Documentação" [level=4] [ref=f4e496]
+          - paragraph [ref=f4e497]: Escritura e Matrícula
+        - generic [ref=f4e498]:
+          - heading "Perfil de Uso" [level=4] [ref=f4e505]
+          - paragraph [ref=f4e506]: Casa para família, convivência e recepção
+        - generic [ref=f4e507]:
+          - heading "Ano de Construção" [level=4] [ref=f4e512]
+          - paragraph [ref=f4e513]: "2015"
+        - generic [ref=f4e514]:
+          - heading "Localização" [level=4] [ref=f4e519]
+          - paragraph [ref=f4e520]: Siriúba 2, Ilhabela
+        - generic [ref=f4e521]:
+          - heading "IPTU" [level=4] [ref=f4e526]
+          - paragraph [ref=f4e527]: R$ 10.184/ano
+      - generic [ref=f4e529]:
+        - heading "Valor de Venda" [level=4] [ref=f4e535]
+        - paragraph [ref=f4e536]: R$ 5.000.000
+        - generic [ref=f4e537]: Oportunidade Única em Ilhabela
+    - generic [ref=f4e542]:
+      - generic [ref=f4e547]:
+        - img "OPA Imóveis" [ref=f4e548]
+        - generic [ref=f4e549]:
+          - paragraph [ref=f4e550]: Experiência
+          - paragraph [ref=f4e551]: +20 anos
+      - generic [ref=f4e553]:
+        - generic [ref=f4e554]: Curadoria OPA Imóveis
+        - heading "Ilhabela não é um mercado simples." [level=2] [ref=f4e557]
+        - generic [ref=f4e558]:
+          - paragraph [ref=f4e559]: Cada bairro responde de um jeito. Cada casa tem um comportamento diferente ao longo do tempo. E nem tudo que aparece na foto é o que define o valor de um imóvel.
+          - paragraph [ref=f4e560]: Quando a OPA apresenta uma casa, ela já passou por essa leitura técnica baseada na forma de uso e na relação real com o mar. Você não está vendo um anúncio. Está vendo uma curadoria.
+    - generic [ref=f4e563]:
+      - img "Marco Henrique" [ref=f4e566]
+      - generic [ref=f4e568]:
+        - generic [ref=f4e569]: Atendimento
+        - heading "Marco Henrique" [level=2] [ref=f4e570]
+        - paragraph [ref=f4e571]: Arquiteto · Curadoria OPA Imóveis
+        - generic [ref=f4e572]:
+          - button [ref=f4e573]
+          - paragraph [ref=f4e577]: Análise Técnica, Siriúba 2
+        - generic [ref=f4e591]: "\"Responsável por conduzir a visita e traduzir o que, muitas vezes, não aparece na primeira impressão.\""
+        - generic [ref=f4e592]:
+          - link "Falar com o Marco" [ref=f4e593] [cursor=pointer]:
+            - /url: "#contato"
+          - link "Email Profissional" [ref=f4e596] [cursor=pointer]:
+            - /url: mailto:marcofilhoilha@gmail.com
+    - generic [ref=f4e601]:
+      - heading "Pronto para conhecer uma nova experiência?" [level=2] [ref=f4e602]
+      - paragraph [ref=f4e603]: Vamos conversar. Não para vender. Para entender se é esse tipo de casa que você está buscando.
+      - generic [ref=f4e604]:
+        - button "Falar com a OPA" [ref=f4e605]
+        - paragraph [ref=f4e608]: Atendimento direto com Marco Henrique.
+    - generic [ref=f4e610]:
+      - generic [ref=f4e611]:
+        - generic [ref=f4e612]:
+          - generic [ref=f4e613]: OPA
+          - paragraph [ref=f4e614]: Curadoria de imóveis com alma, design e propósito. Transformando a maneira como você encontra o seu próximo refúgio.
+          - generic [ref=f4e615]:
+            - link "Instagram da OPA Imóveis" [ref=f4e616] [cursor=pointer]:
+              - /url: https://www.instagram.com/opaimoveisilhabela/
+            - link "YouTube de Marco Henrique" [ref=f4e620] [cursor=pointer]:
+              - /url: https://www.youtube.com/@marcohenriqueilhabela
+        - generic [ref=f4e624]:
+          - heading "Contato" [level=4] [ref=f4e625]
+          - list [ref=f4e626]:
+            - listitem [ref=f4e627]:
+              - generic [ref=f4e630]: +55 (12) 97406-8058
+            - listitem [ref=f4e631]:
+              - generic [ref=f4e635]: Av. São João, 243 - loja 13Perequê, Ilhabela - SP11623-036
+        - generic [ref=f4e636]:
+          - heading "Links Rápidos" [level=4] [ref=f4e637]
+          - list [ref=f4e638]:
+            - listitem [ref=f4e639]:
+              - link "A Casa" [ref=f4e640] [cursor=pointer]:
+                - /url: "#a-casa"
+            - listitem [ref=f4e641]:
+              - link "Experiência" [ref=f4e642] [cursor=pointer]:
+                - /url: "#experiencia"
+            - listitem [ref=f4e643]:
+              - link "Tour Virtual" [ref=f4e644] [cursor=pointer]:
+                - /url: "#tour"
+            - listitem [ref=f4e645]:
+              - link "Agendar Visita" [ref=f4e646] [cursor=pointer]:
+                - /url: "#contato"
+      - generic [ref=f4e647]:
+        - paragraph [ref=f4e648]: © 2026 OPA Imóveis. Todos os direitos reservados.
+        - paragraph [ref=f4e649]: CRECI 79555
+  - generic [ref=f4e650]:
+    - link "Falar no WhatsApp":
+      - /url: https://wa.me/5512974068058?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20a%20OPA%20Ilhabela.
+  - alert [ref=f4e651]

@@ -1,0 +1,59 @@
+- generic [ref=f6e2]:
+  - generic [ref=f6e3]:
+    - img "Ilhabela vista do drone" [ref=f6e4]
+    - img "Marco Henrique" [ref=f6e7]
+    - paragraph [ref=f6e9]: Confira todos os acessos
+  - generic [ref=f6e14]:
+    - generic [ref=f6e15]:
+      - generic [ref=f6e16]:
+        - generic [ref=f6e17]: 👆
+        - text: Selecione uma opção
+      - generic [ref=f6e18]:
+        - button "Nossos acessos" [ref=f6e19]
+        - button "Imóveis exclusivos" [ref=f6e21]
+        - button "Ilhabela" [ref=f6e22]
+    - generic [ref=f6e23]:
+      - link [ref=f6e24] [cursor=pointer]:
+        - /url: https://wa.me/5512974068058?text=Ol%C3%A1%20Marco!%20Vim%20pela%20sua%20p%C3%A1gina%20de%20links.%20%5Bsrc:linkbio_marco_card_whatsapp%5D
+        - generic [ref=f6e29]:
+          - heading "Entre em contato" [level=3] [ref=f6e30]
+          - paragraph [ref=f6e31]: Fale diretamente com Marco no WhatsApp
+      - link [ref=f6e35] [cursor=pointer]:
+        - /url: https://wa.me/5512992570299?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20de%20links%20e%20gostaria%20de%20saber%20mais%20sobre%20loca%C3%A7%C3%A3o%20e%20temporada.&utm_source=linkbio_marco&utm_medium=linkbio&utm_campaign=locacao
+        - generic [ref=f6e40]:
+          - heading "Locação e Temporada" [level=3] [ref=f6e41]
+          - paragraph [ref=f6e42]: Fale com nossa equipe especialista
+      - link [ref=f6e46] [cursor=pointer]:
+        - /url: https://www.instagram.com/marcohenriqueilhabela/?utm_source=linkbio_marco&utm_medium=linkbio&utm_campaign=corretor_marco_2026&utm_content=card_instagram
+        - generic [ref=f6e52]:
+          - heading "Instagram" [level=3] [ref=f6e53]
+          - paragraph [ref=f6e54]: "@marcohenriqueilhabela"
+      - link [ref=f6e58] [cursor=pointer]:
+        - /url: https://www.linkedin.com/in/marcohenriquesilva/?utm_source=linkbio_marco&utm_medium=linkbio&utm_campaign=corretor_marco_2026&utm_content=card_linkedin
+        - generic [ref=f6e65]:
+          - heading "LinkedIn" [level=3] [ref=f6e66]
+          - paragraph [ref=f6e67]: Conecte-se profissionalmente
+      - link [ref=f6e71] [cursor=pointer]:
+        - /url: https://opailhabela.com.br/blog?utm_source=linkbio_marco&utm_medium=linkbio&utm_campaign=corretor_marco_2026&utm_content=card_blog
+        - generic [ref=f6e77]:
+          - heading "Blog – OPA Imóveis" [level=3] [ref=f6e78]
+          - paragraph [ref=f6e79]: Acompanhe dicas e novidades
+      - link [ref=f6e83] [cursor=pointer]:
+        - /url: https://www.youtube.com/@marcohenriqueilhabela?utm_source=linkbio_marco&utm_medium=linkbio&utm_campaign=corretor_marco_2026&utm_content=card_youtube
+        - generic [ref=f6e89]:
+          - heading "YouTube" [level=3] [ref=f6e90]
+          - paragraph [ref=f6e91]: Vídeos e tours pelos imóveis
+      - link [ref=f6e95] [cursor=pointer]:
+        - /url: https://opailhabela.com.br/?utm_source=linkbio_marco&utm_medium=linkbio&utm_campaign=corretor_marco_2026&utm_content=card_opa_home
+        - generic [ref=f6e101]:
+          - heading "OPA Imóveis" [level=3] [ref=f6e102]
+          - paragraph [ref=f6e103]: Conheça nossos imóveis e serviços
+      - link [ref=f6e107] [cursor=pointer]:
+        - /url: https://opailhabela.com.br/anuncie-seu-imovel/?utm_source=linkbio_marco&utm_medium=linkbio&utm_campaign=corretor_marco_2026&utm_content=card_cadastro_imovel
+        - generic [ref=f6e113]:
+          - heading "Cadastro Imóveis" [level=3] [ref=f6e114]
+          - paragraph [ref=f6e115]: Anuncie seu imóvel conosco em Ilhabela
+  - contentinfo [ref=f6e119]:
+    - generic [ref=f6e120]: © 2026 Opa Ilhabela. Todos os direitos reservados.
+    - link "Política de Privacidade" [ref=f6e121] [cursor=pointer]:
+      - /url: https://exclusivo.opailhabela.com.br/politica-de-privacidade
