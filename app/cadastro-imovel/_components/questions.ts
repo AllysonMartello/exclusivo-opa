@@ -415,6 +415,14 @@ export const QUESTIONS: Question[] = [
     required: true,
   },
   {
+    id: "indicacaoPrestadores",
+    section: "Termos e fechamento",
+    label: "Há alguma indicação de prestador de serviço para o imóvel?",
+    description: "Ex.: Piscineiro, caseiro, etc. Informe o nome, número de contato e a condição acordada.",
+    type: "textarea",
+    placeholder: "Ex.: João (Piscineiro) - (12) 99999-9999 - R$ 300 mensais",
+  },
+  {
     id: "cotistasSocios",
     section: "Termos e fechamento",
     label: "Existe cotista, sócio ou herdeiro do imóvel?",
