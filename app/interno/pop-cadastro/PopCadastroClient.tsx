@@ -21,6 +21,8 @@ export default function PopCadastroClient() {
     "Fotos e vídeos organizados",
     "Informações ajustadas no GPT OPA",
     "Cadastro preenchido na plataforma",
+    "Metragem (área total e construída) conferida",
+    "Preço, condomínio e IPTU conferidos",
     "Valor, características e localização conferidos",
     "Fotos e capa conferidas",
     "Página final revisada",
@@ -122,6 +124,18 @@ export default function PopCadastroClient() {
             {
               title: "Cadastrar na plataforma da OPA",
               desc: "Inserir as informações revisadas, características, valores e mídias na plataforma. Preencher todos os campos aplicáveis."
+            },
+            {
+              title: "Verificar informações, metragem e preço",
+              desc: "Antes de publicar, conferir dado por dado contra o formulário do proprietário e a documentação do imóvel.",
+              list: [
+                "Metragem: área total e área construída conferem com o informado/documentação",
+                "Preço: valor de venda ou locação, condomínio e IPTU",
+                "Características: quartos, suítes, banheiros, vagas e demais itens",
+                "Localização e endereço corretos",
+                "Se houver divergência, confirmar com o proprietário antes de seguir"
+              ],
+              alert: "Não publicar com metragem ou preço em dúvida."
             },
             {
               title: "Conferir o cadastro",
