@@ -114,16 +114,19 @@ export default function PopCadastroClient() {
                 "Vídeos",
                 "Plantas, documentos ou materiais complementares, quando houver",
                 "Se faltar material, solicitar diretamente ao proprietário"
-              ]
+              ],
+              owner: "Corretor responsável"
             },
             {
               title: "Ajustar as informações com o GPT OPA",
               desc: "Pegar as informações respondidas no formulário e enviar para o GPT OPA organizar, revisar e transformar no padrão de cadastro da empresa.",
+              owner: "Corretor",
               alert: "Importante: não inventar informações que não estejam no formulário."
             },
             {
               title: "Cadastrar na plataforma da OPA",
-              desc: "Inserir as informações revisadas, características, valores e mídias na plataforma. Preencher todos os campos aplicáveis."
+              desc: "Inserir as informações revisadas, características, valores e mídias na plataforma. Preencher todos os campos aplicáveis.",
+              owner: "Momentaneamente: Allyson"
             },
             {
               title: "Conferir o cadastro",
@@ -136,6 +139,7 @@ export default function PopCadastroClient() {
                 "Fotos, capa e textos revisados",
                 "Se houver divergência, confirmar com o proprietário antes de seguir"
               ],
+              owner: "Equipe OPA e Corretor",
               alert: "Não finalizar com metragem ou preço em dúvida."
             }
           ].map((step, idx) => (
