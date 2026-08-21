@@ -126,20 +126,17 @@ export default function PopCadastroClient() {
               desc: "Inserir as informações revisadas, características, valores e mídias na plataforma. Preencher todos os campos aplicáveis."
             },
             {
-              title: "Verificar informações, metragem e preço",
-              desc: "Antes de publicar, conferir dado por dado contra o formulário do proprietário e a documentação do imóvel.",
+              title: "Conferir o cadastro",
+              desc: "Abrir o imóvel publicado e revisar como um cliente veria, conferindo dado por dado contra o formulário do proprietário e a documentação do imóvel.",
               list: [
                 "Metragem: área total e área construída conferem com o informado/documentação",
                 "Preço: valor de venda ou locação, condomínio e IPTU",
                 "Características: quartos, suítes, banheiros, vagas e demais itens",
                 "Localização e endereço corretos",
+                "Fotos, capa e textos revisados",
                 "Se houver divergência, confirmar com o proprietário antes de seguir"
               ],
-              alert: "Não publicar com metragem ou preço em dúvida."
-            },
-            {
-              title: "Conferir o cadastro",
-              desc: "Abrir o imóvel publicado e revisar como um cliente veria. Se estiver tudo correto, cadastro finalizado. Se houver erro ou informação faltando, corrigir antes de considerar concluído."
+              alert: "Não finalizar com metragem ou preço em dúvida."
             }
           ].map((step, idx) => (
             <article key={idx} className="bg-[#0E3142] border border-white/10 rounded-2xl p-5 sm:p-6 flex gap-4 sm:gap-6">
