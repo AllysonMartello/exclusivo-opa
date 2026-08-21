@@ -166,7 +166,7 @@ const pt = {
       { label: "Tipo", value: "Casa" },
       { label: "Bairro", value: "Engenho D’Água" },
       { label: "Cidade", value: "Ilhabela/SP" },
-      { label: "Área construída", value: "376 m²" },
+      { label: "Área construída", value: "407 m²" },
       { label: "Terreno", value: "1.131 m²" },
       { label: "Suítes", value: "4" },
       { label: "Banheiros", value: "4" },
