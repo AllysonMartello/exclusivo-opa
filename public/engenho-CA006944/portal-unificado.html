@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Engenho D'Água | Portal Unificado | OPA Imóveis</title>
+<link rel="icon" type="image/svg+xml" href="/assets/logo/logo-opa-nova.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --azul:#166188;
+    --azul-escuro:#104761;
+    --azul-hover:#1a7aa8;
+    --azul-claro:#e8f4f8;
+    --azul-nevoa:#f3f8fa;
+    --texto:#2d2d2d;
+    --muted:#6b7280;
+    --linha:#e5e7eb;
+    --branco:#ffffff;
+    --fundo:#fafbfc;
+    --verde:#55796d;
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    color:var(--texto);
+    background:var(--branco);
+    line-height:1.7;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+
+  .capa{
+    min-height:100vh;
+    background:
+      linear-gradient(rgba(16,71,97,.75),rgba(16,71,97,.95)),
+      url('/assets/engenho-CA006944/engenho-CA006944-varanda-piscina-vista-panoramica-mar.webp') center/cover no-repeat;
+    color:var(--branco);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:72px 40px;
+    position:relative;
+    overflow:hidden;
+  }
+  .capa::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+    background-size:72px 72px;
+  }
+  .capa::after{
+    content:'';
+    position:absolute;
+    width:520px;
+    height:520px;
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:50%;
+    right:-180px;
+    top:-190px;
+  }
+  .capa-conteudo{
+    position:relative;
+    z-index:2;
+    max-width:980px;
+  }
+  .capa-logo{margin-bottom:76px}
+  .capa-logo img{height:42px;filter:brightness(0) invert(1);opacity:.92}
+  .capa-kicker{font-size:11px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,.56);margin-bottom:18px}
+  .capa h1{font-size:clamp(50px,7vw,78px);font-weight:300;letter-spacing:-3px;line-height:1.03;margin-bottom:22px}
+  .capa-subtitulo{font-size:18px;font-weight:300;color:rgba(255,255,255,.80);margin-bottom:14px}
+  .capa-specs{font-size:14px;color:rgba(255,255,255,.56);letter-spacing:1px;margin-bottom:48px}
+  .capa-codigo{display:inline-block;border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:10px 18px;font-size:11px;font-weight:600;letter-spacing:2.4px;text-transform:uppercase;color:rgba(255,255,255,.66)}
+  .capa-badge{position:absolute;bottom:34px;font-size:10px;letter-spacing:2.4px;text-transform:uppercase;color:rgba(255,255,255,.34)}
+
+  /* Tabs Navigation */
+  .tabs-nav {
+    display: flex;
+    justify-content: center;
+    background: var(--fundo);
+    border-bottom: 1px solid var(--linha);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  .tab-btn {
+    padding: 20px 40px;
+    background: none;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--muted);
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+  }
+  .tab-btn.active {
+    color: var(--azul);
+  }
+  .tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--azul);
+  }
+  .tab-content {
+    display: none;
+  }
+  .tab-content.active {
+    display: block;
+  }
+
+  /* Shared styles */
+  .hero-visual{min-height:56vh;position:relative;display:grid;place-items:center;overflow:hidden;background:linear-gradient(rgba(16,71,97,.28),rgba(16,71,97,.44)),radial-gradient(circle at 30% 30%,#9bc0cf 0%,transparent 32%),linear-gradient(145deg,#a9c8d3 0%,#d8e6eb 46%,#6f98aa 100%)}
+  .hero-visual::before,.hero-visual::after{content:'';position:absolute;border-radius:50%;filter:blur(2px)}
+  .hero-visual::before{width:620px;height:620px;background:rgba(255,255,255,.12);left:-140px;bottom:-360px}
+  .hero-visual::after{width:420px;height:420px;border:1px solid rgba(255,255,255,.35);right:-80px;top:-150px}
+  .hero-texto{position:relative;z-index:2;color:#fff;text-align:center;padding:40px;max-width:760px}
+  .hero-texto span{display:block;font-size:11px;font-weight:600;letter-spacing:4px;text-transform:uppercase;margin-bottom:16px;opacity:.70}
+  .hero-texto h2{font-size:clamp(36px,5vw,56px);font-weight:300;line-height:1.12;letter-spacing:-1.8px}
+
+  .sumario{background:var(--fundo);padding:84px 40px}
+  .sumario-inner,.secao-inner{width:min(100%,880px);margin:0 auto}
+  .sumario-titulo,.secao-label{font-size:11px;font-weight:600;letter-spacing:4px;text-transform:uppercase;color:var(--azul)}
+  .sumario-titulo{margin-bottom:42px}
+  .sumario-grid{display:grid;grid-template-columns:1fr 1fr}
+  .sumario-item{padding:26px 30px;border-bottom:1px solid var(--linha);display:flex;align-items:flex-start;gap:18px;min-height:126px}
+  .sumario-num{font-size:30px;font-weight:200;line-height:1;color:var(--azul);min-width:38px}
+  .sumario-item h3{font-size:15px;font-weight:600;margin-bottom:5px}
+  .sumario-item p{font-size:13px;line-height:1.55;color:var(--muted)}
+  .secao{padding:88px 40px}
+  .secao.soft{background:var(--fundo)}
+  .secao-label{margin-bottom:12px}
+  .secao h2,.destaque-full h2{font-size:clamp(30px,4vw,39px);font-weight:300;letter-spacing:-.8px;line-height:1.18;margin-bottom:36px}
+  .secao p{font-size:16px;line-height:1.85;margin-bottom:20px}
+  .lead{font-size:20px!important;line-height:1.65!important;color:var(--azul-escuro)}
+  .secao-divider{width:48px;height:2px;background:var(--azul);opacity:.25;margin:0 auto}
+  
+  .ficha-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--linha)}
+  .ficha-item{display:flex;justify-content:space-between;gap:20px;padding:17px 0;border-bottom:1px solid var(--linha);align-items:baseline}
+  .ficha-item:nth-child(odd){padding-right:30px}
+  .ficha-item:nth-child(even){padding-left:30px;border-left:1px solid var(--linha)}
+  .ficha-label{font-size:13px;color:var(--muted)}
+  .ficha-valor{font-size:14px;font-weight:500;text-align:right}
+  .ficha-destaque{margin-top:30px;background:var(--azul-claro);padding:26px 30px;border-radius:10px;display:flex;justify-content:space-between;align-items:center;gap:24px}
+  .ficha-destaque .ficha-label{font-size:14px;color:var(--azul);font-weight:600}
+  .ficha-destaque .ficha-valor{font-size:27px;color:var(--azul);font-weight:600}
+  
+  .destaque-full{background:linear-gradient(135deg,var(--azul-escuro),var(--azul));color:#fff;padding:88px 40px}
+  .destaque-full .secao-label{color:rgba(255,255,255,.48)}
+  .destaque-full p{color:rgba(255,255,255,.78)}
+  
+  .planta-grid,.perfil-grid,.recursos-grid,.contatos-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .planta-card,.perfil-card,.recurso-card,.contato-card{border:1px solid var(--linha);border-radius:10px;padding:28px;background:#fff}
+  .planta-card h3,.perfil-card h3,.recurso-card h3,.contato-card h3{font-size:16px;font-weight:600;margin-bottom:10px}
+  .planta-card p,.perfil-card p,.recurso-card p,.contato-card p{font-size:14px;color:var(--muted);line-height:1.7;margin:0}
+  .perfil-card{border-color:rgba(255,255,255,.14);background:rgba(255,255,255,.055)}
+  .perfil-card h3{color:#fff}
+  .perfil-card p{color:rgba(255,255,255,.70)}
+  .recurso-card{background:var(--fundo);min-height:120px}
+  .recurso-card strong{display:block;font-size:13px;color:var(--azul);margin-bottom:5px}
+
+  /* Messages Styles */
+  .page{width:min(100%,930px);margin:0 auto;padding:70px 24px 96px}
+  .intro{display:grid;grid-template-columns:180px 1fr;gap:38px;align-items:start;padding-bottom:38px;border-bottom:1px solid var(--linha);margin-bottom:28px}
+  .intro-label{font-size:10px;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:var(--azul)}
+  .intro p{font-size:14px;line-height:1.75;color:var(--muted)}
+  .notice{margin-bottom:30px;padding:14px 17px;border-radius:10px;background:var(--azul-claro);color:var(--azul-escuro);font-size:12px;line-height:1.55}
+  .messages{display:grid;gap:22px}
+  .message-card{background:#fff;border:1px solid var(--linha);border-radius:16px;overflow:hidden;box-shadow:0 10px 35px rgba(23,76,102,.045)}
+  .message-head{display:grid;grid-template-columns:84px 1fr auto;gap:22px;align-items:center;padding:24px 26px;border-bottom:1px solid var(--linha)}
+  .number{font-size:42px;font-weight:200;line-height:1;color:var(--azul)}
+  .message-title{font-size:15px;font-weight:600;margin-bottom:4px}
+  .message-context{font-size:12px;color:var(--muted);line-height:1.5}
+  .copy-button{border:1px solid var(--linha);background:#fff;color:var(--azul);border-radius:999px;padding:9px 13px;font-family:inherit;font-size:9px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;cursor:pointer;transition:.2s ease}
+  .copy-button:hover{background:var(--azul);border-color:var(--azul);color:#fff}
+  .message-body{padding:28px 110px 32px 132px;position:relative}
+  .message-body::before{content:'';position:absolute;left:83px;top:31px;bottom:32px;width:2px;background:var(--azul-claro)}
+  .message-copy{white-space:pre-line;font-size:15px;line-height:1.8;color:#293941}
+  .placeholder{display:inline-block;margin-top:5px;color:var(--azul);font-weight:600}
+  .tip{margin-top:18px;padding-top:15px;border-top:1px dashed var(--linha);font-size:11px;line-height:1.6;color:var(--muted)}
+  .tip strong{color:var(--azul);font-weight:600}
+
+  .final{background:radial-gradient(circle at 78% 18%,rgba(255,255,255,.10),transparent 28%),linear-gradient(135deg,var(--azul-escuro),var(--azul));color:#fff;text-align:center;padding:100px 40px}
+  .final-inner{width:min(100%,720px);margin:0 auto}
+  .final img{height:38px;filter:brightness(0) invert(1);opacity:.84;margin-bottom:44px}
+  .final h2{font-size:clamp(32px,5vw,46px);font-weight:300;line-height:1.18;letter-spacing:-1.2px;margin-bottom:18px}
+  .final p{font-size:15px;color:rgba(255,255,255,.68);line-height:1.75}
+
+  .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);opacity:0;pointer-events:none;background:#163f54;color:#fff;border-radius:999px;padding:11px 17px;font-size:11px;font-weight:600;letter-spacing:.3px;transition:.25s ease;z-index:100;box-shadow:0 12px 30px rgba(0,0,0,.18)}
+  .toast.show{opacity:1;transform:translate(-50%,0)}
+
+  @media(max-width:760px){
+    .capa{padding:64px 24px}
+    .capa-logo{margin-bottom:56px}
+    .capa h1{letter-spacing:-2px}
+    .capa-badge{position:static;margin-top:58px}
+    .sumario,.secao,.destaque-full,.final{padding:64px 22px}
+    .sumario-grid,.ficha-grid,.planta-grid,.perfil-grid,.recursos-grid,.contatos-grid{grid-template-columns:1fr}
+    .sumario-item{padding:24px 0}
+    .ficha-item:nth-child(odd),.ficha-item:nth-child(even){padding-left:0;padding-right:0;border-left:0}
+    .ficha-destaque{align-items:flex-start;flex-direction:column}
+    .hero-visual{min-height:48vh}
+    
+    .page{padding:54px 18px 72px}
+    .intro{grid-template-columns:1fr;gap:10px}
+    .message-head{grid-template-columns:60px 1fr;gap:14px;padding:22px 20px}
+    .number{font-size:34px}
+    .copy-button{grid-column:2;justify-self:start;margin-top:5px}
+    .message-body{padding:24px 22px 28px}
+    .message-body::before{display:none}
+    .message-copy{font-size:14px}
+  }
+</style>
+</head>
+<body>
+
+<section class="capa">
+  <div class="capa-conteudo">
+    <div class="capa-logo">
+      <img src="https://exclusivo.opailhabela.com.br/assets/logo/logo-opa.svg" alt="OPA Imóveis">
+    </div>
+    <div class="capa-kicker">Portal Unificado</div>
+    <h1>Engenho D'Água</h1>
+    <p class="capa-subtitulo">Dossiê de Informações e Mensagens de Apoio Comercial</p>
+    <div class="capa-codigo">Código CA006944</div>
+  </div>
+</section>
+
+<div class="tabs-nav">
+  <button class="tab-btn active" onclick="showTab('info')">Dossiê de Informações</button>
+  <button class="tab-btn" onclick="showTab('mensagens')">Mensagens para Leads</button>
+</div>
+
+<div id="tab-info" class="tab-content active">
+  <section class="hero-visual">
+  <div class="hero-texto">
+    <span>Arquitetura · Vista · Mobilidade</span>
+    <h2>Uma casa pronta para viver Ilhabela desde o primeiro dia.</h2>
+  </div>
+</section>
+
+<section class="sumario">
+  <div class="sumario-inner">
+    <div class="sumario-titulo">Neste material</div>
+    <div class="sumario-grid">
+      <div class="sumario-item"><span class="sumario-num">01</span><div><h3>A casa</h3><p>A leitura arquitetônica, a proposta e o uso real do imóvel.</p></div></div>
+      <div class="sumario-item"><span class="sumario-num">02</span><div><h3>Ficha técnica</h3><p>Metragens, configuração, valor, IPTU e documentação.</p></div></div>
+      <div class="sumario-item"><span class="sumario-num">03</span><div><h3>Como a planta funciona</h3><p>A organização dos pavimentos e a separação entre rotina e hóspedes.</p></div></div>
+      <div class="sumario-item"><span class="sumario-num">04</span><div><h3>Localização e vista</h3><p>O começo do Engenho D'Água, o acesso simples e a leitura do canal.</p></div></div>
+      <div class="sumario-item"><span class="sumario-num">05</span><div><h3>Pronta para viver</h3><p>Mobiliário, climatização, automação e recursos instalados.</p></div></div>
+      <div class="sumario-item"><span class="sumario-num">06</span><div><h3>Para quem faz sentido</h3><p>Perfis de compradores que aproveitam melhor esta configuração.</p></div></div>
+      <div class="sumario-item"><span class="sumario-num">07</span><div><h3>Diferenciais de venda</h3><p>Os argumentos que tornam o conjunto mais difícil de comparar.</p></div></div>
+      <div class="sumario-item"><span class="sumario-num">08</span><div><h3>Segurança e visita</h3><p>Documentação, curadoria, tour virtual e contato com a OPA.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="secao">
+  <div class="secao-inner">
+    <div class="secao-label">01</div>
+    <h2>A casa</h2>
+    <p class="lead">Esta casa segue um caminho diferente da oferta mais tradicional de Ilhabela.</p>
+    <p>Em vez de reproduzir a linguagem predominantemente rústica da ilha, ela apresenta uma arquitetura mais contemporânea. Linhas limpas, ambientes integrados, vidro, madeira, pedra, luz natural e uma decoração leve em tons naturais.</p>
+    <p>O imóvel foi construído do zero e pensado para uma rotina simples. Não é uma casa antiga adaptada a um novo uso. A planta, a iluminação, a climatização e os recursos tecnológicos nasceram dentro da mesma proposta.</p>
+    <p>A casa será entregue mobiliada e porteira fechada. A próxima família não precisa começar uma obra, acompanhar fornecedores ou esperar pela montagem dos ambientes. A casa já está pronta para ser ocupada.</p>
+    <p>O resultado é uma residência de alto padrão que combina vista, conforto e arquitetura atual sem perder a relação com Ilhabela.</p>
+  </div>
+</section>
+
+<div class="secao-divider"></div>
+
+<section class="secao">
+  <div class="secao-inner">
+    <div class="secao-label">02</div>
+    <h2>Ficha técnica</h2>
+
+    <div class="ficha-grid">
+      <div class="ficha-item"><span class="ficha-label">Código</span><span class="ficha-valor">CA006944</span></div>
+      <div class="ficha-item"><span class="ficha-label">Bairro</span><span class="ficha-valor">Engenho D'Água</span></div>
+      <div class="ficha-item"><span class="ficha-label">Cidade</span><span class="ficha-valor">Ilhabela · SP</span></div>
+      <div class="ficha-item"><span class="ficha-label">Condição</span><span class="ficha-valor">Imóvel novo</span></div>
+      <div class="ficha-item"><span class="ficha-label">Área da casa</span><span class="ficha-valor">343,26 m²</span></div>
+      <div class="ficha-item"><span class="ficha-label">Área da piscina</span><span class="ficha-valor">45 m²</span></div>
+      <div class="ficha-item"><span class="ficha-label">Área do terreno</span><span class="ficha-valor">942,80 m²</span></div>
+      <div class="ficha-item"><span class="ficha-label">Dormitórios</span><span class="ficha-valor">4</span></div>
+      <div class="ficha-item"><span class="ficha-label">Suítes</span><span class="ficha-valor">4</span></div>
+      <div class="ficha-item"><span class="ficha-label">Banheiros</span><span class="ficha-valor">4</span></div>
+      <div class="ficha-item"><span class="ficha-label">Vagas</span><span class="ficha-valor">2</span></div>
+      <div class="ficha-item"><span class="ficha-label">Pavimentos</span><span class="ficha-valor">Mais de um</span></div>
+      <div class="ficha-item"><span class="ficha-label">Entrega</span><span class="ficha-valor">Porteira fechada</span></div>
+      <div class="ficha-item"><span class="ficha-label">Mobiliada</span><span class="ficha-valor">Sim</span></div>
+      <div class="ficha-item"><span class="ficha-label">Vista</span><span class="ficha-valor">Canal de São Sebastião</span></div>
+      <div class="ficha-item"><span class="ficha-label">Documentação</span><span class="ficha-valor">Matrícula regularizada</span></div>
+      <div class="ficha-item"><span class="ficha-label">IPTU anual</span><span class="ficha-valor">R$ 10.963,00</span></div>
+    </div>
+
+    <div class="ficha-destaque">
+      <span class="ficha-label">Valor pedido</span>
+      <span class="ficha-valor">R$ 8.500.000,00</span>
+    </div>
+  </div>
+</section>
+
+<div class="secao-divider"></div>
+
+<section class="secao soft">
+  <div class="secao-inner">
+    <div class="secao-label">03</div>
+    <h2>Como a planta funciona</h2>
+    <p>A organização dos ambientes é um dos principais argumentos desta casa. A vida cotidiana fica concentrada no pavimento principal, enquanto as suítes de hóspedes ocupam o andar inferior.</p>
+
+    <div class="planta-grid">
+      <div class="planta-card">
+        <h3>Pavimento principal</h3>
+        <p>Sala de estar, jantar, cozinha, sala de TV, suíte master, lavanderia e área de serviço. Na prática, funciona como um grande apartamento dentro da casa.</p>
+      </div>
+      <div class="planta-card">
+        <h3>Pavimento inferior</h3>
+        <p>Três suítes destinadas à família e aos hóspedes, criando uma separação natural entre a rotina dos proprietários e os momentos de receber.</p>
+      </div>
+      <div class="planta-card">
+        <h3>Suíte master</h3>
+        <p>Localizada no mesmo pavimento da área social, simplifica o uso diário e evita deslocamentos constantes entre os andares.</p>
+      </div>
+      <div class="planta-card">
+        <h3>Gourmet independente</h3>
+        <p>Completo, climatizado e separado da área íntima. Permite receber, celebrar e realizar encontros sem interferir na privacidade da casa principal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="destaque-full">
+  <div class="secao-inner">
+    <div class="secao-label">04</div>
+    <h2>Localização e vista</h2>
+    <p>A casa está no começo do Engenho D'Água, em uma das primeiras ruas acima do plano da cidade. O acesso exige apenas uma subida leve, mas já entrega uma abertura ampla para o mar.</p>
+    <p>Da casa, a vista alcança o centro de Ilhabela, o campo da aviação, o píer do Saco da Capela e o movimento do canal de São Sebastião. Não é apenas uma faixa de água. É uma paisagem viva, com cidade, barcos e horizonte.</p>
+    <p>A posição também facilita a rotina. Praia, serviços, gastronomia, Vila e pontos ligados à vida náutica permanecem próximos, sem depender de um acesso longo ou de uma casa isolada no alto do morro.</p>
+    <p>Em Ilhabela, vista e mobilidade raramente aparecem com a mesma força. Aqui, as duas coisas fazem parte do mesmo endereço.</p>
+  </div>
+</section>
+
+<section class="secao">
+  <div class="secao-inner">
+    <div class="secao-label">05</div>
+    <h2>Pronta para viver</h2>
+    <p>O estado da casa elimina uma etapa que costuma consumir tempo, energia e orçamento em imóveis de alto padrão: preparar tudo antes de usar.</p>
+
+    <div class="recursos-grid">
+      <div class="recurso-card"><strong>Porteira fechada</strong><p>Mobiliário e composição de interiores entregues com o imóvel.</p></div>
+      <div class="recurso-card"><strong>Climatização completa</strong><p>Ar-condicionado na casa e também no espaço gourmet.</p></div>
+      <div class="recurso-card"><strong>Projeto luminotécnico</strong><p>Iluminação planejada para acompanhar a arquitetura e os diferentes usos.</p></div>
+      <div class="recurso-card"><strong>Venezianas automatizadas</strong><p>Mais controle de luz, conforto e praticidade no dia a dia.</p></div>
+      <div class="recurso-card"><strong>Piscina</strong><p>45 m² integrados à área externa e à experiência de receber.</p></div>
+      <div class="recurso-card"><strong>Aquecimento e banheira</strong><p>Recursos voltados ao conforto cotidiano e ao uso em diferentes épocas do ano.</p></div>
+      <div class="recurso-card"><strong>Churrasqueira e gourmet</strong><p>Estrutura independente para encontros, festas e refeições com convidados.</p></div>
+      <div class="recurso-card"><strong>Mobilidade elétrica</strong><p>Carregador para carro elétrico e carregador para bicicleta elétrica.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="destaque-full">
+  <div class="secao-inner">
+    <div class="secao-label">06</div>
+    <h2>Para quem faz sentido</h2>
+
+    <div class="perfil-grid">
+      <div class="perfil-card">
+        <h3>Famílias que querem morar na ilha</h3>
+        <p>A localização facilita escola, serviços, praia, Vila e rotina urbana sem abrir mão da vista e da natureza.</p>
+      </div>
+      <div class="perfil-card">
+        <h3>Casais que buscam praticidade</h3>
+        <p>A suíte master e toda a vida cotidiana ficam no pavimento principal. A casa funciona bem mesmo quando apenas o casal está presente.</p>
+      </div>
+      <div class="perfil-card">
+        <h3>Quem gosta de receber</h3>
+        <p>As suítes inferiores e o gourmet independente permitem hospedar e celebrar sem misturar tudo com a área íntima.</p>
+      </div>
+      <div class="perfil-card">
+        <h3>Compradores ligados à arquitetura atual</h3>
+        <p>Uma casa nova, clean e contemporânea para quem não procura a estética rústica mais convencional da ilha.</p>
+      </div>
+      <div class="perfil-card">
+        <h3>Quem quer uma casa pronta</h3>
+        <p>Construída, mobiliada, equipada e entregue porteira fechada, sem uma nova fase de obras ou montagem.</p>
+      </div>
+      <div class="perfil-card">
+        <h3>Quem quer vista sem acesso difícil</h3>
+        <p>A leve elevação abre a paisagem do canal sem exigir uma subida longa ou uma rotina dependente do carro.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="secao">
+  <div class="secao-inner">
+    <div class="secao-label">07</div>
+    <h2>Diferenciais de venda</h2>
+
+    <div class="diferenciais">
+      <div class="dif-item">
+        <span class="dif-titulo">Arquitetura contemporânea</span>
+        <span class="dif-texto">Não é uma casa rústica reformada para parecer atual. Foi construída do zero com uma linguagem mais clean, integrada e tecnológica.</span>
+      </div>
+      <div class="dif-item">
+        <span class="dif-titulo">Vista rica para o canal</span>
+        <span class="dif-texto">A paisagem inclui o centro, o campo da aviação, o píer do Saco da Capela, barcos e o movimento cotidiano de Ilhabela.</span>
+      </div>
+      <div class="dif-item">
+        <span class="dif-titulo">Mobilidade real</span>
+        <span class="dif-texto">A casa fica no começo do Engenho D'Água. Sobe-se pouco, chega-se rapidamente ao plano da cidade e ainda se mantém a amplitude da vista.</span>
+      </div>
+      <div class="dif-item">
+        <span class="dif-titulo">Uso simples no dia a dia</span>
+        <span class="dif-texto">Sala, cozinha, TV, suíte master, lavanderia e serviço no mesmo pavimento reduzem deslocamentos e tornam a rotina mais prática.</span>
+      </div>
+      <div class="dif-item">
+        <span class="dif-titulo">Privacidade para receber</span>
+        <span class="dif-texto">Três suítes no pavimento inferior e gourmet separado da área íntima permitem receber sem abrir mão da privacidade dos moradores.</span>
+      </div>
+      <div class="dif-item">
+        <span class="dif-titulo">Tecnologia aplicada ao conforto</span>
+        <span class="dif-texto">Projeto luminotécnico, venezianas automatizadas, climatização completa e pontos de carregamento reforçam o caráter contemporâneo do imóvel.</span>
+      </div>
+      <div class="dif-item">
+        <span class="dif-titulo">Pronta para ocupação</span>
+        <span class="dif-texto">Mobiliada, decorada e porteira fechada. O comprador entra em uma casa concluída, sem precisar iniciar outro projeto.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="secao-divider"></div>
+
+<section class="secao soft">
+  <div class="secao-inner">
+    <div class="secao-label">08</div>
+    <h2>Transparência e segurança</h2>
+    <p>A negociação parte de uma base documental organizada. A OPA conduz a apresentação do imóvel com clareza sobre o estado físico, jurídico e patrimonial da casa.</p>
+
+    <div class="seguranca-box">
+      <div class="seg-item"><span class="seg-check">✓</span><span>Matrícula regularizada e escritura registrada.</span></div>
+      <div class="seg-item"><span class="seg-check">✓</span><span>Habite-se informado como regular.</span></div>
+      <div class="seg-item"><span class="seg-check">✓</span><span>Área construída informada como averbada.</span></div>
+      <div class="seg-item"><span class="seg-check">✓</span><span>IPTU informado como regular e com valor anual definido.</span></div>
+      <div class="seg-item"><span class="seg-check">✓</span><span>Conservação técnica, salinidade e drenagem consideradas na leitura do imóvel.</span></div>
+    </div>
+
+    <div class="visita-box">
+      <h3>Tour virtual e visita presencial</h3>
+      <p>O tour virtual permite circular pelos ambientes antes da visita. A apresentação presencial é feita com hora marcada, depois de uma conversa breve para entender o perfil do comprador e avaliar se a casa faz sentido para o momento da família.</p>
+    </div>
+  </div>
+</section>
+
+<section class="secao">
+  <div class="secao-inner">
+    <div class="secao-label">09</div>
+    <h2>Corretores responsáveis</h2>
+
+    <div class="contatos-grid">
+      <div class="contato-card">
+        <h3>Cristian Spengler</h3>
+        <div class="creci">CRECI 293581</div>
+        <a href="tel:+5511939566693">(11) 93956-6693</a>
+        <a href="mailto:cristian.spengler@opailhabela.com.br">cristian.spengler@opailhabela.com.br</a>
+      </div>
+
+      <div class="contato-card">
+        <h3>Marco Henrique da S. Filho</h3>
+        <div class="creci">CRECI 79555</div>
+        <a href="tel:+5512974068058">(12) 97406-8058</a>
+        <a href="mailto:marcofilhoilha@gmail.com">marcofilhoilha@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+</div>
+
+<div id="tab-mensagens" class="tab-content">
+  <div class="page" style="background: var(--fundo);">
+    
+
+  <section class="intro">
+    <div class="intro-label">Como usar</div>
+    <p>As mensagens não foram feitas para disparo em massa. Elas funcionam melhor quando o corretor identifica o argumento que combina com o momento e com o perfil de cada pessoa.</p>
+  </section>
+
+  <div class="notice">
+    Os links da página exclusiva e do tour virtual já estão inseridos.
+  </div>
+
+  <section class="messages">
+
+    <article class="message-card">
+      <div class="message-head">
+        <span class="number">1</span>
+        <div>
+          <h2 class="message-title">Ativação: lead que pode ter perfil para a casa</h2>
+          <p class="message-context">Quando você identifica alguém que valoriza arquitetura contemporânea, vista e uma rotina mais prática em Ilhabela.</p>
+        </div>
+        <button class="copy-button" data-target="msg1">Copiar mensagem</button>
+      </div>
+
+      <div class="message-body">
+        <div class="message-copy" id="msg1">Oi [nome], tudo bem?
+
+Lembrei de você porque apareceu uma casa no Engenho D'Água que reúne duas coisas difíceis de encontrar em Ilhabela: vista para o mar e acesso simples.
+
+É nova, contemporânea, tem 4 suítes, suíte master no pavimento principal e um gourmet independente e climatizado.
+
+Está pronta, mobiliada e porteira fechada.
+
+Dá uma olhada:
+<span class="placeholder">https://exclusivo.opailhabela.com.br/engenho-CA006944</span></div>
+
+        <div class="tip"><strong>Argumento central:</strong> não vender apenas a vista. Apresentar a combinação entre arquitetura atual, mobilidade e casa pronta.</div>
+      </div>
+    </article>
+
+    <article class="message-card">
+      <div class="message-head">
+        <span class="number">2</span>
+        <div>
+          <h2 class="message-title">Follow-up: enviou o material e quer retomar</h2>
+          <p class="message-context">Dois ou três dias depois. O tour virtual ajuda a retomar sem transformar a conversa em cobrança.</p>
+        </div>
+        <button class="copy-button" data-target="msg2">Copiar mensagem</button>
+      </div>
+
+      <div class="message-body">
+        <div class="message-copy" id="msg2">[Nome], conseguiu ver a casa do Engenho?
+
+O tour virtual ajuda a entender bem como a planta funciona: a rotina inteira no pavimento principal e as outras três suítes no andar de baixo.
+
+Te mando aqui:
+<span class="placeholder">https://discover.matterport.com/space/tL9pSrTiUNR</span>
+
+Me diz o que achou.</div>
+
+        <div class="tip"><strong>Melhor momento:</strong> depois que o lead já abriu a página, mas ainda não comentou o que mais chamou atenção.</div>
+      </div>
+    </article>
+
+    <article class="message-card">
+      <div class="message-head">
+        <span class="number">3</span>
+        <div>
+          <h2 class="message-title">Relacionamento: manter a casa na cabeça do lead</h2>
+          <p class="message-context">Sem link e sem pressão. Um detalhe específico abre conversa e reforça o valor do endereço.</p>
+        </div>
+        <button class="copy-button" data-target="msg3">Copiar mensagem</button>
+      </div>
+
+      <div class="message-body">
+        <div class="message-copy" id="msg3">[Nome], um detalhe daquela casa que te mandei.
+
+Ela fica no começo do Engenho. Você sobe pouco, mas já abre uma vista enorme para o canal, o centro, o campo da aviação e o píer do Saco da Capela.
+
+É uma combinação rara por aqui: vista sem complicar a rotina.</div>
+
+        <div class="tip"><strong>Por que funciona:</strong> traduz o diferencial territorial da casa em uma situação concreta, sem repetir a ficha técnica.</div>
+      </div>
+    </article>
+
+    <article class="message-card">
+      <div class="message-head">
+        <span class="number">4</span>
+        <div>
+          <h2 class="message-title">Reativação: lead que deixou de responder</h2>
+          <p class="message-context">Semanas ou meses depois. Respeita o tempo da pessoa e abre espaço para entender se o plano mudou.</p>
+        </div>
+        <button class="copy-button" data-target="msg4">Copiar mensagem</button>
+      </div>
+
+      <div class="message-body">
+        <div class="message-copy" id="msg4">Oi [nome], faz um tempo que conversamos sobre a casa no Engenho D'Água.
+
+Ela continua no seu radar ou o que você procura mudou?
+
+Pergunto só para saber se ainda faz sentido te manter atualizado.</div>
+
+        <div class="tip"><strong>Evite:</strong> criar urgência artificial ou perguntar várias vezes se a pessoa viu o material.</div>
+      </div>
+    </article>
+
+    <article class="message-card">
+      <div class="message-head">
+        <span class="number">5</span>
+        <div>
+          <h2 class="message-title">Convite para visita: lead que demonstrou interesse</h2>
+          <p class="message-context">Quando o lead já entendeu o imóvel e precisa avançar para a percepção presencial.</p>
+        </div>
+        <button class="copy-button" data-target="msg5">Copiar mensagem</button>
+      </div>
+
+      <div class="message-body">
+        <div class="message-copy" id="msg5">[Nome], acho que vale conhecer essa casa pessoalmente.
+
+O Marco apresenta a arquitetura e a forma como os ambientes funcionam.
+
+A visita ajuda a perceber duas coisas que o material não entrega por completo: a amplitude da vista e a facilidade do acesso.
+
+Qual dia funciona melhor para você?</div>
+
+        <div class="tip"><strong>Condução:</strong> a visita é com hora marcada e começa por uma conversa breve para confirmar se a casa faz sentido para o perfil do comprador.</div>
+      </div>
+    </article>
+
+  </section>
+
+  </div>
+</div>
+
+<footer class="final">
+  <div class="final-inner">
+    <img src="https://exclusivo.opailhabela.com.br/assets/logo/logo-opa.svg" alt="OPA Imóveis">
+    <h2>O imóvel certo, para a pessoa certa.</h2>
+    <p>Portal exclusivo OPA Imóveis para o Engenho D'Água.</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast">Mensagem copiada</div>
+
+<script>
+  function showTab(tabId) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById('tab-' + tabId).classList.add('active');
+    event.currentTarget.classList.add('active');
+    window.scrollTo({ top: document.querySelector('.tabs-nav').offsetTop, behavior: 'smooth' });
+  }
+
+  const toast = document.getElementById('toast');
+  let toastTimer;
+  document.querySelectorAll('.copy-button').forEach(button => {
+    button.addEventListener('click', async (event) => {
+      const targetId = button.getAttribute('data-target');
+      const target = document.getElementById(targetId);
+      const text = target.innerText.trim();
+
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch (error) {
+        const area = document.createElement('textarea');
+        area.value = text;
+        area.style.position = 'fixed';
+        area.style.opacity = '0';
+        document.body.appendChild(area);
+        area.select();
+        document.execCommand('copy');
+        area.remove();
+      }
+
+      toast.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => toast.classList.remove('show'), 1800);
+    });
+  });
+</script>
+</body>
+</html>

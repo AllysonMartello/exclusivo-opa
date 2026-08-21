@@ -1,1 +1,0 @@
-(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,11817,e=>{"use strict";var t=e.i(43476),n=e.i(71645);e.s(["LanguageProvider",0,function({children:e}){return(0,n.useEffect)(()=>{document.documentElement.lang="pt-BR"},[]),(0,t.jsx)(t.Fragment,{children:e})}])}]);
