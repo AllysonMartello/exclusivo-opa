@@ -15,8 +15,8 @@ export default function FichaResumida() {
   const fichaItems = [
     { icon: <MapPin size={16} />, text: "Engenho D'Água · Ilhabela · SP" },
     { icon: <Hash size={16} />, text: lang === "pt" ? "Código CA006944" : "Code CA006944" },
-    { icon: <Ruler size={16} />, text: lang === "pt" ? "942,80 m² de terreno" : "942.80 m² of land" },
-    { icon: <Ruler size={16} />, text: lang === "pt" ? "343,26 m² casa + 45 m² piscina" : "343.26 m² house + 45 m² pool" },
+    { icon: <Ruler size={16} />, text: lang === "pt" ? "1.131,00 m² de terreno" : "1,131.00 m² of land" },
+    { icon: <Ruler size={16} />, text: lang === "pt" ? "407 m² de área construída" : "407 m² of built area" },
     { icon: <BedDouble size={16} />, text: lang === "pt" ? "4 dormitórios" : "4 bedrooms" },
     { icon: <Bath size={16} />, text: lang === "pt" ? "4 suítes" : "4 suites" },
     { icon: <Eye size={16} />, text: lang === "pt" ? "Vista para o canal de São Sebastião" : "View of the São Sebastião channel" },
