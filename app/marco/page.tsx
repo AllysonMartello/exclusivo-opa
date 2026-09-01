@@ -21,14 +21,6 @@ const acessos: AccessCardData[] = [
     external: true,
   },
   {
-    href: "https://wa.me/5512992570299?text=Ol%C3%A1%21%20Vim%20pela%20p%C3%A1gina%20de%20links%20e%20gostaria%20de%20saber%20mais%20sobre%20loca%C3%A7%C3%A3o%20e%20temporada.&utm_source=linkbio_marco&utm_medium=linkbio&utm_campaign=locacao",
-    icon: "key",
-    title: "Locação e Temporada",
-    desc: "Fale com nossa equipe especialista",
-    color: "#F39C12",
-    external: true,
-  },
-  {
     href: "https://www.instagram.com/marcohenriqueilhabela/?utm_source=linkbio_marco&utm_medium=linkbio&utm_campaign=corretor_marco_2026&utm_content=card_instagram",
     icon: "instagram",
     title: "Instagram",
