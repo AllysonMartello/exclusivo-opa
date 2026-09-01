@@ -67,6 +67,15 @@ const INTERNAL_LINKS: InternalLinkItem[] = [
     badge: "Linkbio",
     icon: UserCheck,
   },
+  {
+    id: "local-subir-videos",
+    title: "Local de subir vídeos",
+    url: "https://drive.google.com/drive/folders/1WfPG9KEJ2Bf9h_BddrpZBAkqNSseKkE0?usp=sharing",
+    description: "Pasta compartilhada no Google Drive para envio dos vídeos gravados pelo corretor Marco Henrique.",
+    category: "marco",
+    badge: "Drive",
+    icon: Folder,
+  },
 
   // SITES DA OPA
   {
